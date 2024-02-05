@@ -563,7 +563,7 @@ body.uikit .btn-download {
 .iq-banner-thumb-slider .slider .slider-bg .slider-images .description p {
     margin-top: .625rem;
     margin-bottom: 2rem;
-    width: 37.5em;
+    width: 44.5em;
     max-width: 100%
 }
 
@@ -581,6 +581,24 @@ body.uikit .btn-download {
 .iq-banner-thumb-slider .slider .slider-bg .slider-images .description .iq-button {
     margin-top: 2.8125rem
 }
+
+
+
+.img-douban {
+    width: 22px;
+    margin-bottom: 3px;
+}
+
+
+.iq-banner-thumb-slider .slider .slider-bg .slider-images .description .text-artist {
+    font-size: .875rem;
+}
+
+.iq-banner-thumb-slider .slider .slider-bg .slider-images .description .banner-text-info {
+    font-size: .875rem;
+}
+
+
 
 .iq-banner-thumb-slider .slider .slider-bg .horizontal_thumb_slider {
     position: relative;
@@ -695,6 +713,36 @@ body.uikit .btn-download {
         left: 0;
         padding: 0 1rem
     }
+    .big-font {
+        font-size: 2.2rem;
+        font-weight: 700
+	}
+    .slider-content h1{
+        margin-top: 100px;
+    }
+    .iq-banner-thumb-slider .slider .slider-bg .slider-images .description p {
+        font-size: 12px;
+        margin-top: 0.625rem;
+        margin-bottom: 1rem;
+        width: 24.5em;
+        max-width: 100%;
+    }
+    .iq-banner-thumb-slider .slider .slider-bg .slider-images .description .text-artist {
+        font-size: 12px;
+        display: none;
+    }
+
+    .iq-banner-thumb-slider .slider .slider-bg .slider-images .description .banner-text-info {
+        font-size: 12px;
+    }
+    .iq-banner-thumb-slider .slider .slider-bg .slider-images .description .iq-button {
+        margin-top: 1.8125rem
+    }
+    .img-douban {
+        width: 18px;
+        margin-bottom: 4px;
+    }
+
 }
 
 .movie-tag li {
