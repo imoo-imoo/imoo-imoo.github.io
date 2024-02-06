@@ -1714,9 +1714,9 @@ body.uikit .btn-download {
     .iq-breadcrumb .title {
         font-size: 1.9rem
     }
-    .navbar-brand img.logo {
+    /*.navbar-brand img.logo {
         width: 80%;
-    }
+    }*/
 }
 
 .iq-card .block-images {
