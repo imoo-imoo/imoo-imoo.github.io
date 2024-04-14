@@ -18188,7 +18188,7 @@ select:-webkit-autofill:focus {
   }
 
   .banner-wrapper.style8 .display9-size {
-    font-size: 75px !important;
+    font-size: 48px /*75px*/ !important;
   }
 
   .banner-wrapper.style17 .display9-size {
