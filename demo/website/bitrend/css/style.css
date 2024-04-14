@@ -1026,7 +1026,7 @@ h6, .h6, p {
 .circle {
   position: absolute;
   border: 3px solid transparent;
-  border-top-color: #9ee925;
+  border-top-color: #6d10ff /*#9ee925*/;
   border-radius: 50%;
   -webkit-animation: rotate linear infinite;
   animation: rotate linear infinite;
