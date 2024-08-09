@@ -7746,6 +7746,14 @@
     font-family: var(--lqd-outfit-font-family)
 }
 
+.font-chakra-petch {
+    font-family: var(--lqd-chakra-petch-font-family)
+}
+
+.font-silkscreen {
+    font-family: var(--lqd-silkscreen-font-family)
+}
+
 .uppercase {
     text-transform: uppercase
 }

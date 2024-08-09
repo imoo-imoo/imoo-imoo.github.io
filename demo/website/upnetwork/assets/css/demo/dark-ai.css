@@ -12,6 +12,8 @@
     --lqd-body-font-weight: 500;
     --lqd-accent-font-family: 'ivymode', sans-serif;
     --lqd-outfit-font-family: "Outfit", sans-serif;
+    --lqd-chakra-petch-font-family: "Chakra Petch", sans-serif;
+    --lqd-silkscreen-font-family: "Silkscreen", sans-serif;
     --lqd-accent-font-weight: 400;
     --lqd-heading-font-family: var(--lqd-body-font-family);
     --lqd-heading-line-height: 1.2em;
