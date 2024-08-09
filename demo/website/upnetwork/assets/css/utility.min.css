@@ -8126,6 +8126,10 @@
     background-color: rgba(0, 0, 0, .9)
 }
 
+.bg-black-95 {
+    background-color: rgba(0, 0, 0, .95)
+}
+
 .bg-gray {
     background-color: rgba(110, 127, 153, .15)
 }

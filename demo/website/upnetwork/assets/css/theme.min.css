@@ -14989,7 +14989,7 @@ h2.lqd-lp-title a:hover {
     height: 100%;
 }
 .lity[data-modal-type="fullscreen"] .lity-close {
-    color: #000;
+    color: rgba(255, 255, 255, .4);
 }
 .lqd-modal[data-modal-type="fullscreen"] {
     padding: 0;
