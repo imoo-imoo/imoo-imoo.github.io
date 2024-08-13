@@ -7858,6 +7858,14 @@
     line-height: 60px
 }
 
+.leading-0\/6em {
+    line-height: .6em
+}
+
+.leading-0\/7em {
+    line-height: .7em
+}
+
 .leading-0\/8em {
     line-height: .8em
 }
