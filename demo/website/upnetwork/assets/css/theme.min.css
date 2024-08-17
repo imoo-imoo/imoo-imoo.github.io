@@ -1420,6 +1420,11 @@ h6 {
 .is-stuck .lqd-stickybar-wrap.lqd-show-onstuck {
     transition-delay: 0.15s;
 }
+
+.lqd-stickybar-wrap-fixed {
+    position: fixed !important;
+}
+
 [data-sticky-header] .lqd-stickybar-wrap {
     position: fixed !important;
 }

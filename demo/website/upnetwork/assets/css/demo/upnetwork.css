@@ -40,6 +40,33 @@
 ::-webkit-scrollbar-thumb:hover {background: rgba(253, 209, 16, 1);border-radius: 0px;}
 ::-webkit-scrollbar-thumb:active {background: rgba(0, 0, 0, .5);border-radius: 0px;}
 
+.lqd-gdpr-accept {
+    padding: 8px 23px;
+    border: none;
+    border-radius: 50em;
+    background: #f5f5f5;
+    font-size: 14px;
+    line-height: 1em;
+    color: #000000;
+    transition: background 0.3s, color 0.3s;
+}
+
+.lqd-gdpr-accept:hover {
+    color: #000000;
+    background-color: #fdd110;
+}
+
+@media (min-width: 1200px) {
+    .is-stuck section:not(.lqd-stickybar-wrap) {
+        background: rgba(255, 255, 255, 0.96) !important;
+    }
+}
+
+/* ***** Left Sticky ***** */
+.main-header .lqd-stickybar-left {
+    padding: 100px 0 25px 0;
+}
+
 @media(max-width:767px) {
     :root {
         --lqd-h2-font-size: 16vw
