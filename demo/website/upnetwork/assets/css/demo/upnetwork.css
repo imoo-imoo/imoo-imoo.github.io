@@ -137,10 +137,14 @@
 }
 
 .banner .container {
-    max-width: 700px
+    max-width: 1000px
 }
 
 .banner h1 {
+    font-size: 154px
+}
+
+.uplanding h1 {
     font-size: 154px
 }
 
@@ -150,6 +154,27 @@
 
 .banner .module-video:before {
     background-image: url(../../images/banner/hero-overlay.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+.banner .module-video-2 {
+    mix-blend-mode: difference;
+}
+
+.banner .module-video-2:before {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+.module-video-3 {
+    mix-blend-mode: luminosity
+}
+
+.module-video-3:before {
+    /*background-image: url(../../images/banner/hero-overlay.png);*/
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover
@@ -166,12 +191,23 @@
 
 @media(max-width:767px) {
     .banner h1 {
-        font-size: 18vw
+        font-size: 16vw;
+        padding-bottom: 20px;
     }
     .banner .btn {
         padding: 12px 20px
     }
     .banner .btn-icon-left {
+        padding: 12px 20px
+    }
+    .uplanding h1 {
+        font-size: 16vw;
+        padding-bottom: 20px;
+    }
+    .uplanding .btn {
+        padding: 12px 20px
+    }
+    .uplanding .btn-icon-left {
         padding: 12px 20px
     }
 }
