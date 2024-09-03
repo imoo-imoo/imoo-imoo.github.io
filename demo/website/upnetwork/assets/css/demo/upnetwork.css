@@ -255,9 +255,9 @@
     }
 }
 
-.float-text {
+/*.float-text {
     filter: saturate(0%)
-}
+}*/
 
 .float-text .container {
     max-width: 970px
@@ -275,6 +275,9 @@
     }
     .float-text .lqd-text-reveal-el {
         font-size: 32px
+    }
+    .float-text .lqd-text-reveal-el-2 {
+        font-size: 22px
     }
 }
 
@@ -431,5 +434,20 @@
     }
     .main-footer .module-social {
         margin-top: 20px
+    }
+}
+/* ***** Download ***** */
+@media (max-width: 991px) {
+    .download .module-col {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .download .ld-fancy-heading h2 {
+        margin-bottom: 0.5em;
+    }
+
+    .download .btn-lg {
+        padding: 1.15em 2.5em;
     }
 }
