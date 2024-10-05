@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #3dbad4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        fill: #393067;
+        mix-blend-mode: multiply;
+        opacity: .8;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-5 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-6 {
+        isolation: isolate;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="32.6" y1="396.8" x2="221.2" y2="296.1" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3d3c97"/>
+      <stop offset="1" stop-color="#7170b3"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="384" y1="516.3" x2="384" y2="302" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#857eba"/>
+      <stop offset="1" stop-color="#b9b6da"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="4.7" y1="185.7" x2="494.5" y2="174.1" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#706baf"/>
+      <stop offset="1" stop-color="#a4a6d2"/>
+    </linearGradient>
+  </defs>
+  <g class="cls-6">
+    <g id="Layer_1" data-name="Layer 1">
+      <g>
+        <polygon class="cls-3" points="256 512 0 332.2 0 179.7 256 359.5 256 512"/>
+        <polygon class="cls-4" points="256 512 512 332.4 512 179.7 256 359.3 256 512"/>
+        <polygon class="cls-5" points="256 0 256 0 256 0 256 0 0 179.9 256 359.5 256 359.5 256 359.5 256 359.5 512 179.9 256 0"/>
+        <polygon class="cls-2" points="256 25.2 256 25.2 256 25.2 256 25.2 35.9 179.9 256 334.3 256 334.3 256 334.3 256 334.3 476.1 179.9 256 25.2"/>
+        <g>
+          <polygon class="cls-1" points="253.8 63.2 253.8 63.2 253.8 63.2 253.8 63.2 84.1 182.3 253.8 301.3 253.8 301.3 253.8 301.3 253.8 301.3 423.4 182.3 253.8 63.2"/>
+          <polygon class="cls-1" points="253.8 97.5 253.8 97.5 253.8 97.5 253.8 97.5 133 182.3 253.8 267 253.8 267 253.8 267 253.8 267 374.5 182.3 253.8 97.5"/>
+          <polygon class="cls-1" points="253.8 141.8 253.8 141.8 253.8 141.8 253.8 141.8 196.1 182.3 253.8 222.7 253.8 222.7 253.8 222.7 253.8 222.7 311.3 182.3 253.8 141.8"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
