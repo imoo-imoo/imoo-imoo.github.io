@@ -1589,7 +1589,7 @@ body.loaded {
   transition: all .4s !important; }
   .author-profile .cont {
     width: 100%;
-    height: 100%;
+/*    height: 100%;*/
     padding: 30px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 30px;
@@ -3201,7 +3201,7 @@ img.left {
   .sm-hide {
     display: none; }
   h1 {
-    font-size: 30px; }
+    font-size: 42px; }
   h2 {
     font-size: 28px; }
   h3 {
@@ -3326,6 +3326,8 @@ img.left {
   .comments-post .item-box .replay-post {
     margin: 15px 0 0 0; }
   .comments-post .item-box.replayed {
-    margin-left: 0; } }
+    margin-left: 0; }
+  .author-profile .cont {
+    margin-top: 50px; } }
 
 /* ====================== [ End Responsive ] ====================== */
