@@ -59,6 +59,13 @@
 	--lqd-cc-blend-mode: difference;
 }
 
+
+::-webkit-scrollbar {width: 6px;}
+::-webkit-scrollbar-track {background: rgba(0, 0, 0, 1);border-radius: 0px;}
+::-webkit-scrollbar-thumb {background: rgba(255, 255, 255, .2);border-radius: 0px;}
+::-webkit-scrollbar-thumb:hover {background: rgba(253, 209, 16, 1);border-radius: 0px;}
+::-webkit-scrollbar-thumb:active {background: rgba(0, 0, 0, .5);border-radius: 0px;}
+
 /* ***** Button ***** */
 button,
 input[type="button"],
@@ -727,5 +734,108 @@ input[type="submit"],
 
 	.main-footer .module-info .module-col {
 		margin-bottom: 20px;
+	}
+}
+
+
+
+.clients-carousel .lqd-iconbox-scale:hover {
+	transform: scale(1.1);
+}
+
+.clients-carousel .lqd-iconbox-scale:hover .iconbox-heading-arrow-onhover h3 svg {
+	opacity: 1;
+	transform: translateX(.5em);
+}
+
+
+/*  Companies  */
+.companies .lqd-shape[data-negative=false].lqd-shape .lqd-custom-shape,
+.companies .lqd-shape[data-negative=false].lqd-shape .lqd-custom-shape {
+	transform: translateX(-50%) rotate(180deg);
+}
+
+.companies .module-shape-2 {
+	min-height: 350px;
+}
+
+.companies .btn-md:hover,
+.companies .btn-md:focus {
+	color: #ffffff;
+	background-color: var(--lqd-color-purple-300);
+	box-shadow: 0 15px 55px 0 rgba(190, 184, 255, 0.22);
+}
+
+.companies .btn-lg {
+	--icon-ms: 8px;
+}
+
+.companies .btn-lg:hover,
+.companies .btn-lg:focus {
+	color: #17212B;
+	background-color: var(--lqd-color-blue-400);
+	box-shadow: 0 15px 55px 0 rgba(190, 184, 255, 0.22);
+}
+
+.companies .lqd-iconbox-scale:hover {
+	transform: scale(1.1);
+}
+
+.companies .lqd-iconbox-scale:hover .iconbox-heading-arrow-onhover h3 svg {
+	opacity: 1;
+	transform: translateX(.5em);
+}
+
+.companies .module-shape-3 .lqd-imggrp-single[data-float] {
+	--float-animate-from: -10%;
+	--float-animate-to: 0;
+	--float-animation-ease: ease-out;
+}
+
+.companies .lqd-imggrp-single:hover {
+	opacity: 1;
+}
+
+.companies .module-img-2 {
+	right: -130px;
+}
+
+.companies .module-parallax {
+	left: -43px;
+}
+
+.companies .module-shape-3 {
+	right: -1%;
+}
+
+@media(max-width: 1199px) {
+	.companies {
+		padding: 100px 20px 150px 20px;
+	}
+
+	.companies .module-col {
+		padding: 30px;
+	}
+
+	.companies .module-title h2 {
+		font-size: 58px;
+	}
+}
+
+@media(max-width: 767px) {
+	.companies {
+		padding: 0px 20px;
+	}
+
+	.companies .module-shape-1 .lqd-custom-shape {
+		height: 80px;
+	}
+
+	.companies .module-shape-2 .lqd-custom-shape {
+		height: 200px;
+	}
+
+	.companies .btn-lg {
+		font-size: 13px;
 	}
 }
