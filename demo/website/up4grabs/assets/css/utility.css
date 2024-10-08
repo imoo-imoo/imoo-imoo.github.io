@@ -9148,6 +9148,11 @@
 	border-style: none;
 }
 
+.border-05 {
+	border-width: 0.5px;
+	border-style: solid;
+}
+
 .border-1 {
 	border-width: 1px;
 	border-style: solid;
