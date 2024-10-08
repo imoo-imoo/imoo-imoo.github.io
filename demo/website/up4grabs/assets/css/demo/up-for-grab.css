@@ -824,7 +824,7 @@ input[type="submit"],
 
 @media(max-width: 767px) {
 	.companies {
-		padding: 0px 20px;
+		padding: 0px 0px;
 	}
 
 	.companies .module-shape-1 .lqd-custom-shape {
