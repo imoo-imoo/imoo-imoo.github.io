@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Upnetwork_logomark_yellow_" data-name="Upnetwork logomark yellow " xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 185.4 94.8">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #000;
+        fill-rule: evenodd;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="Rectangle_1" data-name="Rectangle 1">
+    <path class="cls-1" d="M148,0h-46.4v26.4h41.8c7.7,0,14,6.3,14,14s-6.3,14-14,14h-41.8v39.1h27.3v-13h19.2c24,0,37.3-21.5,37.3-40.7S172.1,0,148,0Z"/>
+  </g>
+  <g id="Rectangle_1-2" data-name="Rectangle 1-2">
+    <path class="cls-1" d="M54-.4v55.3c0,7.6-6.2,13.8-13.8,13.8s-13.8-6.2-13.8-13.8V-.4H0v53.6c0,22.4,18.1,40.5,40.5,40.5s40.5-18.1,40.5-40.5V-.4h-27Z"/>
+  </g>
+</svg>

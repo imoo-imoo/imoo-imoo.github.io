@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #3c3b3d;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #e64c42;
+      }
+
+      .cls-3 {
+        fill: #57606f;
+      }
+
+      .cls-4 {
+        fill: #d7deed;
+      }
+
+      .cls-5 {
+        fill: #ecf0f1;
+      }
+
+      .cls-6 {
+        fill: #e4eaef;
+      }
+
+      .cls-7 {
+        fill: #afb9d2;
+      }
+
+      .cls-8 {
+        display: none;
+      }
+    </style>
+  </defs>
+  <rect class="cls-6" width="512" height="512"/>
+  <g class="cls-8">
+    <g id="_836_Computer_devices_laptop" data-name="836, Computer, devices, laptop">
+      <g>
+        <polygon class="cls-3" points="122.6 129.2 122.6 339 192.3 339 211.7 358.4 300.8 358.4 319.7 339 389.9 339 389.9 129.2 122.6 129.2"/>
+        <rect class="cls-5" x="148" y="154.7" width="216.4" height="159.4"/>
+        <path class="cls-1" d="M408.8,338.5v19.4c0,13.8-11.2,25-25,25h-255.6c-13.7,0-25-11.2-25-25v-19.4h89.6l19.4,19.4h89.1l19.4-19.4h88.1Z"/>
+      </g>
+    </g>
+  </g>
+  <g>
+    <rect class="cls-3" x="131.4" y="129.2" width="29.4" height="191.3" rx="14.7" ry="14.7"/>
+    <rect class="cls-3" x="351.2" y="129.2" width="29.4" height="191.3" rx="14.7" ry="14.7"/>
+  </g>
+  <g>
+    <path class="cls-4" d="M393.8,280.6H118.1c-8.5,0-14.9,6.9-14.9,14.9v71.9c0,8.5,6.9,14.9,14.9,14.9h275.7c8.5,0,14.9-6.9,14.9-14.9v-71.9c.5-8.5-6.4-14.9-14.9-14.9Z"/>
+    <path class="cls-2" d="M362.4,313.6c7.5,0,13.3,5.9,13.3,13.3s-5.9,13.3-13.3,13.3-13.3-5.9-13.3-13.3,5.9-13.3,13.3-13.3Z"/>
+    <path class="cls-2" d="M302.8,313.6c7.5,0,13.3,5.9,13.3,13.3s-6.4,13.3-13.3,13.3-13.3-5.9-13.3-13.3,5.9-13.3,13.3-13.3Z"/>
+    <path class="cls-2" d="M242.7,313.6c7.5,0,13.3,5.9,13.3,13.3s-5.9,13.3-13.3,13.3-13.3-5.9-13.3-13.3,5.9-13.3,13.3-13.3Z"/>
+    <path class="cls-7" d="M136.2,360.5c-3.7,0-6.9-3.2-6.9-6.9v-46.8c0-3.7,3.2-6.9,6.9-6.9s6.9,3.2,6.9,6.9v46.8c0,3.7-3.2,6.9-6.9,6.9Z"/>
+  </g>
+</svg>

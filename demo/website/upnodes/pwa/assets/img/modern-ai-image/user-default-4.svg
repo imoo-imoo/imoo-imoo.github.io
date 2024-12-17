@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="upnetwork_logomark_BG-yellow_" data-name="upnetwork logomark (BG-yellow)" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1500 1500">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ff7900;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        stroke-width: 0px;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #000;
+      }
+
+      .cls-3 {
+        fill-rule: evenodd;
+      }
+
+      .cls-4 {
+        fill: #ffe6d2;
+      }
+    </style>
+  </defs>
+  <g id="yellow_BG" data-name="yellow BG">
+    <rect class="cls-4" x=".3" y="0" width="1500" height="1500"/>
+  </g>
+  <g id="upface">
+    <g id="Rectangle_1" data-name="Rectangle 1">
+      <path class="cls-3" d="M845.7,792.6v14.6c0,54.3-44,98.3-98.3,98.3s-98.3-44-98.3-98.3v-14.6h-187.1v2.9c0,158.9,128.8,287.8,287.8,287.8s287.8-128.8,287.8-287.8v-2.9h-191.8Z"/>
+    </g>
+    <g id="Rectangle_1-2" data-name="Rectangle 1">
+      <rect class="cls-2" x="461.9" y="416.7" width="187.1" height="188"/>
+    </g>
+    <g id="Rectangle_1-3" data-name="Rectangle 1">
+      <rect class="cls-1" x="845.7" y="416.7" width="191.8" height="188"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Group_2" data-name="Group 2" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 280.41 141.78">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-rule: evenodd;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="Group_1" data-name="Group 1">
+    <g id="Rectangle_1" data-name="Rectangle 1">
+      <path class="cls-1" d="M223.96,0h-70.26v39.89h63.28c11.68,0,21.15,9.47,21.15,21.15s-9.47,21.15-21.15,21.15h-63.28v59.16h41.25v-19.62h29.01c36.32,0,56.46-32.51,56.46-61.52S260.27,0,223.96,0Z"/>
+    </g>
+    <g id="Rectangle_1-2" data-name="Rectangle 1">
+      <path class="cls-1" d="M81.64-.58v83.62c0,11.55-9.36,20.91-20.91,20.91s-20.91-9.36-20.91-20.91V-.58H0v81.13C0,114.37,27.41,141.78,61.22,141.78s61.22-27.41,61.22-61.22V-.58h-40.81Z"/>
+    </g>
+  </g>
+</svg>

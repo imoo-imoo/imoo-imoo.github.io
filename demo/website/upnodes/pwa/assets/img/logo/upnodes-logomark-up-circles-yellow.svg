@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Upnetwork_logomark_yellow_" data-name="Upnetwork logomark (yellow)" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 421.1 105.1">
+  <defs>
+    <style>
+      .cls-1 {
+        fill-rule: evenodd;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #fdd110;
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        opacity: .3;
+      }
+
+      .cls-4 {
+        opacity: .6;
+      }
+    </style>
+  </defs>
+  <g id="Ellipse_1" data-name="Ellipse 1" class="cls-3">
+    <circle class="cls-2" cx="368.6" cy="52.5" r="52.5" transform="translate(70.8 276) rotate(-45)"/>
+  </g>
+  <g id="Ellipse_1-2" data-name="Ellipse 1" class="cls-4">
+    <circle class="cls-2" cx="316.4" cy="52.5" r="52.5" transform="translate(-1.6 93.9) rotate(-16.8)"/>
+  </g>
+  <g id="Ellipse_1-3" data-name="Ellipse 1">
+    <circle class="cls-2" cx="264.1" cy="52.5" r="52.5" transform="translate(40.2 202.2) rotate(-45)"/>
+  </g>
+  <g id="Rectangle_1" data-name="Rectangle 1">
+    <path class="cls-1" d="M148,6.1h-46.4v26.4h41.8c7.7,0,14,6.3,14,14s-6.3,14-14,14h-41.8v39.1h27.3v-13h19.2c24,0,37.3-21.5,37.3-40.7s-13.3-39.8-37.3-39.8Z"/>
+  </g>
+  <g id="Rectangle_1-2" data-name="Rectangle 1">
+    <path class="cls-1" d="M54,5.7v55.3c0,7.6-6.2,13.8-13.8,13.8s-13.8-6.2-13.8-13.8V5.7H0v53.6C0,81.7,18.1,99.8,40.5,99.8s40.5-18.1,40.5-40.5V5.7h-27Z"/>
+  </g>
+</svg>

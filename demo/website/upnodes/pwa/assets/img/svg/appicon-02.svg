@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 76.8 76.8">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient-4);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient-3);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="5.2" y1="71.6" x2="71.6" y2="5.2" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff4eff"/>
+      <stop offset="0" stop-color="#f154fe"/>
+      <stop offset=".1" stop-color="#ce65fc"/>
+      <stop offset=".2" stop-color="#9580f9"/>
+      <stop offset=".4" stop-color="#47a5f4"/>
+      <stop offset=".5" stop-color="#04c5f1"/>
+      <stop offset="1" stop-color="#36bf46"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="8.3" y1="2.5" x2="68.6" y2="74.3" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffb600"/>
+      <stop offset="0" stop-color="rgba(255, 182, 0, .8)" stop-opacity=".8"/>
+      <stop offset=".2" stop-color="rgba(255, 182, 0, .6)" stop-opacity=".6"/>
+      <stop offset=".4" stop-color="rgba(255, 182, 0, .4)" stop-opacity=".4"/>
+      <stop offset=".5" stop-color="rgba(255, 182, 0, .3)" stop-opacity=".3"/>
+      <stop offset=".6" stop-color="rgba(255, 182, 0, .2)" stop-opacity=".2"/>
+      <stop offset=".8" stop-color="rgba(255, 182, 0, 0)" stop-opacity="0"/>
+      <stop offset=".9" stop-color="rgba(255, 182, 0, 0)" stop-opacity="0"/>
+      <stop offset="1" stop-color="#ffb600" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="41.1" y1="45.7" x2="25.2" y2="18.1" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="54.6" y1="63.1" x2="38.8" y2="35.7" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff" stop-opacity=".7"/>
+      <stop offset=".7" stop-color="rgba(255, 255, 255, 1)" stop-opacity="1"/>
+      <stop offset=".8" stop-color="#fff"/>
+    </linearGradient>
+  </defs>
+  <rect class="cls-1" x="0" width="76.8" height="76.8" rx="17.7" ry="17.7"/>
+  <rect class="cls-3" x="0" width="76.8" height="76.8" rx="17.7" ry="17.7"/>
+  <g>
+    <path class="cls-4" d="M27.6,53.5l-12.5-12.5c-2.5-2.5-2.5-6.5,0-9.1L31.5,14.8c2.5-2.6,6.5-2.7,9.1-.2l13.2,12.4"/>
+    <path class="cls-2" d="M53.8,27l1.8,1.8c2.2,2.2,2.2,5.8,0,8l-5.6,5.6,10.4,10.4c1.9,1.9,1.9,5,0,6.9h0c-1.9,1.9-5,1.9-6.9,0l-10.5-10.5-5.6,5.6c-2.2,2.2-5.8,2.2-8,0l-1.5-1.5,25.9-26.2Z"/>
+  </g>
+</svg>
