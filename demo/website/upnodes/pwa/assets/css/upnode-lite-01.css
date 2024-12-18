@@ -25892,6 +25892,16 @@ fieldset:disabled .btn {
     padding-right: 3rem !important
 }
 
+.px-6 {
+    padding-left: 4.5rem !important;
+    padding-right: 4.5rem !important
+}
+
+.px-7 {
+    padding-left: 6rem !important;
+    padding-right: 6rem !important
+}
+
 .py-0 {
     padding-bottom: 0 !important;
     padding-top: 0 !important
