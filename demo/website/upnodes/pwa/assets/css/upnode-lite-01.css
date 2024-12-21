@@ -37346,7 +37346,8 @@ figure {
 }
 
 [data-bs-theme=dark] .bg-theme-1-subtle {
-    color: hsla(0, 0%, 100%, .85)
+    color: hsla(0, 0%, 100%, .85);
+    background-color: rgba(var(--adminuiux-theme-1-rgb), .18) !important
 }
 
 [data-bs-theme=dark] .badge.light.text-bg-theme-1 {
