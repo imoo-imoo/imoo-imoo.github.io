@@ -1,12 +1,35 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg xmlns="http://www.w3.org/2000/svg"
-aria-label="Ethereum" role="img"
-viewBox="0 0 512 512"><rect
-width="512" height="512"
-rx="15%"
-fill="#ffffff"/><path
-fill="#3C3C3B" d="m256 362v107l131-185z"/><path
-fill="#343434" d="m256 41l131 218-131 78-132-78"/><path
-fill="#8C8C8C" d="m256 41v158l-132 60m0 25l132 78v107"/><path
-fill="#141414" d="m256 199v138l131-78"/><path
-fill="#393939" d="m124 259l132-60v138"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #343434;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #3c3c3b;
+      }
+
+      .cls-3 {
+        fill: #8c8c8c;
+      }
+
+      .cls-4 {
+        fill: #141414;
+      }
+
+      .cls-5 {
+        fill: #393939;
+      }
+    </style>
+  </defs>
+  <path class="cls-2" d="M256.1,384v128l156.7-221.3-156.7,93.3Z"/>
+  <path class="cls-1" d="M256.1,0l156.7,260.8-156.7,93.3-157.9-93.3"/>
+  <path class="cls-3" d="M256.1,0v189l-157.9,71.8M98.2,290.7l157.9,93.3v128"/>
+  <path class="cls-4" d="M256.1,189v165.1l156.7-93.3"/>
+  <path class="cls-5" d="M98.2,260.8l157.9-71.8v165.1"/>
+</svg>
