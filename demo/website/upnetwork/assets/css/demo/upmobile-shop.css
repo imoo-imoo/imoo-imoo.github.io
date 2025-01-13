@@ -4,6 +4,8 @@
 	--lqd-container-width-sm: 750px;
 	
 	--lqd-color-primary: #FDD110;
+    --lqd-color-primary-10: #1e1b0e;
+    --lqd-color-primary-20: rgba(253, 209, 16, .20);
 	--lqd-body-text-color: rgba(255, 255, 255, .47);
 
 	--lqd-color-link: #5b7bfb;
@@ -2765,6 +2767,27 @@
 table tbody tr:nth-child(odd) {
     background-color: rgba(255, 255, 255, 0.0);
 }
+
+
+/* ***** Tab Items ***** */
+.tab-items .lqd-tabs-nav li a.active {
+    color: #ffffff;
+}
+.tab-items .lqd-tabs-nav li a{
+    color: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 991px) {
+    .tab-items {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .tab-items .ld-fancy-heading h2 {
+        font-size: 40px;
+    }
+}
+
 
 /*------------ product ---------------- */
 .thumbs-slider {
@@ -5843,4 +5866,90 @@ table tbody tr:nth-child(odd) {
   .banner-countdown-v2 .tf-countdown .countdown__timer {
     justify-content: start;
   }
+}
+
+
+.accordion-active-has-fill .accordion-item.active .accordion-title a {
+    background-color: var(--lqd-color-primary);
+    color: #000000;
+}
+
+/* ***** Slide Carousel ***** */
+.slide-carousel .lqd-shape-top svg {
+    height: 165px;
+    transform: translateX(-50%) rotateY(180deg);
+}
+
+.slide-carousel .module-shape {
+    left: 26%;
+}
+
+.slide-carousel .module-img {
+    right: -2%;
+}
+
+.slide-carousel .module-shadow {
+    min-height: 245px;
+}
+
+.slide-carousel .carousel-item-content {
+    font-size: 7vw;
+}
+
+.slide-carousel .carousel-item-content>* {
+    white-space: nowrap;
+}
+
+@media (max-width: 1199px) {
+    .slide-carousel {
+        padding-top: 180px;
+        padding-bottom: 170px;
+    }
+
+    .slide-carousel .lqd-shape-top svg {
+        height: 120px;
+    }
+
+    .slide-carousel .module-column {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .slide-carousel .lqd-shape svg {
+        height: 100px;
+    }
+
+    .slide-carousel .module-img {
+        top: -59px;
+    }
+
+    .slide-carousel .carousel-item-content {
+        font-size: 24vw;
+    }
+}
+
+/* ***** Price Box ***** */
+.price-box .btn-icon-circle .btn-icon:before {
+    border-color: #0000003B;
+}
+
+@media (max-width: 1199px) {
+    .price-box .module-gap {
+        gap: 20px;
+    }
+}
+
+/* ***** Has Accoirdion ***** */
+@media (max-width: 1199px) {
+    .has-accordion {
+        padding: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .has-accordion {
+        padding-top: 40px;
+        padding-bottom: 50px;
+    }
 }
