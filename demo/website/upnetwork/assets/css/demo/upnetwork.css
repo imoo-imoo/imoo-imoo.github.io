@@ -247,6 +247,10 @@
     max-width: 1280px
 }
 
+.features .container h3{
+    font-size: 44px;
+}
+
 .how-it-works .container {
     max-width: 1260px
 }
@@ -254,6 +258,9 @@
 @media(max-width:767px) {
     .how-it-works .module-top {
         margin-bottom: 80px
+    }
+    .features .container h3{
+    font-size: 26px;
     }
     .how-it-works .lqd-text-reveal-el {
         font-size: 24px;
