@@ -6,6 +6,12 @@
     --tertiary: #666666;
 }
 
+::-webkit-scrollbar {width: 6px;}
+::-webkit-scrollbar-track {background: rgba(0, 0, 0, 1);border-radius: 0px;}
+::-webkit-scrollbar-thumb {background: rgba(255, 255, 255, .2);border-radius: 0px;}
+::-webkit-scrollbar-thumb:hover {background: rgba(253, 209, 16, 1);border-radius: 0px;}
+::-webkit-scrollbar-thumb:active {background: rgba(0, 0, 0, .5);border-radius: 0px;}
+
 /* ======================================
 *       TABLE OF CONTENT
 *----------------------------------------
