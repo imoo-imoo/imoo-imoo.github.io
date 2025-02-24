@@ -493,6 +493,9 @@
         top: 10%;
         height: auto;
     }
+    .hero-sec .hero-bottom .left {
+        align-items: center;
+    }
 }
 
 @media (max-width: 767px) {
