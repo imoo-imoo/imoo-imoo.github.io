@@ -294,9 +294,14 @@
         line-height: 52px;
         padding: 7px;
         margin: -7px;
+        text-align: center;
     }
     .hero-sec .hero-bottom {
         row-gap: 20px;
+        align-items: center;
+    }
+    .hero-sec .hero-bottom .left {
+        align-items: center;
     }
     .hero-sec .hero-top {
         max-width: 100%;
@@ -493,9 +498,7 @@
         top: 10%;
         height: auto;
     }
-    .hero-sec .hero-bottom .left {
-        align-items: center;
-    }
+    
 }
 
 @media (max-width: 767px) {
