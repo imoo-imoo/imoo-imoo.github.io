@@ -1,13 +1,13 @@
 {
-  "name": "Unic",
-  "short_name": "Unic",
+  "name": "Up Finance",
+  "short_name": "Up Finance",
   "start_url": "index.html",
-  "display": "standalone",
+  "display": "fullscreen",
   "scope": "./",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
   "orientation": "portrait-primary",
-  "description": "Unic – NFT Marketplace PWA Mobile Template",
+  "description": "Up Finance",
   "categories": [
     "multipurpose ",
     "Service",
