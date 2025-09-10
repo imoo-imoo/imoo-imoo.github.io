@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#222032" media="(prefers-color-scheme: dark)">
+  <title>UP Finance - Success</title>
+  <meta name="description" content="Unic – NFT Marketplace PWA Mobile Template">
+  <meta name="keywords"
+        content="bootstrap 5, mobile template, wallet, crypto, currency, about, blog, cordova, phonegap, mobile, html, nft, store, marketplace, pwa" />
+  <link rel="icon" type="image/png" href="images/favicon/icon-32x32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="images/favicon/icon-96x96.png">
+  <!-- Your existing CSS -->
+  <link rel="stylesheet" href="assets/css/up-finance-style.css">
+  <link rel="stylesheet" href="assets/css/remixicon.min.css">
+
+  <style>
+    :root{
+      /* tweak these to match your brand */
+      --success-stroke: #fff;
+      --success-glow: rgba(255,255,255,.35);
+      --ring-color: rgba(255,255,255,.25);
+      --bg: #222031;
+    }
+
+    #wrapper{
+      background-color: var(--bg);
+      min-height: 100vh;
+    }
+
+    /* container for the circular badge */
+    .check-wrap{
+      width: clamp(80px, 20vw, 240px);
+      aspect-ratio: 1 / 1;
+      border: 4px solid rgba(255,255,255,.32);
+      border-radius: 9999px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      animation: pop 600ms ease-out both;
+      animation-delay: 120ms;
+      overflow: visible;
+    }
+
+    /* subtle expanding ring after the pop */
+    .check-wrap::after{
+      content:"";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      border: 4px solid var(--ring-color);
+      transform: scale(.9);
+      opacity: 0;
+      pointer-events: none;
+      animation: ring 800ms ease-out 800ms both;
+    }
+
+    .check-anim{
+      width: 90%;
+      height: auto;
+      display: block;
+    }
+
+    .check-anim .circle{
+      fill: none;
+      stroke: var(--success-stroke);
+      stroke-width: 6;
+      stroke-linecap: round;
+      /*filter: drop-shadow(0 0 8px var(--success-glow));*/
+      /* normalize path length so 0..100 works for any size */
+      pathLength: 100;
+      stroke-dasharray: 280;
+      stroke-dashoffset: 280;
+      animation: draw-circle 900ms ease-out forwards;
+    }
+
+    .check-anim .tick{
+      fill: none;
+      stroke: var(--success-stroke);
+      stroke-width: 6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      pathLength: 100;
+      stroke-dasharray: 100;
+      stroke-dashoffset: 100;
+      animation: draw-tick 600ms cubic-bezier(.2,.6,.2,1) 650ms forwards;
+      filter: drop-shadow(0 0 8px var(--success-glow));
+    }
+
+    /* text */
+    .title{
+      color: #fff;
+      font-weight: 700;
+      margin-top: .9rem;
+      margin-bottom: 0;
+      font-size: clamp(16px, 2.2vw, 22px);
+    }
+    .hint{
+      position: fixed;
+      bottom: 10vh;
+      width: 100%;
+      text-align: center;
+      color: #9aa0b4;
+      font-size: clamp(12px, 1.8vw, 16px);
+      user-select: none;
+    }
+
+    /* animations */
+    @keyframes draw-circle{
+      to{ stroke-dashoffset: 0; }
+    }
+    @keyframes draw-tick{
+      from{ stroke-dashoffset: 100; }
+      to{ stroke-dashoffset: 0; }
+    }
+    @keyframes pop{
+      0%{ transform: scale(.8); opacity: 0; }
+      60%{ transform: scale(1.06); opacity: 1; }
+      100%{ transform: scale(1); }
+    }
+    @keyframes ring{
+      0%{ transform: scale(.9); opacity: 0; }
+      30%{ opacity: 1; }
+      100%{ transform: scale(1.25); opacity: 0; }
+    }
+
+    /* accessibility: respect reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      .check-wrap, .check-wrap::after, .check-anim .circle, .check-anim .tick{
+        animation: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrapper" class="d-flex flex-column justify-content-center align-items-center">
+    <div id="content" class="d-flex flex-column justify-content-center align-items-center">
+
+      <!-- Animated circle + check -->
+      <div class="check-wrap" aria-hidden="true">
+        <svg class="check-anim" viewBox="0 0 128 128" role="img" aria-label="Success">
+          <!-- circle -->
+          <circle class="circle" cx="64" cy="64" r="44"></circle>
+          <!-- check path -->
+          <path class="tick" d="M44 66 L58 80 L84 52"></path>
+        </svg>
+      </div>
+
+      <h4 class="mt-3 fs-4 text-white fw-bold">Your Card Issued</h4>
+      <p class="fs-7 text-center text-secondary">Your digital card is ready instantly. Your physical card is being prepared</p>
+    </div>
+
+    
+        <a href="#" class="btn btn-sm-arrow bg-primary"  style="position: fixed; bottom: 10vh;">
+            <p class="text-black">Continue</p>
+            <div class="ico text-black">
+                <i class="ri-arrow-drop-right-line"></i>
+            </div>
+        </a>
+
+    <!-- <h5 class="text-secondary fs-7 text-center w-100" style="position: fixed; bottom: 10vh;">Tap Anywhere to Continue</h5> -->
+
+  </div>
+
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script>
+    // Confetti shapes (you can keep/edit these)
+    const pumpkin = confetti.shapeFromPath({
+      path: 'M449.4 142c-5 0-10 .3-15 1a183 183 0 0 0-66.9-19.1V87.5a17.5 17.5 0 1 0-35 0v36.4a183 183 0 0 0-67 19c-4.9-.6-9.9-1-14.8-1C170.3 142 105 219.6 105 315s65.3 173 145.7 173c5 0 10-.3 14.8-1a184.7 184.7 0 0 0 169 0c4.9.7 9.9 1 14.9 1 80.3 0 145.6-77.6 145.6-173s-65.3-173-145.7-173zm-220 138 27.4-40.4a11.6 11.6 0 0 1 16.4-2.7l54.7 40.3a11.3 11.3 0 0 1-7 20.3H239a11.3 11.3 0 0 1-9.6-17.5zM444 383.8l-43.7 17.5a17.7 17.7 0 0 1-13 0l-37.3-15-37.2 15a17.8 17.8 0 0 1-13 0L256 383.8a17.5 17.5 0 0 1 13-32.6l37.3 15 37.2-15c4.2-1.6 8.8-1.6 13 0l37.3 15 37.2-15a17.5 17.5 0 0 1 13 32.6zm17-86.3h-82a11.3 11.3 0 0 1-6.9-20.4l54.7-40.3a11.6 11.6 0 0 1 16.4 2.8l27.4 40.4a11.3 11.3 0 0 1-9.6 17.5z',
+      matrix: [0.020491803278688523, 0, 0, 0.020491803278688523, -7.172131147540983, -5.9016393442622945]
+    });
+    const tree = confetti.shapeFromPath({
+      path: 'M120 240c-41,14 -91,18 -120,1 29,-10 57,-22 81,-40 -18,2 -37,3 -55,-3 25,-14 48,-30 66,-51 -11,5 -26,8 -45,7 20,-14 40,-30 57,-49 -13,1 -26,2 -38,-1 18,-11 35,-25 51,-43 -13,3 -24,5 -35,6 21,-19 40,-41 53,-67 14,26 32,48 54,67 -11,-1 -23,-3 -35,-6 15,18 32,32 51,43 -13,3 -26,2 -38,1 17,19 36,35 56,49 -19,1 -33,-2 -45,-7 19,21 42,37 67,51 -19,6 -37,5 -56,3 25,18 53,30 82,40 -30,17 -79,13 -120,-1l0 41 -31 0 0 -41z',
+      matrix: [0.03597122302158273, 0, 0, 0.03597122302158273, -4.856115107913669, -5.071942446043165]
+    });
+    const heart = confetti.shapeFromPath({
+      path: 'M167 72c19,-38 37,-56 75,-56 42,0 76,33 76,75 0,76 -76,151 -151,227 -76,-76 -151,-151 -151,-227 0,-42 33,-75 75,-75 38,0 57,18 76,56z',
+      matrix: [0.03333333333333333, 0, 0, 0.03333333333333333, -5.566666666666666, -5.533333333333333]
+    });
+
+    const confettiDefaults = {
+      scalar: 1.5,
+      spread: 180,
+      particleCount: 60,
+      origin: { y: -0.1 },
+      startVelocity: -35
+    };
+
+    function fireCelebration(){
+      confetti({ ...confettiDefaults, shapes: [pumpkin], colors: ['#f3ca26', '#f3ca26', '#f3ca26'] });
+      confetti({ ...confettiDefaults, shapes: [tree],    colors: ['#ffffff50', '#ffffff50', '#ffffff50'] });
+      confetti({ ...confettiDefaults, shapes: [heart],   colors: ['#f3ca26', '#f3ca26', '#f3ca26'] });
+    }
+
+    // Trigger confetti when the check finishes drawing
+    window.addEventListener('DOMContentLoaded', () => {
+      const tick = document.querySelector('.check-anim .tick');
+      if(tick){
+        tick.addEventListener('animationend', fireCelebration, { once: true });
+      }
+    });
+
+    // Tap to continue (change this if you want a specific URL)
+    function goNext(){
+      // e.g. window.location.href = 'app-pages.html';
+      if (history.length > 1) history.back();
+    }
+    document.addEventListener('click', goNext);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') goNext();
+    }, { passive: true });
+  </script>
+</body>
+</html>

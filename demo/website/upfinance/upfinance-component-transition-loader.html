@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#222032" media="(prefers-color-scheme: dark)">
+  <title>UP Finance - Success</title>
+  <meta name="description" content="Unic – NFT Marketplace PWA Mobile Template">
+  <meta name="keywords"
+        content="bootstrap 5, mobile template, wallet, crypto, currency, about, blog, cordova, phonegap, mobile, html, nft, store, marketplace, pwa" />
+  <link rel="icon" type="image/png" href="images/favicon/icon-32x32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="images/favicon/icon-96x96.png">
+  <!-- Your existing CSS -->
+  <link rel="stylesheet" href="assets/css/up-finance-style.css">
+  <link rel="stylesheet" href="assets/css/remixicon.min.css">
+
+  <style>
+    :root{
+      --bg: #222031;
+      --bg-2: #171625;
+      --ring: rgba(255,255,255,.08);
+      --glow: rgba(255,255,180,.35);
+      --logo-size: clamp(72px, 18vw, 160px);
+      --overlay-ms: 420ms;
+      --min-visible-ms: 480ms; /* prevent flicker on very fast loads */
+    }
+
+    /* Page demo body */
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      color:#e9ecf1;
+      background: radial-gradient(1200px 800px at 60% -20%, #2b2a43 0%, var(--bg) 55%) fixed;
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+    }
+
+    /* =========================
+       Loader Overlay Component
+       ========================= */
+    .screen-loader{
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: grid;
+      grid-template-rows: 1fr auto 1fr;
+      place-items: center;
+      pointer-events: none; /* clicks pass through when hidden */
+      opacity: 0;
+      clip-path: circle(0% at 50% 50%);
+      transition:
+        opacity var(--overlay-ms) ease,
+        clip-path var(--overlay-ms) ease;
+    }
+    .screen-loader.is-active{
+      opacity: 1;
+      clip-path: circle(140% at 50% 50%);
+      pointer-events: auto;
+    }
+
+    /* Backdrop */
+    .screen-loader::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(900px 600px at 50% -10%, #2b2a43 0%, var(--bg) 50%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+    }
+
+    /* Center content stack */
+    .loader-content{
+      grid-row:2;
+      display:grid;
+      place-items:center;
+      gap:18px;
+      text-align:center;
+    }
+
+    /* 3D rotating logo */
+    .logo-3d{
+      width: var(--logo-size);
+      aspect-ratio: 1/1;
+      display:grid;
+      place-items:center;
+      border-radius: 24px;
+      position:relative;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,.35));
+      perspective: 900px;
+      isolation: isolate;
+    }
+
+    .logo-3d img{
+      width: 40%;
+      height: 40%;
+      object-fit: contain;
+      transform-style: preserve-3d;
+      /*animation: spinY 1350ms cubic-bezier(.35,.7,.25,1) infinite;*/
+      animation: rotate 2350ms cubic-bezier(.35,.7,.25,1) infinite;
+      will-change: transform;
+    }
+
+    /* soft glow plane behind logo */
+    .logo-3d::after{
+      content:"";
+      position:absolute;
+      inset:12%;
+      border-radius: 22px;
+      /*background: radial-gradient(60% 60% at 50% 40%, var(--glow), transparent 70%);*/
+      mix-blend-mode: screen;
+      z-index: -1;
+      filter: blur(8px);
+    }
+
+    /* subtle pulse ring */
+    .pulse-ring{
+      position:absolute;
+      inset:-10%;
+      border-radius: 999px;
+      border: 2px solid var(--ring);
+      animation: ring 1400ms ease-out infinite;
+      pointer-events:none;
+    }
+
+    /* loading label (optional) */
+    .loader-label{
+      font-size: 14px;
+      letter-spacing: .3px;
+      color: #cfd5e2;
+      opacity:.9;
+    }
+
+    /* Progress bar (optional) */
+    .progress{
+      width: clamp(160px, 40vw, 360px);
+      height: 4px;
+      background: rgba(255,255,255,.09);
+      border-radius: 999px;
+      overflow:hidden;
+    }
+    .progress > i{
+      display:block;
+      width: 40%;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(255,255,255,.15), rgba(255,255,255,.55), rgba(255,255,255,.15));
+      animation: indet 1100ms ease-in-out infinite;
+      transform: translateX(-100%);
+    }
+
+    /* Motion keyframes */
+    @keyframes spinY{
+      0%   { transform: rotateY(0deg) translateZ(0); }
+      50%  { transform: rotateY(180deg) translateZ(2px); }
+      100% { transform: rotateY(360deg) translateZ(0); }
+    }
+    @keyframes rotate{
+      0%   { transform: rotate(0deg) translate(0); }
+      25%  { transform: rotate(90deg) translate(0); }
+      50%  { transform: rotate(180deg) translate(0); }
+      75%  { transform: rotate(270deg) translate(0); }
+      100% { transform: rotate(360deg) translate(0); }
+    }
+    @keyframes ring{
+      0%{ transform: scale(.86); opacity: 0; }
+      30%{ opacity: .7; }
+      100%{ transform: scale(1.25); opacity: 0; }
+    }
+    @keyframes indet{
+      0%  { transform: translateX(-60%); }
+      100%{ transform: translateX(160%); }
+    }
+
+    /* Reduced motion accessibility */
+    @media (prefers-reduced-motion: reduce){
+      .logo-3d img, .pulse-ring, .progress > i{
+        animation: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Your app content -->
+  <main style="padding:24px; max-width:720px;">
+    <h1>Demo Page</h1>
+    <p>This is your app screen. Click the buttons to simulate a screen transition with the loader.</p>
+
+    <button id="btn-transition">Simulate Transition (800ms)</button>
+    <button id="btn-transition-long">Simulate Transition (2000ms)</button>
+  </main>
+
+  <!-- Screen Loader Overlay -->
+  <div class="screen-loader" id="screenLoader" aria-hidden="true">
+    <div class="loader-content" role="status" aria-live="polite" aria-atomic="true" aria-label="Loading">
+      <div class="logo-3d">
+        <!-- Swap src to your actual path -->
+        <img src="images/UpFinance-logomark-yellow.svg" alt="" />
+        <span class="pulse-ring" aria-hidden="true"></span>
+      </div>
+      <!-- <div class="loader-label">Loading…</div> -->
+      <!-- <div class="progress" aria-hidden="true"><i></i></div> -->
+    </div>
+  </div>
+
+  <script>
+    /**
+     * ScreenLoader: minimal API for PWA-style transitions.
+     * - ScreenLoader.show()
+     * - ScreenLoader.hide()
+     * - ScreenLoader.transition(asyncWork, {minVisibleMs})
+     * - ScreenLoader.bindLinks(selector) // use data-transition attribute
+     */
+    const ScreenLoader = (() => {
+      const el = document.getElementById('screenLoader');
+      let visibleAt = 0;
+      const MIN_VISIBLE = parseInt(getComputedStyle(document.documentElement)
+        .getPropertyValue('--min-visible-ms')) || 400;
+
+      function show() {
+        if (!el.classList.contains('is-active')) {
+          el.classList.add('is-active');
+          el.removeAttribute('aria-hidden');
+          visibleAt = performance.now();
+        }
+      }
+      async function hide() {
+        const elapsed = performance.now() - visibleAt;
+        const waitMore = Math.max(0, MIN_VISIBLE - elapsed);
+        await new Promise(r => setTimeout(r, waitMore));
+        el.classList.remove('is-active');
+        el.setAttribute('aria-hidden', 'true');
+      }
+      async function transition(work, opts = {}) {
+        const minMs = typeof opts.minVisibleMs === 'number' ? opts.minVisibleMs : undefined;
+        if (minMs) document.documentElement.style.setProperty('--min-visible-ms', `${minMs}ms`);
+        show();
+        try {
+          await Promise.resolve(work());
+        } finally {
+          await hide();
+        }
+      }
+      function bindLinks(selector = 'a[data-transition]'){
+        document.addEventListener('click', e => {
+          const a = e.target.closest(selector);
+          if (!a) return;
+          const href = a.getAttribute('href');
+          if (!href || href.startsWith('#')) return;
+          e.preventDefault();
+          transition(() => new Promise(r => setTimeout(r, 350)))
+            .then(() => { window.location.href = href; });
+        });
+      }
+      return { show, hide, transition, bindLinks };
+    })();
+
+    // Example usage (remove in production if you wire into router)
+    document.getElementById('btn-transition')
+      .addEventListener('click', () => {
+        ScreenLoader.transition(() => new Promise(r => setTimeout(r, 800)));
+      });
+    document.getElementById('btn-transition-long')
+      .addEventListener('click', () => {
+        ScreenLoader.transition(() => new Promise(r => setTimeout(r, 2000)));
+      });
+
+    // Optional: show loader on page unloads (classic navigation)
+    window.addEventListener('beforeunload', () => {
+      ScreenLoader.show();
+    });
+
+    // Optional: intercept links with data-transition
+    ScreenLoader.bindLinks();
+
+    // Example: show briefly on first load (feels "app-y")
+    window.addEventListener('load', () => {
+      // comment out if you don't want an initial splash
+      // ScreenLoader.transition(() => new Promise(r => setTimeout(r, 500)));
+    });
+  </script>
+</body>
+</html>

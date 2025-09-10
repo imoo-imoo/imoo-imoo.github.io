@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="format-detection" content="telephone=no">
+    <!-- <meta name="theme-color" content="#ffffff"> -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#222032" media="(prefers-color-scheme: dark)">
+    <title>UP Finance</title>
+    <meta name="description" content="Unic – NFT Marketplace PWA Mobile Template">
+    <meta name="keywords"
+        content="bootstrap 5, mobile template, wallet, crypto, currency, about, blog, cordova, phonegap, mobile, html, nft, store, marketplace, pwa" />
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="images/favicon/icon-32x32.png" sizes="32x32">
+    <!-- IOS SUPPORT -->
+    <link rel="apple-touch-icon" href="images/favicon/icon-96x96.png">
+    <!-- CSS FILES -->
+    <link rel="stylesheet" href="assets/css/up-finance-style.css">
+    <link rel="stylesheet" href="assets/css/remixicon.min.css">
+    <link rel="stylesheet" href="assets/vendors/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/vendors/zuck_stories/zuck.min.css">
+    <link rel="manifest" href="_manifest.json" />
+
+</head>
+
+<body>
+    <!-- ===================================
+      START LODAER PAGE
+    ==================================== -->
+    <section class="loader-page" id="loaderPage">
+        <div class="spinner_flash"></div>
+    </section>
+    <!-- START WRAPPER -->
+    <div id="wrapper">
+        <!-- START CONTENT -->
+        <div id="content">
+            <!-- ===================================
+              START THE HEADER
+            ==================================== -->
+            <header class="default heade-sticky">
+                <a href="index.html">
+                    <div class="un-item-logo">
+                        <img class="logo-img light-mode" src="images/UpFinance-logo-h-yellow-t-b.svg" alt="">
+                        <img class="logo-img dark-mode" src="images/UpFinance-logo-h-yellow-t-w.svg" alt="">
+                    </div>
+                </a>
+                <div class="un-block-right">
+                    <div class="un-notification">
+                        <a href="upfinance-page-activity.html" aria-label="activity">
+                            <i class="ri-notification-line"></i>
+                        </a>
+                        <span class="bull-activity"></span>
+                    </div>
+                    <div class="un-user-profile">
+                        <a href="upfinance-page-my-profile.html" aria-label="profile">
+                            <picture>
+                                <!-- <source srcset="images/avatar/11.webp" type="image/webp"> -->
+                                <img class="img-avatar" src="images/avatar/up-avatar-empty-02.svg" alt="">
+                            </picture>
+                        </a>
+                    </div>
+                    <!-- menu-sidebar -->
+                    <div class="menu-sidebar">
+                        <button type="button" name="sidebarMenu" aria-label="sidebarMenu" class="btn"
+                            data-bs-toggle="modal" data-bs-target="#mdllSidebar-connected">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="9.3" viewBox="0 0 19 9.3">
+                                <g id="Group_8081" data-name="Group 8081" transform="translate(-329 -37)">
+                                    <rect id="Rectangle_3986" data-name="Rectangle 3986" width="19" height="2.3"
+                                        rx="1.15" transform="translate(329 37)" fill="#222032" />
+                                    <rect id="Rectangle_3987" data-name="Rectangle 3987" width="19" height="2.3"
+                                        rx="1.15" transform="translate(329 44)" fill="#222032" />
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </header>
+            <!-- ===================================
+              START THE SPACE STICKY
+            ==================================== -->
+            <div class="space-sticky"></div>
+            <!-- ===================================
+              START THE STORIES SECTION
+            ==================================== -->
+            <section class="margin-t-20 margin-b-10 stories-section">
+                <!-- DISPLAY STRORIES -->
+                <div class="display-stories">
+                    <!-- SWIPER -->
+                    <div class="swiper myStories">
+                        <div class="swiper-wrapper wrapper-stories" id="stories">
+                            <!-- MY STORY -->
+                            <div class="swiper-slide space">
+                                <button type="button" class="btn add-my-story" data-bs-toggle="modal"
+                                    data-bs-target="#mdllAddStory">
+                                    <div class="my_img">
+                                        <img src="images/avatar/up-avatar-empty-01.svg" alt="my story">
+                                        <div class="icon text-black">
+                                            <i class="ri-add-fill"></i>
+                                        </div>
+                                    </div>
+                                    <div class="display-text">
+                                        <span>Me</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <!-- HERE -> ITEMS -> AUTOMATICALLY BY JAVASCRIPT -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ===================================
+              START THE BORDER SECTIONS
+            ==================================== -->
+            <div class="border-sections-home"></div>
+            <!-- ===================================
+              START THE RANDOM NFTS
+            ==================================== -->
+            <section class="unSwiper-cards margin-t-20">
+                <!-- un-title-default -->
+                <div class="un-title-default">
+                    <div class="text">
+                        <h2 class="fw-bold">Balance</h2>
+                        <p>My asset overview</p>
+                    </div>
+                    <div class="un-block-right">
+                        <a href="page-search-random.html" class="icon-back" aria-label="iconBtn">
+                            <i class="ri-arrow-drop-right-line"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="discover-nft-random margin-t-20">
+                    <div class="content-NFTs-body">
+                        <!-- item-card-nft -->
+                        <div class="item-card-nft">
+                            <video autoplay loop muted playsinline style="max-width:100%; height:auto; display:block;" class="rounded-15 opacity-25">
+                                <source src="video/video-08.mp4" type="video/mp4">
+                                <img class="big-image" src="images/other/14.jpg" alt="">
+                            </video>
+                            <!-- <picture>
+                                <source srcset="images/other/14.webp" type="image/webp">
+                                <img class="big-image" src="images/other/14.jpg" alt="">
+                            </picture> -->
+                            
+                            <!-- <div class="counterdown">
+                                <span>24H</span>
+                            </div> -->
+
+                           <!-- <div class="btn-like-click">
+                                <div class="btnLike">
+                                    <input type="checkbox" checked>
+                                    <span class="count-likes"></span>
+                                    <i class="ri-heart-line"></i>
+                                </div>
+                            </div> -->
+
+                            <div class="btn-like-click">
+                                <div class="btnLike">
+                                    <i class="ri-line-chart-line"></i>
+                                </div>
+                            </div>
+                            <a href="page-collectibles-details.html" class="un-info-card bg-filter-blur-1">
+                                <div class="block-left">
+                                    <h6>All accounts</h6>
+                                    <h4 class="fw-bold">$13,520</h4>
+                                    
+                                </div>
+                                <div class="block-right">
+                                    <h6>Crypto</h6>
+                                    <p>
+                                        <span>(35.69%)</span>$3,650
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- item-sm-card-NFTs -->
+                        <!-- <a href="page-collectibles-details.html" class="item-sm-card-NFTs">
+                            <div class="cover-image">
+                                <picture>
+                                    <source srcset="images/other/30.webp" type="image/webp">
+                                    <img class="big-image" src="images/other/30.jpg" alt="">
+                                </picture>
+                                <div class="content-text">
+                                    <div class="btn-like-click">
+                                        <div class="btnLike">
+                                            <input type="checkbox">
+                                            <span class="count-likes">14</span>
+                                            <i class="ri-heart-3-line"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="user-text">
+                                    <div class="user-avatar">
+                                        <picture>
+                                            <source srcset="images/avatar/10.webp" type="image/webp">
+                                            <img class="sm-user" src="images/avatar/10.jpg" alt="">
+                                        </picture>
+                                        <span>Camillo</span>
+                                    </div>
+                                    <div class="number-eth">
+                                        <span class="main-price">1.50 ETH</span>
+                                        <span>($3,650)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="page-collectibles-details.html" class="item-sm-card-NFTs">
+                            <div class="cover-image">
+                                <picture>
+                                    <source srcset="images/other/19.webp" type="image/webp">
+                                    <img class="big-image" src="images/other/19.jpg" alt="">
+                                </picture>
+                                <div class="content-text">
+                                    <div class="icon-type">
+                                        <i class="ri-vidicon-line"></i>
+                                    </div>
+
+                                    <div class="btn-like-click">
+                                        <div class="btnLike">
+                                            <input type="checkbox">
+                                            <span class="count-likes">0</span>
+                                            <i class="ri-heart-3-line"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="user-text">
+                                    <div class="user-avatar">
+                                        <picture>
+                                            <source srcset="images/avatar/14.webp" type="image/webp">
+                                            <img class="sm-user" src="images/avatar/14.jpg" alt="">
+                                        </picture>
+                                        <span>Julian Co.</span>
+                                    </div>
+                                    <div class="number-eth">
+                                        <span class="main-price">1.50 ETH</span>
+                                        <span>($3,650)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="page-collectibles-details.html" class="item-sm-card-NFTs">
+                            <div class="cover-image">
+                                <picture>
+                                    <source srcset="images/other/24.webp" type="image/webp">
+                                    <img class="big-image" src="images/other/24.jpg" alt="">
+                                </picture>
+                                <div class="content-text">
+                                    <div class="btn-like-click">
+                                        <div class="btnLike">
+                                            <input type="checkbox" checked>
+                                            <span class="count-likes">42</span>
+                                            <i class="ri-heart-3-line"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="user-text">
+                                    <div class="user-avatar">
+                                        <picture>
+                                            <source srcset="images/avatar/10.webp" type="image/webp">
+                                            <img class="sm-user" src="images/avatar/10.jpg" alt="">
+                                        </picture>
+                                        <span>Camillo</span>
+                                    </div>
+                                    <div class="number-eth">
+                                        <span class="main-price">1.50 ETH</span>
+                                        <span>($3,650)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="page-collectibles-details.html" class="item-sm-card-NFTs">
+                            <div class="cover-image">
+                                <picture>
+                                    <source srcset="images/other/16.webp" type="image/webp">
+                                    <img class="big-image" src="images/other/16.jpg" alt="">
+                                </picture>
+                                <div class="content-text">
+                                    <div class="icon-type">
+                                        <i class="ri-vidicon-line"></i>
+                                    </div>
+
+                                    <div class="btn-like-click">
+                                        <div class="btnLike">
+                                            <input type="checkbox">
+                                            <span class="count-likes">27</span>
+                                            <i class="ri-heart-3-line"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="user-text">
+                                    <div class="user-avatar">
+                                        <picture>
+                                            <source srcset="images/avatar/14.webp" type="image/webp">
+                                            <img class="sm-user" src="images/avatar/14.jpg" alt="">
+                                        </picture>
+                                        <span>Julian Co.</span>
+                                    </div>
+                                    <div class="number-eth">
+                                        <span class="main-price">1.50 ETH</span>
+                                        <span>($3,650)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a> -->
+                    </div>
+                    <!-- cover-balance -->
+                    <div class="un-promo-banner-default">
+                        <div class="cover-balance">
+                            <div class="un-balance">
+                                <div class="content-balance pt-4 pb-4">
+                                    <div class="head-balance">
+                                        <h4>Identity Verification</h4>
+                                        <a class="btn link-addBalance" data-bs-toggle="modal" data-bs-dismiss="modal"
+                                            data-bs-target="#mdllAddETH">
+                                            <i class="ri-shield-fill"></i>
+                                        </a>
+                                    </div>
+                                    <p class="no-balance text-white-50">KYC-0</p>
+                                </div>
+                            </div>
+                            <!-- <button type="button" class="btn btn-sm-size bg-white text-dark rounded-pill"
+                                data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#mdllUploadItem">
+                                GO
+                            </button> -->
+                            <!-- <button type="button" class="btn btn-sm-size bg-white text-dark rounded-pill"
+                                onclick="window.location.href='upfinance-page-verification-kyc-list.html'">
+                                GO
+                            </button> -->
+                            <button type="button" class="btn btn-sm-size text-white-50 bg-filter-blur-1 rounded-pill"
+                                onclick="window.location.href='upfinance-page-verification-kyc-list.html'">
+                                Under Review
+                            </button>
+                        </div>
+                    </div>
+                    <div class="un-navMenu-default without-visit py-3 bg-white">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link visited" href="page-my-wallet.html">
+                                    <div class="item-content-link">
+                                        <div class="icon bg-green-1 color-green">
+                                            <i class="ri-arrow-right-up-line"></i>
+                                        </div>
+                                        <h3 class="link-title">Send</h3>
+                                    </div>
+                                    <div class="other-cc">
+                                        <span class="badge-text"> 0Xe388...E162</span>
+                                        <div class="icon-arrow">
+                                            <i class="ri-arrow-drop-right-line"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="page-edit-profile.html">
+                                    <div class="item-content-link">
+                                        <div class="icon bg-orange-1 color-orange">
+                                            <i class="ri-arrow-left-down-line"></i>
+                                        </div>
+                                        <h3 class="link-title">Deposit</h3>
+                                    </div>
+                                    <div class="other-cc">
+                                        <span class="badge-text"></span>
+                                        <div class="icon-arrow">
+                                            <i class="ri-arrow-drop-right-line"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="page-my-item.html">
+                                    <div class="item-content-link">
+                                        <div class="icon bg-blue-1 color-blue">
+                                            <i class="ri-exchange-dollar-line"></i>
+                                        </div>
+                                        <h3 class="link-title">Swap</h3>
+                                    </div>
+                                    <div class="other-cc">
+                                        <span class="badge-text"></span>
+                                        <div class="icon-arrow">
+                                            <i class="ri-arrow-drop-right-line"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="page-news-list.html">
+                                    <div class="item-content-link">
+                                        <div class="icon bg-pink-1 color-pink">
+                                            <i class="ri-vip-diamond-line"></i>
+                                        </div>
+                                        <h3 class="link-title">Invest</h3>
+                                    </div>
+                                    <div class="other-cc">
+                                        <span class="badge-text"></span>
+                                        <div class="icon-arrow">
+                                            <i class="ri-arrow-drop-right-line"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <div class="border-sections-home-5"></div>
+            <!-- ===================================
+              START THE BEST SELLER
+            ==================================== -->
+            <section class="un-section-seller margin-y-20">
+                <!-- un-title-default -->
+                <div class="un-title-default">
+                    <div class="text">
+                        <h2>New Features</h2>
+                        <p>Best seller of this week's NFTs</p>
+                    </div>
+                    <div class="un-block-right">
+                        <a href="page-best-seller.html" class="icon-back" aria-label="iconBtn">
+                            <i class="ri-arrow-drop-right-line"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- un-block-auther -->
+                <div class="un-block-creators margin-t-20">
+                    <!-- Swiper -->
+                    <div class="swiper swiperCreators">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <!-- un-item-seller -->
+                                <a href="page-creator-profile.html" class="un-item-seller">
+                                    <div class="number">
+                                        01
+                                    </div>
+                                    <div class="media-profile">
+                                        <figure class="image-avatar">
+                                            <picture>
+                                                <source srcset="images/avatar/22.webp" type="image/webp">
+                                                <img src="images/avatar/22.jpg" alt="">
+                                            </picture>
+                                            <div class="icon-verify">
+                                                <i class="ri-checkbox-circle-fill"></i>
+                                            </div>
+                                        </figure>
+                                        <div class="text">
+                                            <h3>MelonPixel⚡</h3>
+                                            <p>19.4 ETH</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <!-- un-item-seller -->
+                                <a href="page-creator-profile.html" class="un-item-seller">
+                                    <div class="number">
+                                        02
+                                    </div>
+                                    <div class="media-profile">
+                                        <figure class="image-avatar">
+                                            <picture>
+                                                <source srcset="images/avatar/18.webp" type="image/webp">
+                                                <img src="images/avatar/18.jpg" alt="">
+                                            </picture>
+                                            <div class="icon-verify">
+                                                <i class="ri-checkbox-circle-fill"></i>
+                                            </div>
+                                        </figure>
+                                        <div class="text">
+                                            <h3>Camillo Ferrari</h3>
+                                            <p>5.3 ETH</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <!-- un-item-seller -->
+                                <a href="page-creator-profile.html" class="un-item-seller">
+                                    <div class="number">
+                                        03
+                                    </div>
+                                    <div class="media-profile">
+                                        <figure class="image-avatar">
+                                            <picture>
+                                                <source srcset="images/avatar/14.webp" type="image/webp">
+                                                <img src="images/avatar/14.jpg" alt="">
+                                            </picture>
+                                            <div class="icon-verify">
+                                                <i class="ri-checkbox-circle-fill"></i>
+                                            </div>
+                                        </figure>
+                                        <div class="text">
+                                            <h3>🚀 Pingu</h3>
+                                            <p>3.9 ETH</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <!-- un-item-seller -->
+                                <a href="page-creator-profile.html" class="un-item-seller">
+                                    <div class="number">
+                                        04
+                                    </div>
+                                    <div class="media-profile">
+                                        <figure class="image-avatar">
+                                            <picture>
+                                                <source srcset="images/avatar/5.webp" type="image/webp">
+                                                <img src="images/avatar/5.png" alt="">
+                                            </picture>
+                                            <div class="icon-verify">
+                                                <i class="ri-checkbox-circle-fill"></i>
+                                            </div>
+                                        </figure>
+                                        <div class="text">
+                                            <h3>Julian Co.</h3>
+                                            <p>2.8 ETH</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <!-- un-item-seller -->
+                                <a href="page-creator-profile.html" class="un-item-seller">
+                                    <div class="number">
+                                        05
+                                    </div>
+                                    <div class="media-profile">
+                                        <figure class="image-avatar">
+                                            <picture>
+                                                <source srcset="images/avatar/13.webp" type="image/webp">
+                                                <img src="images/avatar/13.jpg" alt="">
+                                            </picture>
+                                            <div class="icon-verify">
+                                                <i class="ri-checkbox-circle-fill"></i>
+                                            </div>
+                                        </figure>
+                                        <div class="text">
+                                            <h3>Tito_Calab</h3>
+                                            <p>2.7 ETH</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ===================================
+              START THE BORDER SECTIONS
+            ==================================== -->
+            <div class="border-sections-home"></div>
+            <!-- ===================================
+              START THE CREATORES
+            ==================================== -->
+            <section class="margin-t-20 unList-creatores">
+                <!-- un-title-default -->
+                <div class="un-title-default">
+                    <div class="text">
+                        <h2 class="fw-bold">Asset</h2>
+                        <p>One wallet, all coins</p>
+                    </div>
+                    <div class="un-block-right">
+                        <a href="page-creators.html" class="icon-back" aria-label="iconBtn">
+                            <i class="ri-arrow-drop-right-line"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-white py-3 un-creator-ptofile">
+                    <div class="tab-creatore-profile">
+                        <ul class="nav nav-pills nav-pilled-tab w-100 mb-0" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-Items-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-Items" type="button" role="tab"
+                                    aria-controls="pills-Items" aria-selected="true">Asset</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-Selling-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-Selling" type="button" role="tab"
+                                    aria-controls="pills-Selling" aria-selected="false">Ledger</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-Created-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-Created" type="button" role="tab"
+                                    aria-controls="pills-Created" aria-selected="false">History</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-Liked-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-Liked" type="button" role="tab"
+                                    aria-controls="pills-Liked" aria-selected="false">Stash</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="content-list-creatores">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="page-creator-profile.html">
+                                <div class="item-user-img">
+                                    <picture>
+                                        <!-- <source srcset="images/avatar/13.webp" type="image/webp"> -->
+                                        <img class="avt-img" src="images/currency/186-united states.svg" alt="">
+                                    </picture>
+                                    <div class="txt-user">
+                                        <h5>USD</h5>
+                                        <p>$1.0000</p>
+                                    </div>
+                                </div>
+                                <div class="other-option">
+                                    <div class="color-text rounded-pill bg-snow btn-xs-size">44 Item</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="page-creator-profile.html">
+                                <div class="item-user-img">
+                                    <picture>
+                                        <!-- <source srcset="images/avatar/7.webp" type="image/webp"> -->
+                                        <img class="avt-img" src="images/currency/196-hong kong.svg" alt="">
+                                    </picture>
+                                    <div class="txt-user">
+                                        <h5>HKD</h5>
+                                        <p>$0.1279</p>
+                                    </div>
+                                </div>
+                                <div class="other-option">
+                                    <div class="color-text rounded-pill bg-snow btn-xs-size">37 Item</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="page-creator-profile.html">
+                                <div class="item-user-img">
+                                    <picture>
+                                        <!-- <source srcset="images/avatar/4.webp" type="image/webp"> -->
+                                        <img class="avt-img" src="images/currency/cryptocurrency/045-tusd.svg" alt="">
+                                    </picture>
+                                    <div class="txt-user">
+                                        <h5>TUSD</h5>
+                                        <p>$1.0000</p>
+                                    </div>
+                                </div>
+                                <div class="other-option">
+                                    <div class="color-text rounded-pill bg-snow btn-xs-size">30 Item</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="page-creator-profile.html">
+                                <div class="item-user-img">
+                                    <picture>
+                                        <!-- <source srcset="images/avatar/1.webp" type="image/webp"> -->
+                                        <img class="avt-img" src="images/currency/cryptocurrency/044-trx.svg" alt="user">
+                                    </picture>
+                                    <div class="txt-user">
+                                        <h5>Tron</h5>
+                                        <p>$0.3568</p>
+                                    </div>
+                                </div>
+                                <div class="other-option">
+                                    <div class="color-text rounded-pill bg-snow btn-xs-size">20 Item</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="page-creator-profile.html">
+                                <div class="item-user-img">
+                                    <picture>
+                                        <!-- <source srcset="images/avatar/13.webp" type="image/webp"> -->
+                                        <img class="avt-img" src="images/currency/252-european union.svg" alt="">
+                                    </picture>
+                                    <div class="txt-user">
+                                        <h5>Euro</h5>
+                                        <p>$1.1600</p>
+                                    </div>
+                                </div>
+                                <div class="other-option">
+                                    <div class="color-text rounded-pill bg-snow btn-xs-size">44 Item</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="page-creator-profile.html">
+                                <div class="item-user-img">
+                                    <picture>
+                                        <!-- <source srcset="images/avatar/7.webp" type="image/webp"> -->
+                                        <img class="avt-img" src="images/currency/241-japan.svg" alt="">
+                                    </picture>
+                                    <div class="txt-user">
+                                        <h5>JPY</h5>
+                                        <p>$0.0067</p>
+                                    </div>
+                                </div>
+                                <div class="other-option">
+                                    <div class="color-text rounded-pill bg-snow btn-xs-size">37 Item</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="page-creator-profile.html">
+                                <div class="item-user-img">
+                                    <picture>
+                                        <!-- <source srcset="images/avatar/4.webp" type="image/webp"> -->
+                                        <img class="avt-img" src="images/currency/cryptocurrency/015-ethereum.svg" alt="">
+                                    </picture>
+                                    <div class="txt-user">
+                                        <h5>Ethereum</h5>
+                                        <p>$4,331.63</p>
+                                    </div>
+                                </div>
+                                <div class="other-option">
+                                    <div class="color-text rounded-pill bg-snow btn-xs-size">30 Item</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="page-creator-profile.html">
+                                <div class="item-user-img">
+                                    <picture>
+                                        <!-- <source srcset="images/avatar/1.webp" type="image/webp"> -->
+                                        <img class="avt-img" src="images/currency/cryptocurrency/036-solana.svg" alt="user">
+                                    </picture>
+                                    <div class="txt-user">
+                                        <h5>Solana</h5>
+                                        <p>$183.80</p>
+                                    </div>
+                                </div>
+                                <div class="other-option">
+                                    <div class="color-text rounded-pill bg-snow btn-xs-size">20 Item</div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <!-- ===================================
+          START THE BOTTOM NAVIGATION
+        ==================================== -->
+        <footer class="un-bottom-navigation filter-blur">
+            <div class="em_body_navigation border-0 -active-links">
+                <div class="item_link">
+                    <a href="upfinance-homepage.html" class="btn btn_navLink" aria-label="btnNavigation">
+                        <div class="icon_current">
+                            <i class="ri-home-5-line"></i>
+                        </div>
+                        <div class="icon_active">
+                            <i class="ri-home-5-fill"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="item_link">
+                    <a href="page-search-random.html" class="btn btn_navLink" aria-label="btnNavigation">
+                        <div class="icon_current">
+                            <i class="ri-wallet-line"></i>
+                        </div>
+                        <div class="icon_active">
+                            <i class="ri-wallet-fill"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="item_link">
+                    <button type="button" class="btn btn_navLink without_active" onclick="window.location.href='upfinance-page-card.html'" aria-label="btnNavigation">
+                        <div class="btn btnCircle_default">
+                            <i class="ri-bank-card-fill"></i>
+                        </div>
+                    </button>
+                </div>
+                <div class="item_link">
+                    <a href="upfinance-page-activity.html" class="btn btn_navLink" aria-label="btnNavigation">
+                        <div class="icon_current">
+                            <i class="ri-chat-smile-3-line"></i>
+                        </div>
+                        <div class="icon_active">
+                            <i class="ri-chat-smile-3-fill"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="item_link">
+                    <a href="upfinance-page-account.html" class="btn btn_navLink" aria-label="btnNavigation">
+                        <div class="icon_current">
+                            <i class="ri-user-4-line"></i>
+                        </div>
+                        <div class="icon_active">
+                            <i class="ri-user-4-fill"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ===================================
+      START THE MODAL UPLOAD
+    ==================================== -->
+    <div class="modal transition-bottom screenFull defaultModal mdlladd__rate fade" id="mdllUploadItem" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="title-modal">Upload Item</h1>
+                    <button type="button" class="btn btnClose" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="ri-close-fill"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="content-upload-item text-center">
+                        <p>
+                            Choose <span>"Single"</span> if you want your collectible to be one of a kind or
+                            <span>"Multiple"</span>
+                            if you want
+                            to sell one collectible multiple times
+                        </p>
+                        <div class="grid_buttonUpload">
+                            <a href="page-create-single.html" class="btn btn-create bg-primary text-white margin-b-20">
+                                Create Single
+                            </a>
+                            <a href="page-create-multi.html"
+                                class="btn btn-create bg-white border border-solid border-snow text-dark">
+                                Create Multiple
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer border-0">
+                    <div class="env-pb"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===================================
+      START THE MODAL ADD ETH
+    ==================================== -->
+    <div class="modal transition-bottom screenFull defaultModal mdlladd__rate fade" id="mdllAddETH" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="title-modal">Add ETH to your wallet</h1>
+                    <button type="button" class="btn btnClose" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="ri-close-fill"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="content-upload-item">
+                        <p class="text-center">
+                            Select one of the options to deposit <br> ETH to your wallet
+                        </p>
+                        <div class="un-navMenu-default margin-t-30 p-0">
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-3">
+                                    <a class="nav-link effect-click" href="javascript: void(0)">
+                                        <div class="item-content-link">
+                                            <div class="icon color-text w-auto">
+                                                <i class="ri-exchange-box-line"></i>
+                                            </div>
+                                            <h3 class="link-title">Deposit from an exchange</h3>
+                                        </div>
+                                        <div class="other-cc">
+                                            <span class="badge-text"></span>
+                                            <div class="icon-arrow">
+                                                <i class="ri-arrow-drop-right-line"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="nav-item mb-0">
+                                    <a class="nav-link effect-click" href="javascript: void(0)">
+                                        <div class="item-content-link">
+                                            <div class="icon color-text w-auto">
+                                                <i class="ri-bank-card-line"></i>
+                                            </div>
+                                            <h3 class="link-title">Buy with card</h3>
+                                        </div>
+                                        <div class="other-cc">
+                                            <span class="badge-text"></span>
+                                            <div class="icon-arrow">
+                                                <i class="ri-arrow-drop-right-line"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="modal-footer border-0">
+                    <div class="env-pb"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===================================
+      START THE MODAL SIDEBAR MENU - CONNECTED
+    ==================================== -->
+    <div class="modal sidebarMenu -left fade" id="mdllSidebar-connected" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header d-block pb-1">
+
+                    <!-- un-user-profile -->
+                    <div class="un-user-profile">
+                        <div class="image_user">
+                            <picture>
+                                <!-- <source srcset="images/avatar/11.webp" type="image/webp"> -->
+                                <img src="images/avatar/up-avatar-empty-01.svg" alt="image">
+                            </picture>
+                        </div>
+                        <div class="text-user">
+                            <h3>Richard Lee</h3>
+                            <p>UID: 0443675508</p>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btnClose" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="ri-close-fill"></i>
+                    </button>
+
+                    <!-- cover-balance -->
+                    <div class="cover-balance">
+                        <div class="un-balance">
+                            <div class="content-balance pt-4 pb-4">
+                                <div class="head-balance">
+                                    <h4>UP CARD</h4>
+                                    <a class="btn link-addBalance" data-bs-toggle="modal" data-bs-dismiss="modal"
+                                        data-bs-target="#mdllAddETH">
+                                        <i class="ri-add-fill"></i>
+                                    </a>
+                                </div>
+                                <p class="no-balance text-secondary">Virtual</p>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-sm-size bg-white text-dark rounded-pill"
+                            data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#mdllUploadItem">
+                            Add New
+                        </button>
+                    </div>
+
+
+                </div>
+                <div class="modal-body">
+                    <ul class="nav flex-column -active-links">
+                        <li class="nav-item">
+                            <a class="nav-link" href="homepage.html">
+                                <div class="icon_current">
+                                    <i class="ri-shield-keyhole-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-shield-keyhole-fill"></i>
+                                </div>
+                                <span class="title_link">Account Security</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="upfinance-page-activity.html">
+                                <div class="icon_current">
+                                    <i class="ri-notification-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-notification-fill"></i>
+                                </div>
+                                <span class="title_link">Notification</span>
+
+                                <span class="xs-badge">8</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="app-pages.html">
+                                <div class="icon_current">
+                                    <i class="ri-pages-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-pages-fill"></i>
+                                </div>
+                                <span class="title_link">Appearance</span>
+
+                                <div class="badge-circle">
+                                    <span class="doted_item"></span>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="app-components.html">
+                                <div class="icon_current">
+                                    <i class="ri-group-2-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-group-2-fill"></i>
+                                </div>
+                                <span class="title_link">Invite Friends</span>
+
+                            </a>
+                        </li>
+
+                        <div class="border-sections-home mb-2"></div>
+
+                        <label class="title__label">Promotions</label>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="page-help.html">
+                                <div class="icon_current">
+                                    <i class="ri-ticket-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-ticket-fill"></i>
+                                </div>
+                                <span class="title_link">My Coupons</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="page-about.html">
+                                <div class="icon_current">
+                                    <i class="ri-gift-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-gift-fill"></i>
+                                </div>
+                                <span class="title_link">Events</span>
+                            </a>
+                        </li>
+
+                        <div class="border-sections-home mb-2"></div>
+
+                        <label class="title__label">Other</label>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="page-help.html">
+                                <div class="icon_current">
+                                    <i class="ri-questionnaire-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-questionnaire-fill"></i>
+                                </div>
+                                <span class="title_link">Help Center</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="page-about.html">
+                                <div class="icon_current">
+                                    <i class="ri-file-info-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-file-info-fill"></i>
+                                </div>
+                                <span class="title_link">Terms of Service</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="page-about.html">
+                                <div class="icon_current">
+                                    <i class="ri-file-info-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-file-info-fill"></i>
+                                </div>
+                                <span class="title_link">About UP Finance</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <div class="em_darkMode_menu">
+                        <label class="text" for="switchDark">
+                            <h3>Dark Mode</h3>
+                            <p>Browsing in night mode</p>
+                        </label>
+                        <label class="switch_toggle toggle_lg theme-switch" for="switchDark">
+                            <input type="checkbox" class="switchDarkMode theme-switch" id="switchDark"
+                                aria-describedby="switchDark">
+                            <span class="handle"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===================================
+      START THE MODAL SIDEBAR MENU - guest
+    ==================================== -->
+    <div class="modal sidebarMenu -left -guest fade" id="mdllSidebar-guest" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="welcome_em">
+                        <h2>Welcome to Unic<span>.</span></h2>
+                        <p>
+                            Connect wallet to browse, Buy, Sell, and create NFTs items.
+                        </p>
+                        <a href="page-connect-wallet.html" class="btn btn-md-size bg-primary text-white rounded-pill">
+                            Connect wallet
+                        </a>
+                    </div>
+                    <button type="button" class="btn btnClose" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="ri-close-fill"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav flex-column -active-links">
+                        <li class="nav-item">
+                            <a class="nav-link" href="homepage.html">
+                                <div class="icon_current">
+                                    <i class="ri-compass-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-compass-fill"></i>
+                                </div>
+                                <span class="title_link">Discover</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="app-homes.html">
+                                <div class="icon_current">
+                                    <i class="ri-home-5-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-home-5-fill"></i>
+                                </div>
+                                <span class="title_link">Home Styles</span>
+
+                                <span class="xs-badge">8</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="app-pages.html">
+                                <div class="icon_current">
+                                    <i class="ri-pages-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-pages-fill"></i>
+                                </div>
+                                <span class="title_link">Page Packs</span>
+
+                                <div class="badge-circle">
+                                    <span class="doted_item"></span>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="app-components.html">
+                                <div class="icon_current">
+                                    <i class="ri-layout-2-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-layout-2-fill"></i>
+                                </div>
+                                <span class="title_link">Components</span>
+
+                            </a>
+                        </li>
+
+                        <label class="title__label">other</label>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="page-help.html">
+                                <div class="icon_current">
+                                    <i class="ri-questionnaire-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-questionnaire-fill"></i>
+                                </div>
+                                <span class="title_link">Help Center</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="page-about.html">
+                                <div class="icon_current">
+                                    <i class="ri-file-info-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-file-info-fill"></i>
+                                </div>
+                                <span class="title_link">About Unic.</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <div class="em_darkMode_menu">
+                        <label class="text" for="switchDark2">
+                            <h3>Dark Mode</h3>
+                            <p>Browsing in night mode</p>
+                        </label>
+                        <label class="switch_toggle toggle_lg theme-switch" for="switchDark2">
+                            <input type="checkbox" class="switchDarkMode theme-switch" id="switchDark2"
+                                aria-describedby="switchDark2" aria-describedby="switchDark2">
+                            <span class="handle"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===================================
+      START THE CREATE STORY MODAL
+    ==================================== -->
+    <div class="modal sidebarMenu -left --fullScreen modal-filter fade" id="mdllAddStory" tabindex="-1"
+        aria-labelledby="sidebarMenuLabel3" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="title-modal">Create Story</h1>
+                    <button type="button" class="btn btnClose" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="ri-close-fill"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="un-create-collectibles bg-white p-0">
+                        <div class="form-group upload-form">
+                            <h2>Upload file</h2>
+                            <p>Choose your file to upload</p>
+                            <div class="upload-input-form">
+                                <input type="file">
+                                <div class="content-input">
+                                    <div class="icon"><i class="ri-upload-cloud-line"></i></div>
+                                    <span>PNG, GIF, JPG, MP4 . Max 5 mb.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group icon-right">
+                            <label>Add Link</label>
+                            <div class="input_group">
+                                <input type="url" class="form-control" placeholder='e. g. "www.example.com"'>
+                                <div class="icon">
+                                    <i class="ri-link"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Link Text</label>
+                            <div class="inpust_group">
+                                <input type="text" class="form-control" placeholder='e. g. "INSTALL APP"'>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center border-0 pt-2">
+                    <div class="footer-pages-forms">
+                        <div class="content">
+                            <div class="links-clear-data">
+                                <button type="button" class="btn link-clear" data-bs-toggle="modal"
+                                    data-bs-dismiss="modal">
+                                    <i class="ri-close-circle-line"></i>
+                                    <span>Cancel</span>
+                                </button>
+                            </div>
+                            <a href="page-home-stories.html" class="btn btn-bid-items">
+                                <p>Create Story</p>
+                                <div class="ico">
+                                    <i class="ri-arrow-drop-right-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===================================
+      START STATUS CONNECTION
+    ==================================== -->
+    <div class="d-flex justify-content-center">
+        <div class="toast status-connection" role="alert" aria-live="assertive" aria-atomic="true"></div>
+    </div>
+
+
+
+    <!-- JS FILES -->
+    <script src="assets/vendors/zuck_stories/zuck.min.js"></script>
+    <script src="assets/vendors/smoothscroll/smoothscroll.min.js"></script>
+    <script src="assets/vendors/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendors/nouislider/nouislider.min.js"></script>
+    <script src="assets/vendors/nouislider/wNumb.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <!-- PWA APP SERVICE REGISTRATION AND WORKS JS -->
+    <script src="assets/js/pwa-services.js"></script>
+
+    <script>
+        // BUILD ITEM
+        function buildItem(id, type, length, src, preview, link, linkText, time, seen) {
+            return {
+                id, type, length, src, preview, link, linkText, time, seen
+            };
+        }
+
+        /*==================================
+        START THE STORIES [CIRCLES]
+        ==================================*/
+        var stories = new Zuck('stories', {
+            autoFullScreen: true,  // enables fullscreen on mobile browsers
+            skin: 'Snapgram',
+            avatars: true,
+            list: false,
+            openEffect: true,
+            cubeEffect: true,
+            backButton: false,
+            backNative: false,
+            localStorage: false,
+            paginationArrows: false,
+            paginationArrows: true,
+            stories: [{
+                id: 'userOne',
+                photo: 'images/avatar/up-avatar-empty-04.svg',
+                name: 'Adam',
+                link: '',
+                lastUpdated: 1646579345,
+                items: [
+                    buildItem('1', 'photo', 4, 'images/other/29.jpg', '', 'upfinance-page-my-profile.html', 'Visit My Profile', 1646665745, false),
+                    buildItem('2', 'photo', 4, 'images/other/31.jpg', '', 'https://themeforest.net/item/unic-nft-mobile-template/36083774', 'Get it Now 🚀', 1646665745, false),
+                    buildItem('3', 'photo', 4, 'images/other/2.jpg', '', '', '', 1646838545, false),
+                ],
+            },
+            {
+                id: 'userTwo',
+                photo: 'images/avatar/up-avatar-empty-03.svg',
+                name: 'Bill',
+                link: '',
+                lastUpdated: 1646673856,
+                items: [
+                    buildItem('4', 'photo', 4, 'images/other/25.jpg', '', '', '', 1646665745, false),
+                ],
+            },
+            {
+                id: 'userThree',
+                photo: 'images/avatar/up-avatar-empty-03.svg',
+                name: 'Sergei',
+                link: '',
+                lastUpdated: 1646753056,
+                items: [
+                    buildItem('5', 'photo', 4, 'images/other/4.jpg', '', '', '', 1646753056, false),
+                    buildItem('6', 'photo', 4, 'images/other/11.jpg', '', '', '', 1646709856, false),
+                ],
+            },
+            {
+                id: 'userFour',
+                photo: 'images/avatar/up-avatar-empty-03.svg',
+                name: 'Alex',
+                link: '',
+                lastUpdated: 1646789056,
+                items: [
+                    buildItem('7', 'photo', 4, 'images/other/10.jpg', '', '', '', 1646789056, false),
+                ],
+            },
+            {
+                id: 'userFive',
+                photo: 'images/avatar/up-avatar-empty-03.svg',
+                name: 'Bella',
+                link: '',
+                lastUpdated: 1646803456,
+                items: [
+                    buildItem('8', 'photo', 4, 'images/other/17.jpg', '', '', '', 1646803456, false),
+                ],
+            },
+            {
+                id: 'userSix',
+                photo: 'images/avatar/up-avatar-empty-03.svg',
+                name: 'Esther',
+                link: '',
+                lastUpdated: 1646889856,
+                items: [
+                    buildItem('9', 'photo', 4, 'images/other/28.jpg', '', '', '', 1646889856, false),
+                ],
+            },
+            {
+                id: 'userSeven',
+                photo: 'images/avatar/up-avatar-empty-03.svg',
+                name: 'Jackie',
+                link: '',
+                lastUpdated: 1647321856,
+                items: [
+                    buildItem('10', 'photo', 4, 'images/other/29.jpg', '', '', '', 1647321856, false),
+                ],
+            }],
+        });
+    </script>
+
+</body>
+
+</html>

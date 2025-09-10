@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="upfinance-avatar-empty" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 500 500">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #000;
+      }
+
+      .cls-3 {
+        isolation: isolate;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="250" y1="0" x2="250" y2="500" gradientTransform="translate(0 500) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#eb8900"/>
+      <stop offset="1" stop-color="#f3ca26"/>
+    </linearGradient>
+  </defs>
+  <g id="bg" class="cls-3">
+    <g id="bg-2">
+      <rect class="cls-1" width="500" height="500"/>
+    </g>
+  </g>
+  <g id="avatar">
+    <g id="Rectangle_1" data-name="Rectangle 1">
+      <rect class="cls-2" x="142.22" y="241.75" width="56.3" height="56.3" transform="translate(-140.95 199.53) rotate(-45)"/>
+    </g>
+    <g id="Rectangle_1-2" data-name="Rectangle 1">
+      <rect class="cls-2" x="182.04" y="281.57" width="56.3" height="56.3" transform="translate(-157.44 239.34) rotate(-45)"/>
+    </g>
+    <g id="Rectangle_1-3" data-name="Rectangle 1">
+      <rect class="cls-2" x="221.85" y="241.75" width="56.3" height="56.3" transform="translate(-117.63 255.83) rotate(-45)"/>
+    </g>
+    <g id="Rectangle_1-4" data-name="Rectangle 1">
+      <rect class="cls-2" x="261.66" y="281.45" width="56.3" height="56.3" transform="translate(-134.04 295.61) rotate(-45)"/>
+    </g>
+    <g id="Rectangle_1-5" data-name="Rectangle 1">
+      <rect class="cls-2" x="301.47" y="241.64" width="56.3" height="56.3" transform="translate(-94.23 312.1) rotate(-45)"/>
+    </g>
+    <g id="Rectangle_1-6" data-name="Rectangle 1">
+      <rect class="cls-2" x="301.47" y="162.13" width="56.3" height="56.3" transform="translate(-38.01 288.81) rotate(-45)"/>
+    </g>
+    <g id="Rectangle_1-7" data-name="Rectangle 1">
+      <rect class="cls-2" x="142.22" y="162.13" width="56.3" height="56.3" transform="translate(-84.65 176.21) rotate(-45)"/>
+    </g>
+  </g>
+</svg>

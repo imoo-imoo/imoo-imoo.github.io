@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="UpFinance-Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 300 300">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #f3ca26;
+      }
+
+      .cls-3 {
+        fill: #121212;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="182.5" y1="86.9" x2="182.5" y2="217.1" gradientTransform="translate(0 302) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#eb8900"/>
+      <stop offset="1" stop-color="#f3ca26"/>
+    </linearGradient>
+  </defs>
+  <rect id="BG" class="cls-3" width="300" height="300"/>
+  <g id="Logomark">
+    <rect class="cls-2" x="84.9" y="84.9" width="65.1" height="65.1"/>
+    <rect class="cls-1" x="150" y="84.9" width="65.1" height="130.2"/>
+  </g>
+</svg>

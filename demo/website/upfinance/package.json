@@ -1,0 +1,42 @@
+{
+  "name": "unic-theme-v1.0",
+  "version": "1.0.0",
+  "description": "Unic – NFT Marketplace PWA Mobile Template",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass --watch scss:assets/css --style compressed"
+  },
+  "keywords": [
+    "bootstrap",
+    "5",
+    "mobile",
+    "template",
+    "wallet",
+    "crypto",
+    "currency",
+    "about",
+    "blog",
+    "cordova",
+    "phonegap",
+    "mobile",
+    "html",
+    "nft",
+    "store",
+    "marketplace",
+    "pwa"
+  ],
+  "author": "Hasan Sibakhi",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.55.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "nouislider": "^15.5.1",
+    "remixicon": "^2.5.0",
+    "smoothscroll-polyfill": "^0.4.4",
+    "swiper": "^8.0.0",
+    "wnumb": "^1.2.0",
+    "zuck.js": "^1.6.0"
+  }
+}

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 500 500">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: .05;
+      }
+
+      .cls-2 {
+        isolation: isolate;
+      }
+
+      .cls-3 {
+        fill: #fff;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="bg" class="cls-2">
+    <g id="bg-2" data-name="bg" class="cls-1">
+      <rect class="cls-3" width="500" height="500"/>
+    </g>
+  </g>
+  <g id="avatar">
+    <g>
+      <g id="Rectangle_1" data-name="Rectangle 1">
+        <rect class="cls-3" x="142.22" y="241.75" width="56.3" height="56.3" transform="translate(-140.95 199.53) rotate(-45)"/>
+      </g>
+      <g id="Rectangle_1-2" data-name="Rectangle 1">
+        <rect class="cls-3" x="182.04" y="281.57" width="56.3" height="56.3" transform="translate(-157.44 239.34) rotate(-45)"/>
+      </g>
+      <g id="Rectangle_1-3" data-name="Rectangle 1">
+        <rect class="cls-3" x="221.85" y="241.75" width="56.3" height="56.3" transform="translate(-117.63 255.83) rotate(-45)"/>
+      </g>
+      <g id="Rectangle_1-4" data-name="Rectangle 1">
+        <rect class="cls-3" x="261.66" y="281.45" width="56.3" height="56.3" transform="translate(-134.04 295.61) rotate(-45)"/>
+      </g>
+      <g id="Rectangle_1-5" data-name="Rectangle 1">
+        <rect class="cls-3" x="301.47" y="241.64" width="56.3" height="56.3" transform="translate(-94.23 312.1) rotate(-45)"/>
+      </g>
+      <g id="Rectangle_1-6" data-name="Rectangle 1">
+        <rect class="cls-3" x="301.47" y="162.13" width="56.3" height="56.3" transform="translate(-38.01 288.81) rotate(-45)"/>
+      </g>
+      <g id="Rectangle_1-7" data-name="Rectangle 1">
+        <rect class="cls-3" x="142.22" y="162.13" width="56.3" height="56.3" transform="translate(-84.65 176.21) rotate(-45)"/>
+      </g>
+    </g>
+  </g>
+</svg>

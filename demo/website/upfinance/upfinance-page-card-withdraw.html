@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="format-detection" content="telephone=no">
+    <!-- <meta name="theme-color" content="#ffffff"> -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#222032" media="(prefers-color-scheme: dark)">
+    <title>UP Finance - Card - Withdraw</title>
+    <meta name="description" content="Unic – NFT Marketplace PWA Mobile Template">
+    <meta name="keywords"
+        content="bootstrap 5, mobile template, wallet, crypto, currency, about, blog, cordova, phonegap, mobile, html, nft, store, marketplace, pwa" />
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="images/favicon/icon-32x32.png" sizes="32x32">
+    <!-- IOS SUPPORT -->
+    <link rel="apple-touch-icon" href="images/favicon/icon-96x96.png">
+    <!-- CSS FILES -->
+    <link rel="stylesheet" href="assets/css/up-finance-style.css">
+    <link rel="stylesheet" href="assets/css/remixicon.min.css">
+    <link rel="stylesheet" href="assets/vendors/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/vendors/zuck_stories/zuck.min.css">
+    <link rel="manifest" href="_manifest.json" />
+
+</head>
+
+<body>
+    <!-- ===================================
+      START LODAER PAGE
+    ==================================== -->
+    <section class="loader-page" id="loaderPage">
+        <div class="spinner_flash"></div>
+    </section>
+    <!-- START WRAPPER -->
+    <div id="wrapper">
+        <!-- START CONTENT -->
+        <div id="content">
+            <!-- ===================================
+              START THE HEADER
+            ==================================== -->
+            <header class="default heade-sticky">
+                <div class="un-title-page go-back">
+                    <a href="javascript:history.back()" class="icon">
+                        <i class="ri-arrow-drop-left-line"></i>
+                    </a>
+                    <h1 class="fw-bolder">Withdraw</h1>
+                </div>
+                <div class="un-block-right">
+
+                    <!-- <button type="button" class="btn btn-box-icon bg-orange-1 color-orange">
+                        <i class="ri-flag-2-line"></i>
+                    </button> -->
+
+                    
+
+                    <button type="button" class="btn effect-click btn-xs-size bg-snow text-dark rounded-pill">
+                        <div class="item-user-img me-2">
+                            <picture>
+                                <source srcset="images/icons/account-card-cyan.svg">
+                                <img class="avt-img" src="images/icons/account-card-cyan.svg" alt="" style="width: 18px">
+                            </picture>
+                        </div>
+                        3 cards
+                    </button>
+
+                    <!-- <button type="button" class="btn btn-box-icon bg-snow text-dark" data-bs-toggle="modal"
+                        data-bs-target="#mdllShareProfile">
+                        <i class="ri-eye-line"></i>
+                    </button> -->
+
+                    <!-- <button type="button" class="btn effect-click btn-xs-size border text-secondary rounded-pill">
+                        1/4
+                    </button> -->
+                </div>
+            </header>
+            <!-- ===================================
+              START THE SPACE STICKY
+            ==================================== -->
+            <div class="space-sticky"></div>
+            <!-- ===================================
+              START THE ACCOUNT DETAILS
+            ==================================== -->
+            <section class="margin-t-5 unList-creatores">
+                <div class="content-list-creatores tab-content content-custome-data" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-Allcard" role="tabpanel" aria-labelledby="pills-Allcard-tab">
+                        <div class="un-card-list-deposit bg-white px-0 py-2">
+                            <nav class="nav flex-column">
+                                <div class="nav-link">
+                                    <div class="cover_img">
+                                        <!-- <div class="wrapper-image">
+                                            <div class="icon-status bg-green-1 color-green">
+                                                <i class="ri-arrow-left-down-line"></i>
+                                            </div>
+                                            <div class="icon"><i class="ri-exchange-fill"></i></div>
+                                        </div> -->
+                                        <picture>
+                                            <source srcset="images/icons/account-cash-pink.svg" type="image/svg">
+                                            <img src="images/icons/account-cash-pink.svg" alt="">
+                                        </picture>
+                                        <div class="txt">
+                                            <p>Withdraw to:</p>
+                                            <h2>Cash Account</h2>
+                                            <!-- <p class="fs-8 text-secondary"><i class="ri-bank-card-fill me-1"></i>Digital</p> -->
+                                        </div>
+                                    </div>
+                                    <div class="other-side">
+                                        <!-- <button type="button" class="btn btn-xs-size bg-snow color-text rounded-pill">Default</button> -->
+                                        <a href="page-create-single.html" class="out-link-edit visited">
+                                            <i class="ri-arrow-right-s-line"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="border-sections-home-5"></div>
+
+            <!-- ===================================
+              START THE CREATORES
+            ==================================== -->
+            <section class="margin-t-5 un-my-account">
+                <div class="body">
+                    <div class="img-coin-eth margin-t-200">
+                        <picture>
+                            <!-- <source srcset="images/currency/186-united states.svg" type="image/svg"> -->
+                            <img src="images/currency/186-united states.svg" alt="" class="opacity-20" style="mix-blend-mode: luminosity; width: 50px;">
+                        </picture>
+                    </div>
+                    <div class="my-balance-text">
+                        <h2>American Dollar (USD)</h2>
+                        <!-- <p>$23,550.58</p> -->
+                        <div class="form-group with_icon m-0 px-2">
+                            <div class="input_group">
+                                <input type="search" class="form-control border-0" placeholder="$0.00">
+                                <!-- <div class="icon">
+                                    <i class="ri-search-2-line"></i>
+                                </div> -->
+                            </div>
+                        </div>
+
+                        <!-- <button type="button"
+                            class="btn btn-md-size effect-click border-secondary rounded-pill text-secondary"
+                            data-bs-toggle="modal" data-bs-target="#mdllAddETH">
+                            Add Balance
+                        </button> -->
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            
+            <!-- ===================================
+              START THE COPYRIGHT MARK
+            ==================================== -->
+            <!-- <section class="copyright-mark margin-t-20">
+                <div class="content">
+                    <img class="logo-gray" src="images/UpFinance-logomark-gray.svg" alt="image">
+                    <p>Copyright © UP Finance Group 2025</p>
+                </div>
+            </section> -->
+            <!-- ===================================
+              START THE SPACE STICKY -FOOTER
+            ==================================== -->
+            <!-- space-sticky-footer -->
+            <div class="space-sticky-footer"></div>
+            <!-- ===================================
+              START THE FOOTER - BUTTONS
+            ==================================== -->
+            <footer class="footer-pages-forms">
+                <div class="content">
+                    
+                    <a href="page-put-on-marketplace.html" class="btn btn-bid-items w-100 bg-snow">
+                        <p>Confirm Withdraw</p>
+                        <div class="ico fs-5">
+                            <i class="ri-check-line"></i>
+                        </div>
+                    </a>
+                </div>
+            </footer>
+        </div>
+        <!-- ===================================
+          START THE BOTTOM NAVIGATION
+        ==================================== -->
+        <!-- <footer class="un-bottom-navigation filter-blur">
+            <div class="em_body_navigation border-0 -active-links">
+                <div class="item_link">
+                    <a href="upfinance-homepage.html" class="btn btn_navLink" aria-label="btnNavigation">
+                        <div class="icon_current">
+                            <i class="ri-home-5-line"></i>
+                        </div>
+                        <div class="icon_active">
+                            <i class="ri-home-5-fill"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="item_link">
+                    <a href="page-search-random.html" class="btn btn_navLink" aria-label="btnNavigation">
+                        <div class="icon_current">
+                            <i class="ri-wallet-line"></i>
+                        </div>
+                        <div class="icon_active">
+                            <i class="ri-wallet-fill"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="item_link">
+                    <button type="button" class="btn btn_navLink without_active" onclick="window.location.href='upfinance-page-card.html'" aria-label="btnNavigation">
+                        <div class="btn btnCircle_default">
+                            <i class="ri-bank-card-fill"></i>
+                        </div>
+                    </button>
+                </div>
+                <div class="item_link">
+                    <a href="upfinance-page-activity.html" class="btn btn_navLink" aria-label="btnNavigation">
+                        <div class="icon_current">
+                            <i class="ri-chat-smile-3-line"></i>
+                        </div>
+                        <div class="icon_active">
+                            <i class="ri-chat-smile-3-fill"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="item_link">
+                    <a href="upfinance-page-account.html" class="btn btn_navLink" aria-label="btnNavigation">
+                        <div class="icon_current">
+                            <i class="ri-user-4-line"></i>
+                        </div>
+                        <div class="icon_active">
+                            <i class="ri-user-4-fill"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </footer> -->
+    </div>
+    <!-- ===================================
+      START THE HISTORY DEPOSIT MODAL
+    ==================================== -->
+    <div class="modal transition-bottom screenFull defaultModal mdlladd__rate fade" id="mdllHistoryDepodit" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h1 class="title-modal fw-bold">Deposit</h1>
+                    <button type="button" class="btn btnClose" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="ri-close-fill"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <!-- <div class="add-new-card">
+                        <div class="cover-image-card">
+                            <picture>
+                                <source srcset="images/other/up-card-01b.webp" type="image/webp">
+                                <img src="images/other/wallet-light.png" alt="">
+                            </picture>
+                        </div>
+                    </div> -->
+
+                    <div class="bg-white padding-0">
+                        <div class="item-card-gradual-2">
+                            <div class="head-card d-flex justify-content-between align-items-center">
+                                <div class="creator-name">
+                                    <div class="image-user">
+                                        <div class="wrapper-image">
+                                            <div class="icon-status bg-green-1 color-green">
+                                                <i class="ri-arrow-left-down-line"></i>
+                                            </div>
+                                            <div class="icon"><i class="ri-exchange-fill"></i></div>
+                                        </div>
+                                        <!-- <picture>
+                                            <source srcset="images/currency/cryptocurrency/015-ethereum.svg" type="image/svg">
+                                            <img class="img-avatar" src="images/currency/cryptocurrency/015-ethereum.svg" alt="chain">
+                                        </picture> -->
+                                        <!-- <div class="icon">
+                                            <i class="ri-error-warning-fill"></i>
+                                        </div> -->
+                                    </div>
+                                    <div class="row">
+                                        <h3 class="text-gray">Deposit Cash - USD</h3>
+                                        <h2 class="fs-2 fw-bold">5000.00</h2>
+                                    </div>
+                                 
+                                </div>
+                                <!-- <button type="button" class="btn btn-copy-address">
+                                    <input type="checkbox">
+                                    <div class="icon-box text-secondary">
+                                        <i class="ri-file-copy-line"></i>
+                                    </div>
+                                </button> -->
+                                <!-- <div class="btn-like-click">
+                                    <div class="btnLike">
+                                        <input type="checkbox">
+                                        <span class="count-likes">195</span>
+                                        <i class="ri-heart-3-line"></i>
+                                    </div>
+                                </div> -->
+                            </div>
+
+                            <div class="border-sections-home"></div>
+
+                            <a href="page-collectibles-details.html" class="body-card py-0">
+                                <!-- <div class="cover-nft">
+                                    <picture>
+                                        <source srcset="images/other/qr-code-usdt.svg" type="image/svg">
+                                        <img class="img-cover" src="images/other/qr-code-usdt.svg" alt="QRcode">
+                                    </picture>
+                                    <div class="icon-type">
+                                        <i class="ri-vidicon-line"></i>
+                                    </div>
+                                    <div class="countdown-time">
+                                        <span class="fw-bold">0x714732c6b1f63bAb379Dd0b3F<br>e67C30005CF2015</span>
+                                    </div>
+                                </div> -->
+                                <div class="title-card-nft">
+                                    <div class="side-one">
+                                        <h2 class="fs-7 mb-3">State</h2>
+                                        <h2 class="fs-7 mb-3">Order Number</h2>
+                                        <h2 class="fs-7">Date</h2>
+                                    </div>
+                                    <div class="side-other">
+                                        <h2 class="fs-7 fw-bold mb-3">Executed</h2>
+                                        <h2 class="fs-7 fw-bold mb-3">BD36764535A345</h2>
+                                        <h2 class="fs-7 fw-bold">August 27, 2025</h2>
+                                        <!-- <span class="text-light">3 for sale</span> -->
+                                    </div>
+                                </div>
+
+                            </a>
+                            <div class="footer-card border-0">
+                                <!-- <div class="starting-bad">
+                                    <h4>2.78 ETH</h4>
+                                    <span>Starting Bid</span>
+                                </div> -->
+                                <button type="button"
+                                    class="btn btn-md-size w-100 effect-click bg-snow text-secondary rounded-pill">
+                                    Need Help?
+                                </button>
+                                <!-- <button type="button"
+                                    class="btn btn-md-size effect-click bg-snow text-white rounded-pill">
+                                    Share
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-upload-item text-center margin-t-20">
+                        <!-- <button type="button" class="btn btn-md-size w-100 effect-click bg-snow text-white rounded-pill margin-b-10">
+                            Need Help?
+                        </button> -->
+                        <p>
+                            Need help? Contact our <span class="fw-bold">support team</span>
+                        </p>
+                        <!-- <div class="grid_buttonUpload">
+                            <a href="upfinance-page-card-add-card-form-step1.html" class="btn btn-create bg-primary text-black margin-b-10">
+                                Get Physical
+                            </a>
+                            <a href="upfinance-page-card-add-card-form-step1.html"
+                                class="btn btn-create bg-white border border-solid border-snow text-dark">
+                                Get Digital
+                            </a>
+                        </div> -->
+                    </div>
+
+                </div>
+                <div class="modal-footer border-0">
+                    <div class="env-pb"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===================================
+      START THE HISTORY REFUND MODAL
+    ==================================== -->
+    <div class="modal transition-bottom screenFull defaultModal mdlladd__rate fade" id="mdllHistoryRefund" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h1 class="title-modal fw-bold">Refund</h1>
+                    <button type="button" class="btn btnClose" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="ri-close-fill"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <!-- <div class="add-new-card">
+                        <div class="cover-image-card">
+                            <picture>
+                                <source srcset="images/other/up-card-01b.webp" type="image/webp">
+                                <img src="images/other/wallet-light.png" alt="">
+                            </picture>
+                        </div>
+                    </div> -->
+
+                    <div class="bg-white padding-0">
+                        <div class="item-card-gradual-2">
+                            <div class="head-card d-flex justify-content-between align-items-center">
+                                <div class="creator-name">
+                                    <div class="image-user">
+                                        <div class="wrapper-image">
+                                            <div class="icon-status bg-yellow-1 color-yellow">
+                                                <i class="ri-refund-line"></i>
+                                            </div>
+                                            <div class="icon"><i class="ri-exchange-fill"></i></div>
+                                        </div>
+                                        <!-- <picture>
+                                            <source srcset="images/currency/cryptocurrency/015-ethereum.svg" type="image/svg">
+                                            <img class="img-avatar" src="images/currency/cryptocurrency/015-ethereum.svg" alt="chain">
+                                        </picture> -->
+                                        <!-- <div class="icon">
+                                            <i class="ri-error-warning-fill"></i>
+                                        </div> -->
+                                    </div>
+                                    <div class="row">
+                                        <h3 class="text-gray">Refund - USD</h3>
+                                        <h2 class="fs-2 fw-bold">5000.00</h2>
+                                    </div>
+                                 
+                                </div>
+                                <!-- <button type="button" class="btn btn-copy-address">
+                                    <input type="checkbox">
+                                    <div class="icon-box text-secondary">
+                                        <i class="ri-file-copy-line"></i>
+                                    </div>
+                                </button> -->
+                                <!-- <div class="btn-like-click">
+                                    <div class="btnLike">
+                                        <input type="checkbox">
+                                        <span class="count-likes">195</span>
+                                        <i class="ri-heart-3-line"></i>
+                                    </div>
+                                </div> -->
+                            </div>
+
+                            <div class="border-sections-home"></div>
+
+                            <a href="page-collectibles-details.html" class="body-card py-0">
+                                <!-- <div class="cover-nft">
+                                    <picture>
+                                        <source srcset="images/other/qr-code-usdt.svg" type="image/svg">
+                                        <img class="img-cover" src="images/other/qr-code-usdt.svg" alt="QRcode">
+                                    </picture>
+                                    <div class="icon-type">
+                                        <i class="ri-vidicon-line"></i>
+                                    </div>
+                                    <div class="countdown-time">
+                                        <span class="fw-bold">0x714732c6b1f63bAb379Dd0b3F<br>e67C30005CF2015</span>
+                                    </div>
+                                </div> -->
+                                <div class="title-card-nft">
+                                    <div class="side-one">
+                                        <h2 class="fs-7 mb-3">State</h2>
+                                        <h2 class="fs-7 mb-3">Order Number</h2>
+                                        <h2 class="fs-7 mb-3">Creation Date</h2>
+                                        <h2 class="fs-7 mb-3">Completion Date</h2>
+                                        <h2 class="fs-7 mb-3">Merchant Name</h2>
+                                        <h2 class="fs-7 mb-3">Type</h2>
+                                        <h2 class="fs-7 mb-3">Area</h2>
+                                        <h2 class="fs-7">Refund Amount</h2>
+                                    </div>
+                                    <div class="side-other">
+                                        <h2 class="fs-7 fw-bold mb-3">Refunded</h2>
+                                        <h2 class="fs-7 fw-bold mb-3">BD36764535A345</h2>
+                                        <h2 class="fs-7 fw-bold mb-3">July 30, 2025</h2>
+                                        <h2 class="fs-7 fw-bold mb-3">August 1, 2025</h2>
+                                        <h2 class="fs-7 fw-bold mb-3">Starbucks Toa</h2>
+                                        <h2 class="fs-7 fw-bold mb-3">3440-5502</h2>
+                                        <h2 class="fs-7 fw-bold mb-3">Singapore</h2>
+                                        <h2 class="fs-7 fw-bold">$3.69</h2>
+                                        <!-- <span class="text-light">3 for sale</span> -->
+                                    </div>
+                                </div>
+
+                            </a>
+                            <div class="footer-card border-0">
+                                <!-- <div class="starting-bad">
+                                    <h4>2.78 ETH</h4>
+                                    <span>Starting Bid</span>
+                                </div> -->
+                                <button type="button"
+                                    class="btn btn-md-size w-100 effect-click bg-snow text-secondary rounded-pill">
+                                    Need Help?
+                                </button>
+                                <!-- <button type="button"
+                                    class="btn btn-md-size effect-click bg-snow text-white rounded-pill">
+                                    Share
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-upload-item text-center margin-t-20">
+                        <!-- <button type="button" class="btn btn-md-size w-100 effect-click bg-snow text-white rounded-pill margin-b-10">
+                            Need Help?
+                        </button> -->
+                        <p>
+                            Need help? Contact our <span class="fw-bold">support team</span>
+                        </p>
+                        <!-- <div class="grid_buttonUpload">
+                            <a href="upfinance-page-card-add-card-form-step1.html" class="btn btn-create bg-primary text-black margin-b-10">
+                                Get Physical
+                            </a>
+                            <a href="upfinance-page-card-add-card-form-step1.html"
+                                class="btn btn-create bg-white border border-solid border-snow text-dark">
+                                Get Digital
+                            </a>
+                        </div> -->
+                    </div>
+
+                </div>
+                <div class="modal-footer border-0">
+                    <div class="env-pb"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===================================
+      START THE HISTORY SEND SHOP STORE MODAL
+    ==================================== -->
+    <div class="modal transition-bottom screenFull defaultModal mdlladd__rate fade" id="mdllHistorySendShopStore" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h1 class="title-modal fw-bold">Shop In-Store</h1>
+                    <button type="button" class="btn btnClose" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="ri-close-fill"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <!-- <div class="add-new-card">
+                        <div class="cover-image-card">
+                            <picture>
+                                <source srcset="images/other/up-card-01b.webp" type="image/webp">
+                                <img src="images/other/wallet-light.png" alt="">
+                            </picture>
+                        </div>
+                    </div> -->
+
+                    <div class="bg-white padding-0">
+                        <div class="item-card-gradual-2">
+                            <div class="head-card d-flex justify-content-between align-items-center">
+                                <div class="creator-name">
+                                    <div class="image-user">
+                                        <div class="wrapper-image">
+                                            <div class="icon-status bg-red-1 color-red">
+                                                <i class="ri-store-3-line"></i>
+                                            </div>
+                                            <div class="icon"><i class="ri-exchange-fill"></i></div>
+                                        </div>
+                                        <!-- <picture>
+                                            <source srcset="images/currency/cryptocurrency/015-ethereum.svg" type="image/svg">
+                                            <img class="img-avatar" src="images/currency/cryptocurrency/015-ethereum.svg" alt="chain">
+                                        </picture> -->
+                                        <!-- <div class="icon">
+                                            <i class="ri-error-warning-fill"></i>
+                                        </div> -->
+                                    </div>
+                                    <div class="row">
+                                        <h3 class="text-gray">Shop In-Store - USD</h3>
+                                        <h2 class="fs-2 fw-bold">5000.00</h2>
+                                    </div>
+                                 
+                                </div>
+                                <!-- <button type="button" class="btn btn-copy-address">
+                                    <input type="checkbox">
+                                    <div class="icon-box text-secondary">
+                                        <i class="ri-file-copy-line"></i>
+                                    </div>
+                                </button> -->
+                                <!-- <div class="btn-like-click">
+                                    <div class="btnLike">
+                                        <input type="checkbox">
+                                        <span class="count-likes">195</span>
+                                        <i class="ri-heart-3-line"></i>
+                                    </div>
+                                </div> -->
+                            </div>
+
+                            <div class="border-sections-home"></div>
+
+                            <a href="page-collectibles-details.html" class="body-card py-0">
+                                <!-- <div class="cover-nft">
+                                    <picture>
+                                        <source srcset="images/other/qr-code-usdt.svg" type="image/svg">
+                                        <img class="img-cover" src="images/other/qr-code-usdt.svg" alt="QRcode">
+                                    </picture>
+                                    <div class="icon-type">
+                                        <i class="ri-vidicon-line"></i>
+                                    </div>
+                                    <div class="countdown-time">
+                                        <span class="fw-bold">0x714732c6b1f63bAb379Dd0b3F<br>e67C30005CF2015</span>
+                                    </div>
+                                </div> -->
+                                <div class="title-card-nft">
+                                    <div class="side-one">
+                                        <h2 class="fs-7 mb-3">State</h2>
+                                        <h2 class="fs-7 mb-3">Order Number</h2>
+                                        <h2 class="fs-7 mb-3">Creation Date</h2>
+                                        <h2 class="fs-7 mb-3">Completion Date</h2>
+                                        <h2 class="fs-7 mb-3">Merchant Name</h2>
+                                        <h2 class="fs-7 mb-3">Type</h2>
+                                        <h2 class="fs-7 mb-3">Area</h2>
+                                        <h2 class="fs-7 mb-3">Deduction Amount</h2>
+                                        <h2 class="fs-7">Authorization Fee</h2>
+                                    </div>
+                                    <div class="side-other">
+                                        <h2 class="fs-7 fw-bold mb-3">Settled</h2>
+                                        <h2 class="fs-7 fw-bold mb-3">BD36764535A345</h2>
+                                        <h2 class="fs-7 fw-bold mb-3">July 30, 2025</h2>
+                                        <h2 class="fs-7 fw-bold mb-3">August 1, 2025</h2>
+                                        <h2 class="fs-7 fw-bold mb-3">Starbucks Toa</h2>
+                                        <h2 class="fs-7 fw-bold mb-3">Restaurant</h2>
+                                        <h2 class="fs-7 fw-bold mb-3">Singapore</h2>
+                                        <h2 class="fs-7 fw-bold mb-3">$4.55</h2>
+                                        <h2 class="fs-7 fw-bold">$0.50</h2>
+                                        <!-- <span class="text-light">3 for sale</span> -->
+                                    </div>
+                                </div>
+
+                            </a>
+                            <div class="footer-card border-0">
+                                <!-- <div class="starting-bad">
+                                    <h4>2.78 ETH</h4>
+                                    <span>Starting Bid</span>
+                                </div> -->
+                                <button type="button"
+                                    class="btn btn-md-size w-100 effect-click bg-snow text-secondary rounded-pill">
+                                    Need Help?
+                                </button>
+                                <!-- <button type="button"
+                                    class="btn btn-md-size effect-click bg-snow text-white rounded-pill">
+                                    Share
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-upload-item text-center margin-t-20">
+                        <!-- <button type="button" class="btn btn-md-size w-100 effect-click bg-snow text-white rounded-pill margin-b-10">
+                            Need Help?
+                        </button> -->
+                        <p>
+                            Need help? Contact our <span class="fw-bold">support team</span>
+                        </p>
+                        <!-- <div class="grid_buttonUpload">
+                            <a href="upfinance-page-card-add-card-form-step1.html" class="btn btn-create bg-primary text-black margin-b-10">
+                                Get Physical
+                            </a>
+                            <a href="upfinance-page-card-add-card-form-step1.html"
+                                class="btn btn-create bg-white border border-solid border-snow text-dark">
+                                Get Digital
+                            </a>
+                        </div> -->
+                    </div>
+
+                </div>
+                <div class="modal-footer border-0">
+                    <div class="env-pb"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===================================
+      START THE HISTORY SEND SHOP ONLINE MODAL
+    ==================================== -->
+    <div class="modal transition-bottom screenFull defaultModal mdlladd__rate fade" id="mdllHistorySendShopOnline" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h1 class="title-modal fw-bold">Shop Online</h1>
+                    <button type="button" class="btn btnClose" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="ri-close-fill"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <!-- <div class="add-new-card">
+                        <div class="cover-image-card">
+                            <picture>
+                                <source srcset="images/other/up-card-01b.webp" type="image/webp">
+                                <img src="images/other/wallet-light.png" alt="">
+                            </picture>
+                        </div>
+                    </div> -->
+
+                    <div class="bg-white padding-0">
+                        <div class="item-card-gradual-2">
+                            <div class="head-card d-flex justify-content-between align-items-center">
+                                <div class="creator-name">
+                                    <div class="image-user">
+                                        <div class="wrapper-image">
+                                            <div class="icon-status bg-cyan-1 color-cyan">
+                                                <i class="ri-shopping-cart-line"></i>
+                                            </div>
+                                            <div class="icon"><i class="ri-exchange-fill"></i></div>
+                                        </div>
+                                        <!-- <picture>
+                                            <source srcset="images/currency/cryptocurrency/015-ethereum.svg" type="image/svg">
+                                            <img class="img-avatar" src="images/currency/cryptocurrency/015-ethereum.svg" alt="chain">
+                                        </picture> -->
+                                        <!-- <div class="icon">
+                                            <i class="ri-error-warning-fill"></i>
+                                        </div> -->
+                                    </div>
+                                    <div class="row">
+                                        <h3 class="text-gray">Shop Online - USD</h3>
+                                        <h2 class="fs-2 fw-bold">5000.00</h2>
+                                    </div>
+                                 
+                                </div>
+                                <!-- <button type="button" class="btn btn-copy-address">
+                                    <input type="checkbox">
+                                    <div class="icon-box text-secondary">
+                                        <i class="ri-file-copy-line"></i>
+                                    </div>
+                                </button> -->
+                                <!-- <div class="btn-like-click">
+                                    <div class="btnLike">
+                                        <input type="checkbox">
+                                        <span class="count-likes">195</span>
+                                        <i class="ri-heart-3-line"></i>
+                                    </div>
+                                </div> -->
+                            </div>
+
+                            <div class="border-sections-home"></div>
+
+                            <a href="page-collectibles-details.html" class="body-card py-0">
+                                <!-- <div class="cover-nft">
+                                    <picture>
+                                        <source srcset="images/other/qr-code-usdt.svg" type="image/svg">
+                                        <img class="img-cover" src="images/other/qr-code-usdt.svg" alt="QRcode">
+                                    </picture>
+                                    <div class="icon-type">
+                                        <i class="ri-vidicon-line"></i>
+                                    </div>
+                                    <div class="countdown-time">
+                                        <span class="fw-bold">0x714732c6b1f63bAb379Dd0b3F<br>e67C30005CF2015</span>
+                                    </div>
+                                </div> -->
+                                <div class="title-card-nft">
+                                    <div class="side-one">
+                                        <h2 class="fs-7 mb-3">State</h2>
+                                        <h2 class="fs-7 mb-3">Order Number</h2>
+                                        <h2 class="fs-7 mb-3">Creation Date</h2>
+                                        <h2 class="fs-7 mb-3">Completion Date</h2>
+                                        <h2 class="fs-7 mb-3">Merchant Name</h2>
+                                        <h2 class="fs-7 mb-3">Type</h2>
+                                        <h2 class="fs-7 mb-3">Area</h2>
+                                        <h2 class="fs-7 mb-3">Deduction Amount</h2>
+                                        <h2 class="fs-7">Authorization Fee</h2>
+                                    </div>
+                                    <div class="side-other">
+                                        <h2 class="fs-7 fw-bold mb-3">Settled</h2>
+                                        <h2 class="fs-7 fw-bold mb-3">BD36764535A345</h2>
+                                        <h2 class="fs-7 fw-bold mb-3">July 30, 2025</h2>
+                                        <h2 class="fs-7 fw-bold mb-3">August 1, 2025</h2>
+                                        <h2 class="fs-7 fw-bold mb-3">Starbucks Toa</h2>
+                                        <h2 class="fs-7 fw-bold mb-3">Restaurant</h2>
+                                        <h2 class="fs-7 fw-bold mb-3">Singapore</h2>
+                                        <h2 class="fs-7 fw-bold mb-3">$4.55</h2>
+                                        <h2 class="fs-7 fw-bold">$0.50</h2>
+                                        <!-- <span class="text-light">3 for sale</span> -->
+                                    </div>
+                                </div>
+
+                            </a>
+                            <div class="footer-card border-0">
+                                <!-- <div class="starting-bad">
+                                    <h4>2.78 ETH</h4>
+                                    <span>Starting Bid</span>
+                                </div> -->
+                                <button type="button"
+                                    class="btn btn-md-size w-100 effect-click bg-snow text-secondary rounded-pill">
+                                    Need Help?
+                                </button>
+                                <!-- <button type="button"
+                                    class="btn btn-md-size effect-click bg-snow text-white rounded-pill">
+                                    Share
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-upload-item text-center margin-t-20">
+                        <!-- <button type="button" class="btn btn-md-size w-100 effect-click bg-snow text-white rounded-pill margin-b-10">
+                            Need Help?
+                        </button> -->
+                        <p>
+                            Need help? Contact our <span class="fw-bold">support team</span>
+                        </p>
+                        <!-- <div class="grid_buttonUpload">
+                            <a href="upfinance-page-card-add-card-form-step1.html" class="btn btn-create bg-primary text-black margin-b-10">
+                                Get Physical
+                            </a>
+                            <a href="upfinance-page-card-add-card-form-step1.html"
+                                class="btn btn-create bg-white border border-solid border-snow text-dark">
+                                Get Digital
+                            </a>
+                        </div> -->
+                    </div>
+
+                </div>
+                <div class="modal-footer border-0">
+                    <div class="env-pb"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===================================
+      START THE MODAL UPLOAD
+    ==================================== -->
+    <div class="modal transition-bottom screenFull defaultModal mdlladd__rate fade" id="mdllUploadItem" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="title-modal">Upload Item</h1>
+                    <button type="button" class="btn btnClose" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="ri-close-fill"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="content-upload-item text-center">
+                        <p>
+                            Choose <span>"Single"</span> if you want your collectible to be one of a kind or
+                            <span>"Multiple"</span>
+                            if you want
+                            to sell one collectible multiple times
+                        </p>
+                        <div class="grid_buttonUpload">
+                            <a href="page-create-single.html" class="btn btn-create bg-primary text-white margin-b-20">
+                                Create Single
+                            </a>
+                            <a href="page-create-multi.html"
+                                class="btn btn-create bg-white border border-solid border-snow text-dark">
+                                Create Multiple
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer border-0">
+                    <div class="env-pb"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===================================
+      START THE MODAL ADD ETH
+    ==================================== -->
+    <div class="modal transition-bottom screenFull defaultModal mdlladd__rate fade" id="mdllAddETH" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="title-modal">Add ETH to your wallet</h1>
+                    <button type="button" class="btn btnClose" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="ri-close-fill"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="content-upload-item">
+                        <p class="text-center">
+                            Select one of the options to deposit <br> ETH to your wallet
+                        </p>
+                        <div class="un-navMenu-default margin-t-30 p-0">
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-3">
+                                    <a class="nav-link effect-click" href="javascript: void(0)">
+                                        <div class="item-content-link">
+                                            <div class="icon color-text w-auto">
+                                                <i class="ri-exchange-box-line"></i>
+                                            </div>
+                                            <h3 class="link-title">Deposit from an exchange</h3>
+                                        </div>
+                                        <div class="other-cc">
+                                            <span class="badge-text"></span>
+                                            <div class="icon-arrow">
+                                                <i class="ri-arrow-drop-right-line"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="nav-item mb-0">
+                                    <a class="nav-link effect-click" href="javascript: void(0)">
+                                        <div class="item-content-link">
+                                            <div class="icon color-text w-auto">
+                                                <i class="ri-bank-card-line"></i>
+                                            </div>
+                                            <h3 class="link-title">Buy with card</h3>
+                                        </div>
+                                        <div class="other-cc">
+                                            <span class="badge-text"></span>
+                                            <div class="icon-arrow">
+                                                <i class="ri-arrow-drop-right-line"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="modal-footer border-0">
+                    <div class="env-pb"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===================================
+      START THE MODAL SIDEBAR MENU - CONNECTED
+    ==================================== -->
+    <div class="modal sidebarMenu -left fade" id="mdllSidebar-connected" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header d-block pb-1">
+
+                    <!-- un-user-profile -->
+                    <div class="un-user-profile">
+                        <div class="image_user">
+                            <picture>
+                                <!-- <source srcset="images/avatar/11.webp" type="image/webp"> -->
+                                <img src="images/avatar/up-avatar-empty-01.svg" alt="image">
+                            </picture>
+                        </div>
+                        <div class="text-user">
+                            <h3>Richard Lee</h3>
+                            <p>UID: 0443675508</p>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btnClose" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="ri-close-fill"></i>
+                    </button>
+
+                    <!-- cover-balance -->
+                    <div class="cover-balance">
+                        <div class="un-balance">
+                            <div class="content-balance pt-4 pb-4">
+                                <div class="head-balance">
+                                    <h4>UP CARD</h4>
+                                    <a class="btn link-addBalance" data-bs-toggle="modal" data-bs-dismiss="modal"
+                                        data-bs-target="#mdllAddETH">
+                                        <i class="ri-add-fill"></i>
+                                    </a>
+                                </div>
+                                <p class="no-balance text-secondary">Virtual</p>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-sm-size bg-white text-dark rounded-pill"
+                            data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#mdllUploadItem">
+                            Add New
+                        </button>
+                    </div>
+
+
+                </div>
+                <div class="modal-body">
+                    <ul class="nav flex-column -active-links">
+                        <li class="nav-item">
+                            <a class="nav-link" href="homepage.html">
+                                <div class="icon_current">
+                                    <i class="ri-shield-keyhole-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-shield-keyhole-fill"></i>
+                                </div>
+                                <span class="title_link">Account Security</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="upfinance-page-activity.html">
+                                <div class="icon_current">
+                                    <i class="ri-notification-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-notification-fill"></i>
+                                </div>
+                                <span class="title_link">Notification</span>
+
+                                <span class="xs-badge">8</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="app-pages.html">
+                                <div class="icon_current">
+                                    <i class="ri-pages-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-pages-fill"></i>
+                                </div>
+                                <span class="title_link">Appearance</span>
+
+                                <div class="badge-circle">
+                                    <span class="doted_item"></span>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="app-components.html">
+                                <div class="icon_current">
+                                    <i class="ri-group-2-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-group-2-fill"></i>
+                                </div>
+                                <span class="title_link">Invite Friends</span>
+
+                            </a>
+                        </li>
+
+                        <div class="border-sections-home mb-2"></div>
+
+                        <label class="title__label">Promotions</label>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="page-help.html">
+                                <div class="icon_current">
+                                    <i class="ri-ticket-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-ticket-fill"></i>
+                                </div>
+                                <span class="title_link">My Coupons</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="page-about.html">
+                                <div class="icon_current">
+                                    <i class="ri-gift-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-gift-fill"></i>
+                                </div>
+                                <span class="title_link">Events</span>
+                            </a>
+                        </li>
+
+                        <div class="border-sections-home mb-2"></div>
+
+                        <label class="title__label">Other</label>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="page-help.html">
+                                <div class="icon_current">
+                                    <i class="ri-questionnaire-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-questionnaire-fill"></i>
+                                </div>
+                                <span class="title_link">Help Center</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="page-about.html">
+                                <div class="icon_current">
+                                    <i class="ri-file-info-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-file-info-fill"></i>
+                                </div>
+                                <span class="title_link">Terms of Service</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="page-about.html">
+                                <div class="icon_current">
+                                    <i class="ri-file-info-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-file-info-fill"></i>
+                                </div>
+                                <span class="title_link">About UP Finance</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <div class="em_darkMode_menu">
+                        <label class="text" for="switchDark">
+                            <h3>Dark Mode</h3>
+                            <p>Browsing in night mode</p>
+                        </label>
+                        <label class="switch_toggle toggle_lg theme-switch" for="switchDark">
+                            <input type="checkbox" class="switchDarkMode theme-switch" id="switchDark"
+                                aria-describedby="switchDark">
+                            <span class="handle"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===================================
+      START THE MODAL SIDEBAR MENU - guest
+    ==================================== -->
+    <div class="modal sidebarMenu -left -guest fade" id="mdllSidebar-guest" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="welcome_em">
+                        <h2>Welcome to Unic<span>.</span></h2>
+                        <p>
+                            Connect wallet to browse, Buy, Sell, and create NFTs items.
+                        </p>
+                        <a href="page-connect-wallet.html" class="btn btn-md-size bg-primary text-white rounded-pill">
+                            Connect wallet
+                        </a>
+                    </div>
+                    <button type="button" class="btn btnClose" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="ri-close-fill"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav flex-column -active-links">
+                        <li class="nav-item">
+                            <a class="nav-link" href="homepage.html">
+                                <div class="icon_current">
+                                    <i class="ri-compass-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-compass-fill"></i>
+                                </div>
+                                <span class="title_link">Discover</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="app-homes.html">
+                                <div class="icon_current">
+                                    <i class="ri-home-5-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-home-5-fill"></i>
+                                </div>
+                                <span class="title_link">Home Styles</span>
+
+                                <span class="xs-badge">8</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="app-pages.html">
+                                <div class="icon_current">
+                                    <i class="ri-pages-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-pages-fill"></i>
+                                </div>
+                                <span class="title_link">Page Packs</span>
+
+                                <div class="badge-circle">
+                                    <span class="doted_item"></span>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="app-components.html">
+                                <div class="icon_current">
+                                    <i class="ri-layout-2-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-layout-2-fill"></i>
+                                </div>
+                                <span class="title_link">Components</span>
+
+                            </a>
+                        </li>
+
+                        <label class="title__label">other</label>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="page-help.html">
+                                <div class="icon_current">
+                                    <i class="ri-questionnaire-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-questionnaire-fill"></i>
+                                </div>
+                                <span class="title_link">Help Center</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="page-about.html">
+                                <div class="icon_current">
+                                    <i class="ri-file-info-line"></i>
+                                </div>
+                                <div class="icon_active">
+                                    <i class="ri-file-info-fill"></i>
+                                </div>
+                                <span class="title_link">About Unic.</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <div class="em_darkMode_menu">
+                        <label class="text" for="switchDark2">
+                            <h3>Dark Mode</h3>
+                            <p>Browsing in night mode</p>
+                        </label>
+                        <label class="switch_toggle toggle_lg theme-switch" for="switchDark2">
+                            <input type="checkbox" class="switchDarkMode theme-switch" id="switchDark2"
+                                aria-describedby="switchDark2" aria-describedby="switchDark2">
+                            <span class="handle"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===================================
+      START STATUS CONNECTION
+    ==================================== -->
+    <div class="d-flex justify-content-center">
+        <div class="toast status-connection" role="alert" aria-live="assertive" aria-atomic="true"></div>
+    </div>
+
+
+
+    <!-- JS FILES -->
+    <script src="assets/vendors/zuck_stories/zuck.min.js"></script>
+    <script src="assets/vendors/smoothscroll/smoothscroll.min.js"></script>
+    <script src="assets/vendors/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendors/nouislider/nouislider.min.js"></script>
+    <script src="assets/vendors/nouislider/wNumb.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <!-- PWA APP SERVICE REGISTRATION AND WORKS JS -->
+    <script src="assets/js/pwa-services.js"></script>
+</body>
+
+</html>
