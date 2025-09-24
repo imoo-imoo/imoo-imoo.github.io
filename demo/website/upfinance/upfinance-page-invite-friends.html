@@ -11,7 +11,7 @@
     <!-- <meta name="theme-color" content="#ffffff"> -->
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#222032" media="(prefers-color-scheme: dark)">
-    <title>UP Finance - My Account</title>
+    <title>UP Finance - Invite Friends</title>
     <meta name="description" content="Unic – NFT Marketplace PWA Mobile Template">
     <meta name="keywords"
         content="bootstrap 5, mobile template, wallet, crypto, currency, about, blog, cordova, phonegap, mobile, html, nft, store, marketplace, pwa" />
@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="assets/vendors/zuck_stories/zuck.min.css">
     <link rel="manifest" href="_manifest.json" />
 
+
 </head>
 
 <body>
@@ -35,6 +36,14 @@
     <section class="loader-page" id="loaderPage">
         <div class="spinner_flash"></div>
     </section>
+
+    <!-- ===================================
+    START FIXED BACKGROUND IMAGE
+    ==================================== -->
+    <section class="bg-gradient-started">
+        <div class="bg-noise"></div>
+    </section>
+
     <!-- START WRAPPER -->
     <div id="wrapper">
         <!-- START CONTENT -->
@@ -42,364 +51,412 @@
             <!-- ===================================
               START THE HEADER
             ==================================== -->
-            <header class="default heade-sticky">
-                <div class="un-title-page">
-                    <h1 class="fw-bolder">My Account</h1>
+            <header class="default heade-sticky bg-transparent header-light">
+                <div class="un-title-page go-back">
+                    <a href="javascript:history.back()" class="icon">
+                        <i class="ri-arrow-drop-left-line"></i>
+                    </a>
+                    <h1>Invite Friends</h1>
                 </div>
                 <div class="un-block-right">
 
-                    <div class="un-notification">
-                        <a href="upfinance-page-activity.html" aria-label="activity">
-                            <i class="ri-notification-line"></i>
-                        </a>
-                        <span class="bull-activity"></span>
-                    </div>
+                    <!-- <button type="button" class="btn btn-box-icon bg-orange-1 color-orange">
+                        <i class="ri-flag-2-line"></i>
+                    </button> -->
 
-                    <div class="un-user-profile">
-                        <a href="upfinance-page-my-profile.html" aria-label="profile">
-                            <picture>
-                                <!-- <source srcset="images/avatar/11.webp" type="image/webp"> -->
-                                <img class="img-avatar" src="images/avatar/up-avatar-empty-02.svg" alt="">
-                            </picture>
-                        </a>
-                    </div>
+                    <!-- <button type="button" class="btn btn-box-icon bg-snow text-dark" data-bs-toggle="modal"
+                        data-bs-target="#mdllShareProfile">
+                        <i class="ri-share-forward-line"></i>
+                    </button> -->
 
-                    <!-- menu-sidebar -->
-                    <div class="menu-sidebar">
-                        <button type="button" name="sidebarMenu" aria-label="sidebarMenu" class="btn"
-                            data-bs-toggle="modal" data-bs-target="#mdllSidebar-connected">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="9.3" viewBox="0 0 19 9.3">
-                                <g id="Group_8081" data-name="Group 8081" transform="translate(-329 -37)">
-                                    <rect id="Rectangle_3986" data-name="Rectangle 3986" width="19" height="2.3"
-                                        rx="1.15" transform="translate(329 37)" fill="#222032" />
-                                    <rect id="Rectangle_3987" data-name="Rectangle 3987" width="19" height="2.3"
-                                        rx="1.15" transform="translate(329 44)" fill="#222032" />
-                                </g>
-                            </svg>
-                        </button>
-                    </div>
+                    <button type="button" class="btn effect-click btn-xs-size border-secondary text-secondary rounded-pill">
+                        My Invites
+                    </button>
                 </div>
             </header>
             <!-- ===================================
-              START THE SPACE STICKY
+              START INFO ABOUT THE TEMPLATE
             ==================================== -->
-            <div class="space-sticky"></div>
-            <!-- ===================================
-              START THE ACCOUNT DETAILS
-            ==================================== -->
-            <section class="un-my-account">
-                <!-- head -->
-                <div class="head">
-                    <div class="my-personal-account">
-                        <div class="user">
-                            <picture>
-                                <!-- <source srcset="images/avatar/11.webp" type="image/webp"> -->
-                                <img src="images/avatar/up-avatar-empty-01.svg" alt="">
-                            </picture>
-                            <div class="txt-user">
-                                <h1>Richard Lee</h1>
-                                <p>UID: 0443675508</p>
-                            </div>
-                        </div>
-                        <button type="button" class="btn btn-copy-address">
-                            <input type="checkbox">
-                            <div class="icon-box text-secondary">
-                                <i class="ri-file-copy-2-line"></i>
-                            </div>
-                        </button>
+            <section class="un-info-template">
+                <div class="main-img-nft">
+                    <video autoplay loop muted playsinline style="width: 100%; height: 100%; overflow: hidden; display:block; mix-blend-mode: exclusion;" class="rounded-15 margin-t-50 opacity-50">
+                        <source src="video/video-21s.mp4" type="video/mp4">
+                        <img class="big-image" src="images/other/14.jpg" alt="">
+                    </video>
+                    <!-- <picture>
+                        <source srcset="video/gif-07s.gif" type="image/gif">
+                        <img src="video/gif-07s.gif" class="margin-t-50" alt="nft picture" style="mix-blend-mode: exclusion; filter: grayscale();">
+                        <img src="video/gif-07s.gif" class="margin-t-50" alt="nft picture" style="mix-blend-mode: exclusion;">
+                    </picture> -->
+                </div>
+                <div class="un-title-default-3 margin-b-0 text-center">
+                    <div class="text px-3">
+                        <h2 class="fs-1 fw-bold">Get Rewards Together</h2>
+                        <p>Feeling good and like to share? Both you and invited pals will receive amazing rewards!</p>
                     </div>
                 </div>
-                <!-- body -->
-                <div class="body">
-                    <div class="img-coin-eth">
+                <!-- <div class="block-numbers">
+                    <div class="pages">
+                        <h2>45+</h2>
+                        <p>Currencies</p>
+                    </div>
+                    <div class="dividar-y"></div>
+                    <div class="components">
+                        <h2>140+</h2>
+                        <p>Countries</p>
+                    </div>
+                </div> -->
+            </section>
+            <!-- ===================================
+              START PAGES LIST
+            ==================================== -->
+            <section class="un__listPages_started margin-t-20">
+                <div class="content">
+                    <div class="justify-content-center text-center">
                         <picture>
-                            <!-- <source srcset="images/other/eth.webp" type="image/webp"> -->
-                            <img src="images/other/gif-wallet-03.gif" alt="" style="mix-blend-mode: luminosity;">
+                            <!-- <source srcset="images/icons/icon-card-512w-o.png" type="image/png"> -->
+                            <img class="img-cover icon-animation-float-y py-3" style="width:120px;height: auto;" src="images/icons/icon-invite-00.svg"
+                                alt="">
                         </picture>
                     </div>
-                    <div class="my-balance-text">
-                        <h2>Avai. Balance (USD)</h2>
-                        <p>$23,550.58</p>
-
-                        <button type="button"
-                            class="btn btn-md-size effect-click border-secondary rounded-pill text-secondary"
-                            data-bs-toggle="modal" data-bs-target="#mdllAddETH">
-                            Add Balance
-                        </button>
+                    <div class="title">
+                        <h3>You Will Get</h3>
+                        <h2>10%</h2>
+                        <p>
+                            Rebates on crypto/flat swap fees
+                        </p>
                     </div>
+                    <div class="un-navMenu-default style_glass px-0">
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link background">
+                                    <div class="item-content-link">
+                                        <div class="icon">
+                                            <img src="images/icons/icon-invite-00.svg" alt="">
+                                        </div>
+                                        <!-- <h3 class="link-title">UPSTAR</h3> -->
+                                        <h3 class="link-title">Check My Invites</h3>
+                                    </div>
+                                    <div class="other-cc">
+                                        <!-- <span class="badge-text">5 mins</span> -->
+                                        <div class="icon-arrow">
+                                            <i class="ri-arrow-drop-right-line"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- <li class="nav-item">
+                                <a href="app-homes.html" class="nav-link">
+                                    <div class="item-content-link">
+                                        <div class="icon">
+                                            <img src="images/icons/icon-cardholder.svg" alt="">
+                                        </div>
+                                        <h3 class="link-title">UP One-Wallet</h3>
+                                    </div>
+                                    <div class="other-cc">
+                                        <span class="badge-text xs-badge">Step 2</span>
+                                        <div class="icon-arrow">
+                                            <i class="ri-arrow-drop-right-line"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li> -->
+                            <!-- <li class="nav-item">
+                                <a href="app-components.html" class="nav-link">
+                                    <div class="item-content-link">
+                                        <div class="icon">
+                                            <img src="images/icons/icon-card.svg" alt="">
+                                        </div>
+                                        <h3 class="link-title">UP Card</h3>
+                                    </div>
+                                    <div class="other-cc">
+                                        <span class="badge-text xs-badge">Step 3</span>
+                                        <div class="icon-arrow">
+                                            <i class="ri-arrow-drop-right-line"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="un-title-default-3 margin-b-10 margin-t-15 px-0 px-0">
+                    <p class="fs-8 text-secondary">Rewards aply to crypto/flat swaps by invited friends</p>
+                </div>
+            </section>
+
+
+            <section class="un__listPages_started margin-t-20 px-0">
+                <div class="un-title-default-3 margin-b-20 px-0 px-4">
+                    <div class="text text-center">
+                        <h2 class="fw-bold">Reward Together</h2>
+                        <p>Invited friends will get</p>
+                    </div>
+                </div>
+                <div class="content-comp p-0">
+                    <div class="unSwiper-cards bg-transparent py-3">
+                        <div class="content-cards-NFTs">
+                            <div class="swiper cardGradual">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <!-- item-card-gradual -->
+                                        <div class="item-card-gradual bg-filter-blur-3">
+                                            <!-- <div class="head-card"></div> -->
+                                            <a href="#" class="body-card">
+                                                <div class="cover-nft justify-content-center text-center">
+                                                    <picture>
+                                                        <!-- <source srcset="images/icons/icon-card-512w-o.png" type="image/png"> -->
+                                                        <img class="img-cover icon-animation-float-y py-3" style="width:90px;height: auto;" src="images/icons/icon-invite-01.svg"
+                                                            alt="">
+                                                    </picture>
+
+                                                    <div class="icon-type">
+                                                        <i class="ri-gift-2-fill"></i>
+                                                    </div>
+                                                    <!-- <div class="countdown-time">
+                                                        <span>10% Discount</span>
+                                                    </div> -->
+                                                </div>
+                                                <div class="title-card-nft">
+                                                    <div class="side-one w-100 text-center">
+                                                        <h2 class="fs-6 fw-bold">CryptoPay Discount x1</h2>
+                                                        <p>Waive fee for crypto transfer</p>
+                                                    </div>
+                                                    <!-- <div class="side-other">
+                                                        <span class="no-sales">3 for sale</span>
+                                                    </div> -->
+                                                </div>
+                                            </a>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <!-- item-card-gradual -->
+                                        <div class="item-card-gradual bg-filter-blur-3">
+                                            <!-- <div class="head-card"></div> -->
+                                            <a href="#" class="body-card">
+                                                <div class="cover-nft justify-content-center text-center">
+                                                    <picture>
+                                                        <!-- <source srcset="images/icons/icon-card-512w-o.png" type="image/png"> -->
+                                                        <img class="img-cover icon-animation-float-y py-3" style="width:90px;height: auto;" src="images/icons/icon-invite-05.svg"
+                                                            alt="">
+                                                    </picture>
+
+                                                    <div class="icon-type">
+                                                        <i class="ri-gift-2-fill"></i>
+                                                    </div>
+                                                    <!-- <div class="countdown-time">
+                                                        <span>10% Discount</span>
+                                                    </div> -->
+                                                </div>
+                                                <div class="title-card-nft">
+                                                    <div class="side-one w-100 text-center">
+                                                        <h2 class="fs-6 fw-bold">UpPay Discount x1</h2>
+                                                        <p>Waive fee for up tranfer</p>
+                                                    </div>
+                                                    <!-- <div class="side-other">
+                                                        <span class="no-sales">3 for sale</span>
+                                                    </div> -->
+                                                </div>
+                                            </a>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <!-- item-card-gradual -->
+                                        <div class="item-card-gradual bg-filter-blur-3">
+                                            <!-- <div class="head-card"></div> -->
+                                            <a href="#" class="body-card">
+                                                <div class="cover-nft justify-content-center text-center">
+                                                    <picture>
+                                                        <!-- <source srcset="images/icons/icon-card-512w-o.png" type="image/png"> -->
+                                                        <img class="img-cover icon-animation-float-y py-3" style="width:90px;height: auto;" src="images/icons/icon-invite-06.svg"
+                                                            alt="">
+                                                    </picture>
+
+                                                    <div class="icon-type">
+                                                        <i class="ri-gift-2-fill"></i>
+                                                    </div>
+                                                    <!-- <div class="countdown-time">
+                                                        <span>10% Discount</span>
+                                                    </div> -->
+                                                </div>
+                                                <div class="title-card-nft">
+                                                    <div class="side-one w-100 text-center">
+                                                        <h2 class="fs-6 fw-bold">Swap Discount x1</h2>
+                                                        <p>Reduce up swap fee to 0.6%</p>
+                                                    </div>
+                                                    <!-- <div class="side-other">
+                                                        <span class="no-sales">3 for sale</span>
+                                                    </div> -->
+                                                </div>
+                                            </a>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <!-- item-card-gradual -->
+                                        <div class="item-card-gradual bg-filter-blur-3">
+                                            <!-- <div class="head-card"></div> -->
+                                            <a href="#" class="body-card">
+                                                <div class="cover-nft justify-content-center text-center">
+                                                    <picture>
+                                                        <!-- <source srcset="images/icons/icon-card-512w-o.png" type="image/png"> -->
+                                                        <img class="img-cover icon-animation-float-y py-3" style="width:90px;height: auto;" src="images/icons/icon-invite-04.svg"
+                                                            alt="">
+                                                    </picture>
+
+                                                    <div class="icon-type">
+                                                        <i class="ri-gift-2-fill"></i>
+                                                    </div>
+                                                    <!-- <div class="countdown-time">
+                                                        <span>10% Discount</span>
+                                                    </div> -->
+                                                </div>
+                                                <div class="title-card-nft">
+                                                    <div class="side-one w-100 text-center">
+                                                        <h2 class="fs-6 fw-bold">Card Activation x1</h2>
+                                                        <p>Activate a card for free</p>
+                                                    </div>
+                                                    <!-- <div class="side-other">
+                                                        <span class="no-sales">3 for sale</span>
+                                                    </div> -->
+                                                </div>
+                                            </a>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="un-title-default-3 margin-b-20 px-0 px-4">
+                    <p class="fs-8 text-secondary">All rewards will be in form of non-transferable coupons</p>
+                </div>
+
+            </section>
+            <!-- ===================================
+              START THE SOME FEATURES
+            ==================================== -->
+            <section class="un_features_list margin-t-20">
+                <div class="un-title-default-3 px-0 margin-b-40">
+                    <div class="text text-center">
+                        <h2 class="fw-bold">Get Connected & Stay Tuned</h2>
+                        <p>Invite your friends to join and expand your global social circles</p>
+                    </div>
+                </div>
+                <div class="content">
+                    <ul>
+                        <li>
+                            <div class="icon bg-light bg-opacity-10 text-white">
+                                <i class="ri-flashlight-fill"></i>
+                            </div>
+                            <h4 class="fw-bold">Instant & Safe Transfers</h4>
+                            <p>
+                                Pay or receive from friends, no more waiting
+                            </p>
+                        </li>
+                        <li>
+                            <div class="icon bg-light bg-opacity-10 text-white">
+                                <i class="ri-user-community-fill"></i>
+                            </div>
+                            <h4 class="fw-bold">Create Groups & Channels</h4>
+                            <p>
+                                Chat with pals, or follow interesting topics
+                            </p>
+                        </li>
+                        <li>
+                            <div class="icon bg-light bg-opacity-10 text-white">
+                                <i class="ri-hammer-fill"></i>
+                            </div>
+                            <h4 class="fw-bold">Explore & Share Miniapps</h4>
+                            <p>
+                                Discover amazing apps and share them!
+                            </p>
+                        </li>
+                        <li>
+                            <div class="icon bg-light bg-opacity-10 text-white">
+                                <i class="ri-door-lock-fill"></i>
+                            </div>
+                            <h4 class="fw-bold">Set Up Secret Joint Vault</h4>
+                            <p>
+                                Creat secret vault and put money on it
+                            </p>
+                        </li>
+                    </ul>
                 </div>
             </section>
             <!-- ===================================
-              START ACCOUNT LIST
+              START THE FOOTER - BUTTONS
             ==================================== -->
-            <section class="un-navMenu-default without-visit">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link visited" href="page-my-wallet.html">
-                            <div class="item-content-link">
-                                <div class="icon bg-snow text-dark">
-                                    <i class="ri-wallet-line"></i>
+            <!-- <section class="bloack-get-started">
+                <div class="un-navMenu-default p-0">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a href="https://themeforest.net/item/unic-nft-mobile-template/36083774" target="_blank"
+                                class="nav-link bg-transparent">
+                                <div class="item-content-link">
+                                    <div class="icon text-white">
+                                        <i class="ri-bank-card-fill"></i>
+                                    </div>
+                                    <h3 class="link-title text-white">Physical Card</h3>
                                 </div>
-                                <h3 class="link-title">My Wallet</h3>
-                            </div>
-                            <div class="other-cc">
-                                <span class="badge-text"> 0Xe388...E162</span>
-                                <div class="icon-arrow">
-                                    <i class="ri-arrow-drop-right-line"></i>
+                                <div class="other-cc">
+                                    <span class="badge-text">From $10</span>
+                                    <div class="icon-arrow">
+                                        <i class="ri-arrow-drop-right-line"></i>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="upfinance-page-edit-profile.html">
-                            <div class="item-content-link">
-                                <div class="icon bg-snow text-dark">
-                                    <i class="ri-user-3-line"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="upfinance-page-step-create-account.html" class="nav-link bg-primary">
+                                <div class="item-content-link">
+                                    <div class="icon text-black">
+                                        <i class="ri-user-5-fill"></i>
+                                    </div>
+                                    <h3 class="link-title text-black">Invite Friends</h3>
                                 </div>
-                                <h3 class="link-title">Edit Profile</h3>
-                            </div>
-                            <div class="other-cc">
-                                <span class="badge-text"></span>
-                                <div class="icon-arrow">
-                                    <i class="ri-arrow-drop-right-line"></i>
+                                <div class="other-cc">
+                                    <span class="badge-text text-black"></span>
+                                    <div class="icon-arrow text-black">
+                                        <i class="ri-arrow-drop-right-line"></i>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="page-my-item.html">
-                            <div class="item-content-link">
-                                <div class="icon bg-snow text-dark">
-                                    <i class="ri-at-line"></i>
-                                </div>
-                                <h3 class="link-title">UPID</h3>
-                            </div>
-                            <div class="other-cc">
-                                <span class="badge-text"></span>
-                                <div class="icon-arrow">
-                                    <i class="ri-arrow-drop-right-line"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="upfinance-page-verification-kyc-list.html">
-                            <div class="item-content-link">
-                                <div class="icon bg-orange-1 color-orange">
-                                    <i class="ri-shield-user-line"></i>
-                                </div>
-                                <h3 class="link-title">Identity Verification</h3>
-                            </div>
-                            <div class="other-cc">
-                                <div class="color-text rounded-pill bg-snow btn-xs-size">KYC2</div>
-                                <!-- <span class="badge-text">22</span> -->
-                                <div class="icon-arrow">
-                                    <i class="ri-arrow-drop-right-line"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="upfinance-page-invite-friends.html">
-                            <div class="item-content-link">
-                                <div class="icon bg-blue-1 color-blue">
-                                    <i class="ri-group-2-line"></i>
-                                </div>
-                                <h3 class="link-title">Invite Friends</h3>
-                            </div>
-                            <div class="other-cc">
-                                <span class="badge-text"></span>
-                                <div class="icon-arrow">
-                                    <i class="ri-arrow-drop-right-line"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-
-                    <div class="sub-title-pkg">
-                        <h2>Settings</h2>
-                    </div>
-
-                    <li class="nav-item">
-                        <div class="nav-link">
-                            <div class="item-content-link">
-                                <div class="txt">
-                                    <h3 class="link-title">Dark Mode</h3>
-                                    <p class="size-11 color-text m-0">Browsing in night mode</p>
-                                </div>
-                            </div>
-                            <div class="other-cc">
-
-                                <label class="switch_toggle toggle_lg theme-switch" for="switchDark">
-                                    <input type="checkbox" class="switchDarkMode theme-switch" id="switchDark"
-                                        aria-describedby="switchDark" aria-label="switchDark">
-                                    <span class="handle"></span>
-                                </label>
-
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript: void(0)">
-                            <div class="item-content-link">
-                                <div class="icon bg-snow text-dark">
-                                    <i class="ri-global-line"></i>
-                                </div>
-                                <h3 class="link-title">Language</h3>
-                            </div>
-                            <div class="other-cc">
-                                <span class="badge-text">English (UK)</span>
-                                <div class="icon-arrow">
-                                    <i class="ri-arrow-drop-right-line"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="page-activity-settings.html">
-                            <div class="item-content-link">
-                                <div class="icon bg-red-1 color-red">
-                                    <i class="ri-notification-line"></i>
-                                </div>
-                                <h3 class="link-title">Activity Settings</h3>
-                            </div>
-                            <div class="other-cc">
-                                <span class="badge-text"></span>
-                                <div class="icon-arrow">
-                                    <i class="ri-arrow-drop-right-line"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-
-                    <div class="sub-title-pkg">
-                        <h2>Support</h2>
-                    </div>
-
-                    <li class="nav-item">
-                        <a class="nav-link visited" href="upfinance-page-support.html">
-                            <div class="item-content-link">
-                                <div class="icon bg-green-1 color-green">
-                                    <i class="ri-questionnaire-line"></i>
-                                </div>
-                                <h3 class="link-title">Support Center</h3>
-                            </div>
-                            <div class="other-cc">
-                                <span class="badge-text"></span>
-                                <div class="icon-arrow">
-                                    <i class="ri-arrow-drop-right-line"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="upfinance-page-about.html">
-                            <div class="item-content-link">
-                                <div class="icon bg-blue-1 color-blue">
-                                    <i class="ri-information-line"></i>
-                                </div>
-                                <h3 class="link-title">About UP Finance</h3>
-                            </div>
-                            <div class="other-cc">
-                                <span class="badge-text"></span>
-                                <div class="icon-arrow">
-                                    <i class="ri-arrow-drop-right-line"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-
-                    <div class="sub-title-pkg">
-                        <h2>we'll miss you</h2>
-                    </div>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="homepage.html">
-                            <div class="item-content-link">
-                                <div class="icon bg-snow text-dark">
-                                    <i class="ri-logout-box-r-line"></i>
-                                </div>
-                                <h3 class="link-title">Sign Out</h3>
-                            </div>
-                            <div class="other-cc">
-                                <span class="badge-text size-18">😢</span>
-                                <div class="icon-arrow">
-                                    <i class="ri-arrow-drop-right-line"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-
-
-                </ul>
-            </section>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section> -->
             <!-- ===================================
-              START THE COPYRIGHT MARK
+              START THE COPYRIGHT
             ==================================== -->
-            <section class="copyright-mark">
+            <section class="copyright-mark margin-t-20 margin-b-100">
                 <div class="content">
                     <img class="logo-gray" src="images/UpFinance-logomark-gray.svg" alt="image">
-                    <p>Copyright © UP Finance Group 2025</p>
+                    <p>Copyright © Up Finance Group 2025</p>
                 </div>
             </section>
+
         </div>
         <!-- ===================================
-          START THE BOTTOM NAVIGATION
-        ==================================== -->
-        <footer class="un-bottom-navigation filter-blur">
-            <div class="em_body_navigation border-0 -active-links">
-                <div class="item_link">
-                    <a href="upfinance-homepage.html" class="btn btn_navLink" aria-label="btnNavigation">
-                        <div class="icon_current">
-                            <i class="ri-home-5-line"></i>
-                        </div>
-                        <div class="icon_active">
-                            <i class="ri-home-5-fill"></i>
+              START THE FOOTER - BUTTONS
+            ==================================== -->
+            <footer class="footer-pages-forms bg-transparent z-9999">
+                <div class="content">
+                    
+                    <a href="page-put-on-marketplace.html" class="btn btn-bid-items w-100 bg-primary">
+                        <p class="text-black">Invite Friends</p>
+                        <div class="ico fs-5 text-black">
+                            <i class="ri-user-5-fill"></i>
                         </div>
                     </a>
                 </div>
-                <div class="item_link">
-                    <a href="page-search-random.html" class="btn btn_navLink" aria-label="btnNavigation">
-                        <div class="icon_current">
-                            <i class="ri-wallet-line"></i>
-                        </div>
-                        <div class="icon_active">
-                            <i class="ri-wallet-fill"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="item_link">
-                    <button type="button" class="btn btn_navLink without_active" onclick="window.location.href='upfinance-page-card.html'" aria-label="btnNavigation">
-                        <div class="btn btnCircle_default">
-                            <i class="ri-bank-card-fill"></i>
-                        </div>
-                    </button>
-                </div>
-                <div class="item_link">
-                    <a href="upfinance-page-activity.html" class="btn btn_navLink" aria-label="btnNavigation">
-                        <div class="icon_current">
-                            <i class="ri-chat-smile-3-line"></i>
-                        </div>
-                        <div class="icon_active">
-                            <i class="ri-chat-smile-3-fill"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="item_link">
-                    <a href="upfinance-page-account.html" class="btn btn_navLink" aria-label="btnNavigation">
-                        <div class="icon_current">
-                            <i class="ri-user-4-line"></i>
-                        </div>
-                        <div class="icon_active">
-                            <i class="ri-user-4-fill"></i>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </footer>
+            </footer>
+
     </div>
     <!-- ===================================
       START THE MODAL UPLOAD
@@ -771,7 +828,7 @@
                         <label class="title__label">other</label>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="page-help.html">
+                            <a class="nav-link" href="upfinance-page-help.html">
                                 <div class="icon_current">
                                     <i class="ri-questionnaire-line"></i>
                                 </div>

@@ -19,7 +19,7 @@
 
 :root {
     /*--bs-blue: #f3ca26;*/
-    --bs-blue: #395aff;
+    --bs-blue: #0066fe;
     --bs-indigo: #6610f2;
     --bs-purple: #a659ff;
     --bs-pink: #e05fc4;
@@ -7912,6 +7912,16 @@ fieldset:disabled .btn {
     padding-bottom: 3rem !important
 }
 
+.py-6 {
+    padding-top: 2.0rem !important;
+    padding-bottom: 2.0rem !important
+}
+
+.py-7 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important
+}
+
 .pt-0 {
     padding-top: 0 !important
 }
@@ -8337,6 +8347,16 @@ fieldset:disabled .btn {
     backdrop-filter: saturate(1) blur(20px) !important
 }
 
+.bg-filter-blur-3 {
+
+    border: 1px solid rgba(255, 255, 255, .1) !important;
+    background: rgba(34, 32, 50, .01) !important;
+    -webkit-backdrop-filter: saturate(1) blur(10px) !important;
+    -o-backdrop-filter: saturate(1) blur(10px) !important;
+    -ms-backdrop-filter: saturate(1) blur(10px) !important;
+    backdrop-filter: saturate(1) blur(10px) !important;
+}
+
 .video-container-2 {
   position: relative;
   width: 100%;
@@ -8353,6 +8373,31 @@ fieldset:disabled .btn {
   min-height: 100%;
   transform: translate(-50%, -50%);
   object-fit: cover;
+}
+
+.z--2 {
+    z-index: -2 !important;
+}
+.z--1 {
+    z-index: -1 !important;
+}
+.z-0 {
+    z-index: 0 !important;
+}
+.z-1 {
+    z-index: 1 !important;
+}
+.z-10 {
+    z-index: 10 !important;
+}
+.z-100 {
+    z-index: 100 !important;
+}
+.z-999 {
+    z-index: 999 !important;
+}
+.z-9999 {
+    z-index: 9999 !important;
 }
 
 .user-select-all {
@@ -11736,6 +11781,10 @@ fieldset:disabled .btn {
     color: var(--white)
 }
 
+.color-white-100 {
+    color: #fff
+}
+
 .color-primary {
     color: #f3ca26
 }
@@ -11757,7 +11806,7 @@ fieldset:disabled .btn {
 }
 
 .color-blue {
-    color: #f3ca26
+    color: #0066fe
 }
 
 .color-yellow {
@@ -11813,7 +11862,7 @@ fieldset:disabled .btn {
 }
 
 .bg-blue {
-    background-color: #f3ca26
+    background-color: #0066fe
 }
 
 .bg-yellow {
@@ -11845,7 +11894,11 @@ fieldset:disabled .btn {
 }
 
 .bg-white-1 {
-    background-color: rgba(var(--white), 0.1)
+    background-color: rgba(255, 255, 255, 0.1)
+}
+
+.bg-white-05 {
+    background-color: rgba(255, 255, 255, 0.05)
 }
 
 .bg-primary-1 {
@@ -11869,7 +11922,7 @@ fieldset:disabled .btn {
 }
 
 .bg-blue-1 {
-    background-color: rgba(243, 202, 38, .1)
+    background-color: rgba(0, 102, 254, .1)
 }
 
 .bg-yellow-1 {
@@ -16152,7 +16205,7 @@ fieldset:disabled .btn {
 }
 
 .toast.bg-blue {
-    background-color: #f3ca26
+    background-color: #0066fe
 }
 
 .toast.bg-orange {
@@ -17781,7 +17834,7 @@ fieldset:disabled .btn {
 }
 
 .un-bottom-navigation .em_body_navigation.bg-blue {
-    background-color: #f3ca26 !important
+    background-color: #0066fe !important
 }
 
 .un-bottom-navigation .em_body_navigation.bg-green {
@@ -21419,6 +21472,47 @@ header.default.header-light .un-block-right .menu-sidebar .btn svg rect {
     text-decoration: none !important
 }
 
+
+
+.un-title-default-3 {
+    padding: 0 0px;
+    /*display: flex;*/
+    align-items: center;
+    justify-content: space-between
+}
+
+.un-title-default-3 .text h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--dark);
+    margin: 0;
+    margin-bottom: 3px
+}
+
+.un-title-default-3 .text p {
+    font-size: 13px;
+    color: var(--secondary);
+    font-weight: 400;
+    margin: 0
+}
+
+.un-title-default-3 .un-block-right .icon-back {
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: var(--dark);
+    background-color: var(--gray-200);
+    border-radius: 50%;
+    text-decoration: none !important
+}
+
+
+
+
+
 .un-intro-card {
     padding: 20px
 }
@@ -21668,6 +21762,12 @@ header.default.header-light .un-block-right .menu-sidebar .btn svg rect {
 .un-navMenu-default .nav .nav-item .nav-link .item-content-link .link-title {
     font-size: 14px;
     font-weight: 700;
+    color: var(--dark);
+    margin: 0
+}
+
+.un-navMenu-default .nav .nav-item .nav-link .item-content-link .link-text {
+    font-size: 12px;
     color: var(--dark);
     margin: 0
 }
@@ -22313,8 +22413,8 @@ header.default.header-light .un-block-right .menu-sidebar .btn svg rect {
 }
 
 .accordion.--fill-blue-1 .accordion-item {
-    border: 1px solid rgba(243, 202, 38, .3);
-    background-color: rgba(243, 202, 38, .1)
+    border: 1px solid rgba(0, 102, 254, .3);
+    background-color: rgba(0, 102, 254, .1)
 }
 
 .accordion.--fill-orange-1 .accordion-item {
@@ -22363,8 +22463,48 @@ header.default.header-light .un-block-right .menu-sidebar .btn svg rect {
     text-align: center
 }
 
+.un-brand-about .head picture {
+    width: 100%
+}
+
+.un-brand-about .head video {
+    width: 100%
+}
+
+.un-brand-about .head .cover-image {
+    position: relative;
+    z-index: 0;
+}
+
+.un-brand-about .head .cover-image img {
+    width: 100%;
+    height: 155px;
+    object-fit: cover
+}
+
+@media(min-width: 992px) {
+    .un-brand-about .head .cover-image img {
+        height: 220px
+    }
+}
+
+.un-brand-about .head .cover-image.overlay {
+    overflow: hidden
+}
+
+.un-brand-about .head .cover-image.overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(34, 32, 50, .6)
+}
+
 .un-brand-about .brand_img {
-    width: 80px;
+    position: relative;
+    width: 180px;
     height: auto;
     object-fit: contain;
     margin-bottom: 10px
@@ -22397,7 +22537,7 @@ header.default.header-light .un-block-right .menu-sidebar .btn svg rect {
 }
 
 .about-section .descriptio h2 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
     color: var(--dark);
     margin: 0;
@@ -22537,7 +22677,7 @@ header.default.header-light .un-block-right .menu-sidebar .btn svg rect {
     width: 100%;
     height: 100%;
     background-size: cover;
-    padding: 30px 35px;
+    padding: 30px 40px;
     border-radius: 15px
 }
 
@@ -22953,6 +23093,14 @@ header.default.header-light .un-block-right .menu-sidebar .btn svg rect {
 
 .un__listPages_started .content .title h3 {
     font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 10px;
+    color: #fff
+}
+
+.un__listPages_started .content .title h2 {
+    font-size: 48px;
     font-weight: 700;
     margin: 0;
     margin-bottom: 10px;
