@@ -24212,6 +24212,11 @@ html {
     scrollbar-width: none !important
 }
 
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;             /* Chrome、Safari、iOS、Android */
+}
+
 #wrapper,
 #content {
     width: 100%;
