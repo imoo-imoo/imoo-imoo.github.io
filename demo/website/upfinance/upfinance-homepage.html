@@ -133,12 +133,13 @@
                         </a>
                     </div>
                 </div>
+
                 <div class="discover-nft-random margin-t-20">
                     <div class="content-NFTs-body">
                         <!-- item-card-nft -->
-                        <div class="item-card-nft">
-                            <video autoplay loop muted playsinline style="width: 100%; height: 100%; overflow: hidden; display:block;" class="rounded-15 opacity-75">
-                                <source src="video/video-14s.mp4" type="video/mp4">
+                        <div class="item-card-nft border">
+                            <video autoplay loop muted playsinline style="width: 100%; height: 100%; overflow: hidden; display:block;" class="rounded-15 opacity-15">
+                                <source src="video/video-24sb.mp4" type="video/mp4">
                                 <img class="big-image" src="images/other/14.jpg" alt="">
                             </video>
                             <!-- <picture>
@@ -195,6 +196,73 @@
                                     </p>
                                 </div>
                             </a> -->
+                            <!-- Glow border (沿著邊框跑的霓虹光帶) -->
+                            <svg class="glow-border" xmlns="http://www.w3.org/2000/svg"
+                                 viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true"
+                                 style="overflow:visible">
+                              <defs>
+                                <!-- 彩色漸變（兩端透明，中段亮） -->
+                                <linearGradient id="upfGlowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                  <stop offset="0%"   stop-color="#8a5cf6" stop-opacity="0.0"/>
+                                  <stop offset="2%"   stop-color="#8a5cf6" stop-opacity="0.0"/>
+                                  <stop offset="50%"  stop-color="#34d399" stop-opacity="1"/>
+                                  <stop offset="98%"  stop-color="#f59e0b" stop-opacity="0.0"/>
+                                  <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.0"/>
+                                </linearGradient>
+
+                                <!-- 外光暈 -->
+                                <filter id="upfOuterGlow" color-interpolation-filters="sRGB" x="-40%" y="-40%" width="180%" height="180%">
+                                  <feGaussianBlur stdDeviation="6" result="blur"/>
+                                  <feMerge>
+                                    <feMergeNode in="blur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                  </feMerge>
+                                </filter>
+
+                                <!-- 首尾柔化濾鏡（遮罩用） -->
+                                <filter id="softEdgeGlow" x="-40%" y="-40%" width="180%" height="180%">
+                                  <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
+                                  <feComponentTransfer>
+                                    <feFuncA type="gamma" amplitude="1" exponent="1.85" offset="0"/>
+                                  </feComponentTransfer>
+                                </filter>
+
+                                <!-- 羽化遮罩：用白色 dash 跑動，彩色線只負責著色 -->
+                                <mask id="upfFeatherDash" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse">
+                                  <rect class="mask-dash"
+                                        x="0.5" y="0.5" width="999" height="599" rx="30" ry="30"
+                                        fill="none" stroke="#fff" stroke-linecap="round"
+                                        stroke-width="18"
+                                        stroke-dasharray="300 700"
+                                        stroke-dashoffset="0"
+                                        pathLength="1000"
+                                        vector-effect="non-scaling-stroke"
+                                        filter="url(#softEdgeGlow)"/>
+                                </mask>
+                              </defs>
+
+                              <!-- 核心描邊：中心線=外框線（不 dash，顯示交給遮罩） -->
+                              <rect class="glow-stroke core"
+                                    x="0.5" y="0.5" width="999" height="599" rx="30" ry="30"
+                                    fill="none"
+                                    stroke="url(#upfGlowGradient)" stroke-width="1" stroke-linecap="round"
+                                    pathLength="1000"
+                                    vector-effect="non-scaling-stroke"
+                                    mask="url(#upfFeatherDash)"/>
+
+                              <!-- 外圈柔光：更粗，光暈同時覆蓋框內與框外 -->
+                              <rect class="glow-stroke glow-blur"
+                                    x="0.5" y="0.5" width="999" height="599" rx="30" ry="30"
+                                    fill="none"
+                                    stroke="url(#upfGlowGradient)" stroke-width="60" stroke-linecap="round"
+                                    pathLength="1000"
+                                    vector-effect="non-scaling-stroke"
+                                    mask="url(#upfFeatherDash)"
+                                    filter="url(#upfOuterGlow)"
+                                    opacity="0.35"/>
+                            </svg>
+
+
                         </div>
                         <!-- item-sm-card-NFTs -->
                         <!-- <a href="page-collectibles-details.html" class="item-sm-card-NFTs">

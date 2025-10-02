@@ -16426,6 +16426,58 @@ fieldset:disabled .btn {
 
 
 
+/* === Balance 霓虹外框：沿著邊框跑的光帶 === */
+
+/* 讓 .item-card-nft 成為定位容器，不改尺寸不加內距 */
+.content-NFTs-body .item-card-nft {
+      position: relative;           /* 新增 */
+      border-radius: 15px;          /* 與 rounded-15 對齊，視覺一致 */
+      overflow: visible;            /* 讓外光暈不被裁切（需要時可調回 hidden） */
+}
+
+/* 疊在卡片上的 SVG 外框（不吃點擊） */
+.content-NFTs-body .item-card-nft > .glow-border {
+      position: absolute;
+      transform: rotate(0deg);
+      inset: 0;                     /* 撐滿整張卡 */
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 5;                   /* 在影片與文字之上，但不阻擋操作 */
+      overflow: visible;                 /* ★ 新增 */
+}
+
+.content-NFTs-body .item-card-nft > .glow-border .mask-dash {
+      stroke-dasharray: 200 800;     /* 光段/空段 */
+      stroke-dashoffset: 0;
+      stroke-linecap: round;
+      animation: upf-dashmove 20s linear infinite;
+}
+
+/* 跑動的光帶定義 */
+.content-NFTs-body .item-card-nft > .glow-border .glow-stroke {
+      /* 利用 pathLength=1000，dash 單位就能用 0~1000 的相對值 */
+      stroke-dasharray: none !important;
+      stroke-dashoffset: 0 !important;
+      stroke-linecap: round;
+      filter: none !important;
+      animation: none !important;
+      opacity: .95;                  /* 視覺更自然，依喜好調整 */
+}
+
+/* 柔和外光暈一起跑 */
+.content-NFTs-body .item-card-nft > .glow-border .glow-stroke.glow-blur {
+    opacity: .45;  /* 看到效果後可再微調 */
+    animation: upf-dashmove 20s linear infinite;
+}
+
+/* 一圈跑完（對應 pathLength=1000） */
+@keyframes upf-dashmove {
+  to { stroke-dashoffset: -1000; }
+}
+
+
+
 
 .content-NFTs-body .item-card-nft .body {
     /*display: flex;*/
