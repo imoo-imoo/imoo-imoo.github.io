@@ -20750,6 +20750,15 @@ body.tp-magic-cursor #magic-cursor {
 .tp-contact-email:hover {
   color: var(--tp-grey-1);
 }
+.tp-contact-email-2 {
+  font-family: var(--tp-ff-outfit);
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--tp-common-black);
+}
+.tp-contact-email-2:hover {
+  color: var(--tp-grey-1);
+}
 .tp-contact-form {
   padding: 70px 60px 70px 60px;
 }
