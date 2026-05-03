@@ -421,16 +421,27 @@ function sound(type) {
 function bindHold(button, dir) {
   const start = (event) => {
     event.preventDefault();
+    event.stopPropagation();
     moveDir = dir;
     unlockAudio();
   };
-  const stop = () => {
+
+  const stop = (event) => {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
     if (moveDir === dir) moveDir = 0;
   };
-  button.addEventListener("pointerdown", start);
-  button.addEventListener("pointerup", stop);
-  button.addEventListener("pointercancel", stop);
-  button.addEventListener("pointerleave", stop);
+
+  button.addEventListener("pointerdown", start, { passive: false });
+  button.addEventListener("pointerup", stop, { passive: false });
+  button.addEventListener("pointercancel", stop, { passive: false });
+  button.addEventListener("pointerleave", stop, { passive: false });
+
+  button.addEventListener("touchstart", start, { passive: false });
+  button.addEventListener("touchend", stop, { passive: false });
+  button.addEventListener("touchcancel", stop, { passive: false });
 }
 
 function clamp(value, min, max) {
@@ -458,5 +469,11 @@ window.addEventListener("keyup", (event) => {
   if ((event.key === "ArrowRight" || event.key.toLowerCase() === "d") && moveDir === 1) moveDir = 0;
 });
 window.addEventListener("pointerdown", unlockAudio, { once: true });
+
+["contextmenu", "selectstart", "dragstart"].forEach((type) => {
+  document.addEventListener(type, (event) => {
+    event.preventDefault();
+  });
+});
 
 requestAnimationFrame(loop);

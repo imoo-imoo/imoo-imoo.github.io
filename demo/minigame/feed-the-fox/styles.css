@@ -457,14 +457,25 @@ body,
 .hud,
 .controls,
 button,
-canvas {
+canvas,
+img,
+.logo,
+.badge,
+.panel {
   -webkit-user-select: none;
   user-select: none;
   -webkit-touch-callout: none;
   -webkit-tap-highlight-color: transparent;
+  -webkit-user-drag: none;
 }
 
 button,
-.control-button {
+.control-button,
+#leftButton,
+#rightButton {
   touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
 }
