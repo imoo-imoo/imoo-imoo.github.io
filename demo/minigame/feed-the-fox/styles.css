@@ -449,3 +449,22 @@ canvas {
     translate: 0 -3px;
   }
 }
+
+html,
+body,
+.shell,
+.screen,
+.hud,
+.controls,
+button,
+canvas {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+.control-button {
+  touch-action: none;
+}
