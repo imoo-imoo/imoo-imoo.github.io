@@ -3889,7 +3889,7 @@ document.addEventListener("DOMContentLoaded", function() {
           const number = parseInt(element.getAttribute("data-number"));
           const speed = parseInt(element.getAttribute("data-speed")) || 800;
           const interval = parseInt(element.getAttribute("data-interval")) || 150;
-          const rooms = parseInt(element.getAttribute("data-rooms")) || 2;
+          const rooms = parseInt(element.getAttribute("data-rooms")) || 0;
           const dataSpace = element.getAttribute("data-height-space");
           if (!element.classList.contains("animated")) {
             element.classList.add("animated");
