@@ -10347,6 +10347,14 @@ body {
     }
   }
 
+  .border-stroke-666666 {
+    border-color: #666666;
+  }
+
+  .border-stroke-b6b6b6 {
+    border-color: #b6b6b6;
+  }
+
   .border-stroke-1 {
     border-color: var(--color-stroke-1);
   }
@@ -29395,6 +29403,14 @@ body {
 
   .dark\:fill-white:where(.dark, .dark *) {
     fill: var(--color-white);
+  }
+
+  .dark\:stroke-666666:where(.dark, .dark *) {
+    stroke: #666666;
+  }
+
+  .dark\:stroke-b6b6b6:where(.dark, .dark *) {
+    stroke: #b6b6b6;
   }
 
   .dark\:stroke-accent:where(.dark, .dark *) {
