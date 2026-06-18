@@ -736,6 +736,68 @@
   font-style: normal;
 }
 
+/* FONT FAMILY - Chinese
+-------------------------------------------- */
+
+.harmonyos-sans {
+    font-family: 'HarmonyOS Sans SC', "PingFang SC", "Hiragino Sans", "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    font-style: normal;
+}
+
+.harmonyos-sans-100 {
+    font-family: 'HarmonyOS Sans SC', "PingFang SC", "Hiragino Sans", "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.harmonyos-sans-200 {
+    font-family: 'HarmonyOS Sans SC', "PingFang SC", "Hiragino Sans", "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.harmonyos-sans-300 {
+    font-family: 'HarmonyOS Sans SC', "PingFang SC", "Hiragino Sans", "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.harmonyos-sans-400 {
+    font-family: 'HarmonyOS Sans SC', "PingFang SC", "Hiragino Sans", "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.harmonyos-sans-500 {
+    font-family: 'HarmonyOS Sans SC', "PingFang SC", "Hiragino Sans", "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.harmonyos-sans-600 {
+    font-family: 'HarmonyOS Sans SC', "PingFang SC", "Hiragino Sans", "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.harmonyos-sans-700 {
+    font-family: 'HarmonyOS Sans SC', "PingFang SC", "Hiragino Sans", "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.harmonyos-sans-800 {
+    font-family: 'HarmonyOS Sans SC', "PingFang SC", "Hiragino Sans", "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.harmonyos-sans-900 {
+    font-family: 'HarmonyOS Sans SC', "PingFang SC", "Hiragino Sans", "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
 /* FONT WEIGTH
 -------------------------------------------- */
 .fw-semibold
