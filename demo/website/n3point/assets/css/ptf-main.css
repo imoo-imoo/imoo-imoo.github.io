@@ -638,6 +638,45 @@
     font-family: var(--ptf-secondary-font) !important;
 }
 
+/* FONT FAMILY - Japanese
+-------------------------------------------- */
+
+.zen-kaku-gothic-new-light {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.zen-kaku-gothic-new-regular {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.zen-kaku-gothic-new-medium {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.zen-kaku-gothic-new-bold {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.zen-kaku-gothic-new-black {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.dela-gothic-one-regular {
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* FONT WEIGTH
 -------------------------------------------- */
 .fw-semibold
@@ -9709,6 +9748,40 @@ p.form-submit
     margin: 0 .75rem 0 .9375rem;
 
     opacity: .5;
+}
+@media only screen and (max-width: 767px)
+{
+    .ptf-services-list--style-1 li:not(.sep)
+    {
+        display: block;
+        width: 100%;
+        line-height: 1.15;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-right: 3rem;
+    }
+
+    .ptf-services-list--style-1 li:not(.sep):not(:nth-last-child(2))::after
+    {
+        content: "/";
+        display: block;
+        margin-left: 1rem;
+        opacity: .5;
+        font-weight: 300;
+    }
+
+    .ptf-services-list--style-1 li.sep
+    {
+        display: none;
+    }
+
+    .ptf-services-list--style-1 li span
+    {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-left: 0;
+    }
 }
 .ptf-services-list--style-1 li.sep:last-of-type
 {
