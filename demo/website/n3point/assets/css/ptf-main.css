@@ -677,6 +677,60 @@
   font-style: normal;
 }
 
+.yakuhan-jp-100 {
+  font-family: YakuHanJP, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.yakuhan-jp-200 {
+  font-family: YakuHanJP, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.yakuhan-jp-300 {
+  font-family: YakuHanJP, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.yakuhan-jp-400 {
+  font-family: YakuHanJP, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.yakuhan-jp-500 {
+  font-family: YakuHanJP, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.yakuhan-jp-600 {
+  font-family: YakuHanJP, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.yakuhan-jp-700 {
+  font-family: YakuHanJP, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.yakuhan-jp-800 {
+  font-family: YakuHanJP, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.yakuhan-jp-900 {
+  font-family: YakuHanJP, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
 /* FONT WEIGTH
 -------------------------------------------- */
 .fw-semibold
