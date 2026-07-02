@@ -2910,6 +2910,18 @@ p.form-submit
     display: none;
 }
 
+.ptf-header--style-4 .ptf-navbar.ptf-navbar--white-text-on-top:not(.ptf-navbar--solid) .ptf-navbar-inner.project-page
+{
+    -webkit-box-shadow: inset 0 -2px var(--ptf-color-white);
+            box-shadow: inset 0 -2px var(--ptf-color-white);
+}
+
+.ptf-header--style-4 .ptf-navbar.ptf-navbar--white-text-on-top:not(.ptf-navbar--solid) .ptf-navbar-inner.project-page-2
+{
+    -webkit-box-shadow: inset 0 -1px var(--ptf-color-white);
+            box-shadow: inset 0 -1px var(--ptf-color-white);
+}
+
 .ptf-offcanvas-menu-icon
 {
     display: -webkit-inline-box;
@@ -3181,6 +3193,18 @@ p.form-submit
     margin-right: 5rem;
     margin-left: auto;
 }
+
+/*.ptf-header--style-4 .ptf-navbar-inner.project-page
+{
+    -webkit-box-shadow: inset 0 -2px var(--ptf-color-black);
+            box-shadow: inset 0 -2px var(--ptf-color-black);
+}*/
+
+/*.ptf-header--style-4 .ptf-navbar-inner.project-page-2
+{
+    -webkit-box-shadow: inset 0 -1px var(--ptf-color-14);
+            box-shadow: inset 0 -1px var(--ptf-color-14);
+}*/
 
 /* SECTION: STYLE 5
 -------------------------------------------- */
@@ -8908,6 +8932,16 @@ p.form-submit
     overflow: unset !important;
 }
 
+.ptf-project-long-image{
+    margin-top:30px;
+}
+
+.ptf-project-long-image img{
+    width:100%;
+    height:auto;
+    display:block;
+}
+
 /* WIDGET: Instagram Feed
 -------------------------------------------- */
 .ptf-instagram-feed
@@ -10505,6 +10539,24 @@ p.form-submit
             transform: scale(1.05);
 }
 
+.ptf-simple-image.ptf-project-long-image img
+{
+    -webkit-transition: -webkit-transform calc(var(--ptf-transition-duration) * 3) var(--ptf-transition-easing);
+            transition: -webkit-transform calc(var(--ptf-transition-duration) * 3) var(--ptf-transition-easing);
+            transition:         transform calc(var(--ptf-transition-duration) * 3) var(--ptf-transition-easing);
+            transition:         transform calc(var(--ptf-transition-duration) * 3) var(--ptf-transition-easing), -webkit-transform calc(var(--ptf-transition-duration) * 3) var(--ptf-transition-easing);
+
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    will-change: transform;
+}
+.ptf-simple-image.ptf-project-long-image:hover img
+{
+    -webkit-transform: scale(1.01);
+        -ms-transform: scale(1.01);
+            transform: scale(1.01);
+}
+
 .ptf-simple-image-caption
 {
     font-size: .875rem; 
@@ -10541,9 +10593,24 @@ p.form-submit
     aspect-ratio: 21 / 9;
 }
 
+.ptf-simple-video-2
+{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 21 / 9;
+}
+
 .jarallax-img .ptf-simple-video {
     aspect-ratio: 1 / 1;
     }
+
+.jarallax-img .ptf-simple-video-2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+
 
 .ptf-simple-video video {
   display: block;
@@ -10556,7 +10623,22 @@ p.form-submit
   will-change: transform;
 }
 
+.ptf-simple-video-2 video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform calc(var(--ptf-transition-duration) * 3) var(--ptf-transition-easing);
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
 .ptf-simple-video:hover video {
+  transform: scale(1.05);
+}
+
+.ptf-simple-video-2:hover video {
   transform: scale(1.05);
 }
 
@@ -10660,6 +10742,24 @@ p.form-submit
             transform: scale(1.05);
 }
 
+.ptf-simple-video-2 img
+{
+    -webkit-transition: -webkit-transform calc(var(--ptf-transition-duration) * 3) var(--ptf-transition-easing);
+            transition: -webkit-transform calc(var(--ptf-transition-duration) * 3) var(--ptf-transition-easing);
+            transition:         transform calc(var(--ptf-transition-duration) * 3) var(--ptf-transition-easing);
+            transition:         transform calc(var(--ptf-transition-duration) * 3) var(--ptf-transition-easing), -webkit-transform calc(var(--ptf-transition-duration) * 3) var(--ptf-transition-easing);
+
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    will-change: transform;
+}
+.ptf-simple-video-2:hover img
+{
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
+}
+
 .ptf-simple-video-caption
 {
     font-size: .875rem; 
@@ -10675,12 +10775,18 @@ p.form-submit
     .ptf-simple-video {
     aspect-ratio: 4 / 3;
     }
+    .ptf-simple-video-2 {
+    aspect-ratio: 4 / 3;
+    }
     .ptf-simple-video-caption
     {
         margin-top: 1.25rem;
     }
     .jarallax-img .ptf-simple-video {
     aspect-ratio: 3 / 5;
+    }
+    .jarallax-img .ptf-simple-video-2 {
+    aspect-ratio: 9 / 20;
     }
 }
 .ptf-simple-video-caption a
