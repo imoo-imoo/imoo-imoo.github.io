@@ -338,19 +338,24 @@
 	<!-- OverlayScrollbars -->
 	<script src="https://cdn.jsdelivr.net/npm/overlayscrollbars/browser/overlayscrollbars.browser.es6.min.js"></script>
 	<script>
-		const {
-		  OverlayScrollbars
-		} = OverlayScrollbarsGlobal;
+		document.addEventListener('DOMContentLoaded', () => {
+		  const shouldUseCustomScrollbar =
+		    window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-		OverlayScrollbars(document.body, {
+		  if (!shouldUseCustomScrollbar) return;
+
+		  const { OverlayScrollbars } = OverlayScrollbarsGlobal;
+
+		  OverlayScrollbars(document.body, {
 		    scrollbars: {
-		    	theme:"os-theme-dark",
-		        autoHide: "leave",
-		        // autoHide: "scroll",
-		        autoHideDelay: 500,
-		        clickScroll: true,
-		        dragScroll: true
+		      theme: 'os-theme-dark',
+		      autoHide: 'leave',
+		      // autoHide: "scroll",
+		      autoHideDelay: 500,
+		      clickScroll: true,
+		      dragScroll: true
 		    }
+		  });
 		});
 	</script>
 	
