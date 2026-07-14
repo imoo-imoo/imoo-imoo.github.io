@@ -15,15 +15,18 @@
 	<link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad.png">
 	<link rel="apple-touch-icon" sizes="167x167" href="touch-icon-ipad-retina.png">
 	<!-- Place favicon.ico in the root directory -->
-	
-	<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,300i,400,500,600,700" rel="stylesheet">
 
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,300i,400,500,600,700" rel="stylesheet">
+	<!-- CSS -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="icons/icomoon.css">
 	<link rel="stylesheet" href="icons/fontawesome-all.css">
 	<link rel="stylesheet" href="icons/fontawesome.css">
 	<link rel="stylesheet" href="css/plugins.css">
 	<link rel="stylesheet" href="css/main.css">
+	<!-- OverlayScrollbars -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars/styles/overlayscrollbars.min.css"/>
 </head>
 <body>
 
@@ -332,6 +335,24 @@
 	<script src="js/vendor/jquery-3.2.1.min.js"></script>
 	<script src="js/plugins.js"></script>
 	<script src="js/main.js"></script>
+	<!-- OverlayScrollbars -->
+	<script src="https://cdn.jsdelivr.net/npm/overlayscrollbars/browser/overlayscrollbars.browser.es6.min.js"></script>
+	<script>
+		const {
+		  OverlayScrollbars
+		} = OverlayScrollbarsGlobal;
+
+		OverlayScrollbars(document.body, {
+		    scrollbars: {
+		    	theme:"os-theme-dark",
+		        autoHide: "leave",
+		        // autoHide: "scroll",
+		        autoHideDelay: 500,
+		        clickScroll: true,
+		        dragScroll: true
+		    }
+		});
+	</script>
 	
 </body>
 
