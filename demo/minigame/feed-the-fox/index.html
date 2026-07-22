@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#77cdee" />
     <title>Feed the Fox</title>
-    <link rel="stylesheet" href="styles.css?v=ui-repair-6" />
+    <link rel="stylesheet" href="styles.css?v=final-ui-fix-1" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sigmar&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
   </head>
   <body>
     <main class="shell" aria-label="Feed the Fox game">
-      <canvas id="game" width="1080" height="1920"></canvas>
+      <canvas id="game" width="1080" height="1920" draggable="false"></canvas>
       <audio id="bgm" src="assets/music/be-happy-35.mp3" preload="auto"></audio>
 
       <section id="home" class="screen screen--active">
@@ -21,15 +21,18 @@
           <span>Feed the</span>
           <strong>FOX</strong>
         </div>
-        <button id="startButton" class="wood-button primary">Play</button>
-        <button id="leaderButton" class="wood-button">Leaderboard</button>
+        <button id="startButton" type="button" class="wood-button primary">Play</button>
+        <button id="leaderButton" type="button" class="wood-button">Leaderboard</button>
       </section>
 
       <section id="leaderboard" class="screen">
         <div class="panel">
           <h1>Leaderboard</h1>
           <ol id="leaderList" class="scores"></ol>
-          <button class="wood-button small" data-home>Home</button>
+          <div class="leader-actions">
+            <button id="playFromLeaderboardButton" type="button" class="wood-button primary small leader-button">Play Again</button>
+            <button id="homeLeaderboardButton" type="button" class="wood-button small leader-button">Home</button>
+          </div>
         </div>
       </section>
 
@@ -45,25 +48,45 @@
       </section>
 
       <section id="controls" class="controls" aria-label="Fox controls">
-        <button id="leftButton" class="control-button" aria-label="Move left">‹</button>
-        <button id="rightButton" class="control-button" aria-label="Move right">›</button>
+        <button id="leftButton" type="button" class="control-button" aria-label="Move left" draggable="false">‹</button>
+        <button id="rightButton" type="button" class="control-button" aria-label="Move right" draggable="false">›</button>
       </section>
 
       <section id="gameOver" class="screen">
         <div class="panel result">
-          <h1>Time Up!</h1>
-          <p id="finalScore">Score 0</p>
-          <label class="name-field">
-            <span>Name</span>
-            <input id="nameInput" type="text" maxlength="5" autocomplete="off" inputmode="latin" value="FOX" />
-          </label>
-          <button id="saveScoreButton" class="wood-button primary small">Save Score</button>
-          <button id="playAgainButton" class="wood-button small">Play Again</button>
-          <button class="wood-button small" data-home>Home</button>
+          <div id="resultSummary" class="result-view result-view--summary">
+            <h1 class="result-heading">Time Up!</h1>
+            <div class="final-score-block" aria-live="polite">
+              <span class="final-score-label">Score</span>
+              <strong id="finalScore" class="final-score-value">000</strong>
+            </div>
+            <div class="result-stats">
+              <p id="performanceTitle" class="performance-title">E-WASTE BEGINNER</p>
+              <p id="bestCombo" class="best-combo">Best Combo ×0</p>
+            </div>
+            <div class="result-actions">
+              <button id="saveScoreButton" type="button" class="wood-button primary small result-button">Save Score</button>
+              <button id="homeResultButton" type="button" class="wood-button small result-home-button">Home</button>
+            </div>
+          </div>
+
+          <div id="resultNameEntry" class="result-view result-view--name-entry" aria-hidden="true">
+            <h1 class="name-entry-title">Save Your Score</h1>
+            <div class="name-entry-form">
+              <label class="name-field">
+                <span>Name</span>
+                <input id="nameInput" type="text" maxlength="5" autocomplete="off" inputmode="latin" value="FOX" />
+              </label>
+              <div class="result-actions name-actions">
+                <button id="confirmScoreButton" type="button" class="wood-button primary small result-button">Confirm</button>
+                <button id="backResultButton" type="button" class="wood-button small result-button">Back</button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
 
-    <script src="game.js?v=ui-repair-6"></script>
+    <script src="game.js?v=final-ui-fix-1"></script>
   </body>
 </html>

@@ -16,14 +16,23 @@ const els = {
   scoreText: document.getElementById("scoreText"),
   timeText: document.getElementById("timeText"),
   finalScore: document.getElementById("finalScore"),
+  performanceTitle: document.getElementById("performanceTitle"),
+  bestCombo: document.getElementById("bestCombo"),
+  resultPanel: document.querySelector(".result"),
+  resultSummary: document.getElementById("resultSummary"),
+  resultNameEntry: document.getElementById("resultNameEntry"),
   nameInput: document.getElementById("nameInput"),
   leaderList: document.getElementById("leaderList"),
   startButton: document.getElementById("startButton"),
   leaderButton: document.getElementById("leaderButton"),
+  homeLeaderboardButton: document.getElementById("homeLeaderboardButton"),
+  playFromLeaderboardButton: document.getElementById("playFromLeaderboardButton"),
   leftButton: document.getElementById("leftButton"),
   rightButton: document.getElementById("rightButton"),
   saveScoreButton: document.getElementById("saveScoreButton"),
-  playAgainButton: document.getElementById("playAgainButton"),
+  homeResultButton: document.getElementById("homeResultButton"),
+  confirmScoreButton: document.getElementById("confirmScoreButton"),
+  backResultButton: document.getElementById("backResultButton"),
   bgm: document.getElementById("bgm"),
 };
 
@@ -74,12 +83,32 @@ let binBounce = 0;
 let combo = 0;
 let comboTimer = 0;
 let comboPulse = 0;
+let maxCombo = 0;
 let readyTimer = 0;
 let endDelay = 0;
 let phaseBanner = null;
 let nextGoldenAt = 0;
 let slowMoTimer = 0;
 let lastCountdownNumber = 0;
+let countdownPulse = 0;
+let resultScoreDisplay = 0;
+let resultScoreTimer = 0;
+let resultFinalScore = 0;
+let roundEnding = false;
+let roundSequence = 0;
+let currentRoundId = null;
+let currentResult = null;
+let scoreSavedForRound = false;
+let isSavingScore = false;
+let savedEntryId = null;
+let navLockedUntil = 0;
+let actionUnlockTimer = 0;
+let shownMilestones = {};
+let footstepTimer = 0;
+let skidTimer = 0;
+let boundarySquash = 0;
+let foxLean = 0;
+let lastMoveDir = 0;
 let audioCtx;
 const fruits = [];
 const pops = [];
@@ -105,22 +134,138 @@ function image(src) {
   return img;
 }
 
-function setScreen(next) {
-  state = next;
-  [els.home, els.leaderboard, els.gameOver].forEach((el) => el.classList.remove("screen--active"));
-  els.hud.classList.toggle("hud--active", next === "playing");
-  els.controls.classList.toggle("controls--active", next === "playing");
-  if (next === "home") els.home.classList.add("screen--active");
-  if (next === "leaderboard") {
-    renderLeaderboard();
-    els.leaderboard.classList.add("screen--active");
+function navigateTo(nextState) {
+  const valid = {
+    home: new Set(["playing", "leaderboard"]),
+    playing: new Set(["result-summary", "home"]),
+    "result-summary": new Set(["name-entry", "playing", "home"]),
+    "name-entry": new Set(["leaderboard", "result-summary", "home"]),
+    leaderboard: new Set(["playing", "home"]),
+  };
+
+  if (nextState !== state && !valid[state]?.has(nextState)) return false;
+
+  if (state === "name-entry" && nextState !== "name-entry" && els.nameInput) els.nameInput.blur();
+
+  state = nextState;
+  lockNavigation(240);
+  stopControls();
+
+  const screenMap = {
+    home: els.home,
+    leaderboard: els.leaderboard,
+    "result-summary": els.gameOver,
+    "name-entry": els.gameOver,
+  };
+
+  [els.home, els.leaderboard, els.gameOver].forEach((screen) => {
+    if (!screen) return;
+    const active = screen === screenMap[nextState];
+    screen.classList.toggle("screen--active", active);
+    screen.setAttribute("aria-hidden", active ? "false" : "true");
+    screen.style.pointerEvents = active ? "" : "none";
+  });
+
+  const playing = nextState === "playing";
+  els.hud.classList.toggle("hud--active", playing);
+  els.controls.classList.toggle("controls--active", playing);
+  els.controls.setAttribute("aria-hidden", playing ? "false" : "true");
+
+  if (els.resultPanel) {
+    const resultScreenName = nextState === "name-entry" ? "name-entry" : "summary";
+    els.resultPanel.dataset.view = resultScreenName;
+    if (resultScreenName !== "name-entry") els.resultPanel.classList.remove("result--keyboard");
   }
-  if (next === "gameOver") els.gameOver.classList.add("screen--active");
+  if (els.resultSummary) els.resultSummary.setAttribute("aria-hidden", nextState === "result-summary" ? "false" : "true");
+  if (els.resultNameEntry) els.resultNameEntry.setAttribute("aria-hidden", nextState === "name-entry" ? "false" : "true");
+
+  if (nextState === "home") resetResultSurface();
+  if (nextState === "leaderboard") renderLeaderboard();
+
+  return true;
+}
+
+function lockNavigation(duration = 240) {
+  navLockedUntil = performance.now() + duration;
+  window.clearTimeout(actionUnlockTimer);
+  actionUnlockTimer = window.setTimeout(() => {
+    navLockedUntil = 0;
+    setActionButtonsLocked(false);
+  }, duration);
+  setActionButtonsLocked(true);
+}
+
+function isNavigationLocked() {
+  return performance.now() < navLockedUntil;
+}
+
+function setActionButtonsLocked(locked) {
+  document.querySelectorAll("[data-action-button]").forEach((button) => {
+    button.classList.toggle("button--locked", locked);
+  });
+}
+
+function stopControls() {
+  moveDir = 0;
+  foxVX = 0;
+  if (els.controls) els.controls.classList.remove("controls--pressing");
+}
+
+function isResultState() {
+  return state === "result-summary" || state === "name-entry";
+}
+
+function resetResultSurface() {
+  if (els.resultPanel) {
+    els.resultPanel.dataset.view = "summary";
+    els.resultPanel.classList.remove("result--keyboard");
+  }
+  if (els.resultSummary) els.resultSummary.setAttribute("aria-hidden", "true");
+  if (els.resultNameEntry) els.resultNameEntry.setAttribute("aria-hidden", "true");
+  resultScoreDisplay = 0;
+  resultScoreTimer = 0;
+  resultFinalScore = 0;
+  currentResult = null;
+  isSavingScore = false;
+  savedEntryId = null;
+}
+
+function initializeScreens() {
+  state = "home";
+  [els.home, els.leaderboard, els.gameOver].forEach((screen) => {
+    if (!screen) return;
+    const active = screen === els.home;
+    screen.classList.toggle("screen--active", active);
+    screen.setAttribute("aria-hidden", active ? "false" : "true");
+    screen.style.pointerEvents = active ? "" : "none";
+  });
+  els.hud.classList.remove("hud--active");
+  els.controls.classList.remove("controls--active");
+  els.controls.setAttribute("aria-hidden", "true");
+  if (els.resultPanel) els.resultPanel.dataset.view = "summary";
+  if (els.resultSummary) els.resultSummary.setAttribute("aria-hidden", "true");
+  if (els.resultNameEntry) els.resultNameEntry.setAttribute("aria-hidden", "true");
+}
+
+function goHome() {
+  if (els.nameInput) els.nameInput.blur();
+  stopControls();
+  fruits.length = 0;
+  pops.length = 0;
+  particles.length = 0;
+  phaseBanner = null;
+  comboTimer = 0;
+  navigateTo("home");
 }
 
 function startGame() {
   unlockAudio();
   playBGM();
+  currentRoundId = `round-${Date.now()}-${++roundSequence}`;
+  currentResult = null;
+  scoreSavedForRound = false;
+  isSavingScore = false;
+  savedEntryId = null;
   score = 0;
   timeLeft = ROUND_SECONDS;
   elapsed = 0;
@@ -139,26 +284,51 @@ function startGame() {
   combo = 0;
   comboTimer = 0;
   comboPulse = 0;
+  maxCombo = 0;
   readyTimer = prefersReducedMotion ? 0.25 : 1.15;
   endDelay = 0;
   phaseBanner = null;
   nextGoldenAt = 8 + Math.random() * 4;
   slowMoTimer = 0;
   lastCountdownNumber = 0;
+  countdownPulse = 0;
+  resultScoreDisplay = 0;
+  resultScoreTimer = 0;
+  resultFinalScore = 0;
+  roundEnding = false;
+  shownMilestones = {};
+  footstepTimer = 0;
+  skidTimer = 0;
+  boundarySquash = 0;
+  foxLean = 0;
+  lastMoveDir = 0;
   fruits.length = 0;
   pops.length = 0;
   particles.length = 0;
   updateHud();
-  setScreen("playing");
+  navigateTo("playing");
   sound("ready");
 }
 
 function endGame() {
   moveDir = 0;
   foxVX = 0;
-  setScreen("gameOver");
-  els.finalScore.textContent = `Score ${score}`;
-  els.nameInput.focus({ preventScroll: true });
+  fruits.length = 0;
+  pops.length = 0;
+  phaseBanner = null;
+  comboTimer = 0;
+  currentResult = {
+    id: currentRoundId || `round-${Date.now()}-${++roundSequence}`,
+    roundId: currentRoundId || `round-${Date.now()}-${roundSequence}`,
+    score,
+    bestCombo: maxCombo,
+    date: Date.now(),
+  };
+  resultFinalScore = currentResult.score;
+  resultScoreDisplay = 0;
+  resultScoreTimer = prefersReducedMotion ? 0.85 : 0;
+  updateResultPanel();
+  navigateTo("result-summary");
   sound("end");
 }
 
@@ -183,16 +353,20 @@ function update(dt) {
   updatePetals(dt);
   updateParticles(dt);
   updatePops(dt);
+  updateResultAnimation(dt);
   if (state !== "playing") return;
 
   const activeDt = slowMoTimer > 0 ? dt * 0.45 : dt;
   slowMoTimer = Math.max(0, slowMoTimer - dt);
+  countdownPulse = Math.max(0, countdownPulse - dt);
   catchSmile = Math.max(0, catchSmile - dt);
   missSad = Math.max(0, missSad - dt);
   shake = Math.max(0, shake - dt);
   cameraBump = Math.max(0, cameraBump - dt);
   foxReaction = Math.max(0, foxReaction - dt);
   binBounce = Math.max(0, binBounce - dt);
+  skidTimer = Math.max(0, skidTimer - dt);
+  boundarySquash = Math.max(0, boundarySquash - dt);
   comboPulse = Math.max(0, comboPulse - dt);
   comboTimer = Math.max(0, comboTimer - dt);
   if (comboTimer <= 0 && combo > 0) combo = 0;
@@ -212,7 +386,7 @@ function update(dt) {
 
   if (endDelay > 0) {
     endDelay -= dt;
-    updateFruits(activeDt, getCatchZone());
+    updateFruits(activeDt, getCatchZone(), true);
     if (endDelay <= 0) endGame();
     return;
   }
@@ -223,21 +397,31 @@ function update(dt) {
   updatePhaseBanners();
   updateCountdown();
 
-  if (spawnTimer <= 0) {
+  if (spawnTimer <= 0 && timeLeft > 0) {
     spawnFruit();
     spawnTimer = getSpawnDelay();
   }
 
+  const previousVX = foxVX;
+  const previousX = foxX;
+  const previousMoveDir = lastMoveDir;
   const targetVX = moveDir * 760;
   if (moveDir) facingDir = moveDir;
   foxVX += (targetVX - foxVX) * Math.min(1, dt * 12);
   foxX = clamp(foxX + foxVX * dt, 150, W - 150);
+  const acceleration = dt > 0 ? (foxVX - previousVX) / dt : 0;
+  foxLean += (clamp(foxVX / 760, -1, 1) * 0.13 + clamp(acceleration / 8500, -1, 1) * 0.055 - foxLean) * Math.min(1, dt * (moveDir ? 10 : 5));
+  updateFoxMovementEffects(dt, previousMoveDir, previousX);
+  lastMoveDir = moveDir;
 
   updateFruits(activeDt, getCatchZone());
 
   if (timeLeft <= 0) {
     timeLeft = 0;
     updateHud();
+    roundEnding = true;
+    spawnTimer = 999;
+    settleRemainingFruits();
     endDelay = prefersReducedMotion ? 0.12 : 0.42;
     sound("timeup");
   } else {
@@ -245,7 +429,7 @@ function update(dt) {
   }
 }
 
-function updateFruits(dt, catchZone) {
+function updateFruits(dt, catchZone, settling = false) {
   for (let i = fruits.length - 1; i >= 0; i--) {
     const f = fruits[i];
     if (f.caught) {
@@ -261,10 +445,24 @@ function updateFruits(dt, catchZone) {
       continue;
     }
 
+    if (settling || roundEnding) {
+      f.settleAge = (f.settleAge || 0) + dt;
+      f.y += f.vy * dt * 0.22;
+      f.rot += f.spin * dt * 0.35;
+      f.alpha = Math.max(0, 1 - f.settleAge / 0.42);
+      if (f.alpha <= 0.04) fruits.splice(i, 1);
+      continue;
+    }
+
     const flutter = f.flutterAmount ? Math.sin(roundElapsed * f.swaySpeed * 1.7 + f.phase) * f.flutterAmount : 0;
     f.y += (f.vy + flutter) * dt;
     f.x += Math.sin(roundElapsed * f.wobble + f.phase) * f.drift * dt;
     f.rot += f.spin * dt;
+    f.trailTimer = Math.max(0, (f.trailTimer || 0) - dt);
+    if (f.golden && f.trailTimer <= 0 && !prefersReducedMotion) {
+      goldenTrail(f);
+      f.trailTimer = 0.065;
+    }
     if (isCaught(f, catchZone)) {
       beginCatch(f, catchZone);
     } else if (f.y - f.drawHeight / 2 > H + 80) {
@@ -278,6 +476,62 @@ function updateFruits(dt, catchZone) {
       cameraBump = Math.max(cameraBump, 0.08);
       sound("miss");
     }
+  }
+}
+
+function settleRemainingFruits() {
+  for (const f of fruits) {
+    if (!f.caught) {
+      f.settleAge = 0;
+      f.drift *= 0.25;
+      f.vy *= 0.25;
+    }
+  }
+}
+
+function updateFoxMovementEffects(dt, previousMoveDir, previousX) {
+  const speed = Math.abs(foxVX);
+  const changedDirection = moveDir && previousMoveDir && moveDir !== previousMoveDir;
+  if (changedDirection || (moveDir && Math.sign(foxVX || moveDir) !== moveDir && speed > 180)) {
+    skidTimer = 0.18;
+    footDust(foxX - moveDir * 60, 1816, -moveDir, 1.4);
+  }
+
+  if (moveDir && speed > 360 && !prefersReducedMotion) {
+    footstepTimer -= dt;
+    if (footstepTimer <= 0) {
+      footDust(foxX - moveDir * 92, 1814, -moveDir, 0.72);
+      footstepTimer = 0.105;
+    }
+  } else {
+    footstepTimer = 0;
+  }
+
+  const hitLeft = foxX <= 150.5 && previousX > foxX;
+  const hitRight = foxX >= W - 150.5 && previousX < foxX;
+  if ((hitLeft || hitRight) && speed > 260) {
+    boundarySquash = 0.2;
+    footDust(foxX, 1818, hitLeft ? 1 : -1, 0.9);
+  }
+}
+
+function footDust(x, y, dir, strength = 1) {
+  const count = prefersReducedMotion ? 2 : Math.ceil(4 * strength);
+  for (let i = 0; i < count; i++) {
+    addParticle({
+      type: Math.random() > 0.45 ? "leaf" : "dot",
+      x: x + (Math.random() - 0.5) * 42,
+      y: y + Math.random() * 18,
+      vx: dir * (80 + Math.random() * 150) + (Math.random() - 0.5) * 45,
+      vy: -30 - Math.random() * 85,
+      gravity: 260,
+      size: 5 + Math.random() * 8,
+      color: Math.random() > 0.4 ? "rgba(236,124,70,0.62)" : "rgba(255,221,128,0.58)",
+      alpha: 0.58,
+      life: 0.32 + Math.random() * 0.16,
+      rot: Math.random() * Math.PI,
+      spin: -5 + Math.random() * 10,
+    });
   }
 }
 
@@ -345,7 +599,8 @@ function updateCountdown() {
   const n = Math.ceil(timeLeft);
   if (n <= 5 && n >= 1 && n !== lastCountdownNumber) {
     lastCountdownNumber = n;
-    showCenterText(String(n), W / 2, 720, n === 1 ? "#ffd35c" : "#fff7d5", 0.58, 138);
+    countdownPulse = 0.48;
+    showCenterText(String(n), W / 2, 620, n === 1 ? "#ffd35c" : "#fff7d5", 0.46, 118);
     sound(n === 1 ? "countFinal" : "count");
   }
 }
@@ -379,7 +634,8 @@ function beginCatch(f, catchZone) {
   f.alpha = 1;
 
   combo += 1;
-  comboTimer = 1.5;
+  maxCombo = Math.max(maxCombo, combo);
+  comboTimer = combo >= 5 ? 2.25 : 2.0;
   comboPulse = 0.72;
   const comboBonus = combo >= 10 ? 8 : combo >= 5 ? 5 : combo >= 2 ? 2 : 0;
   const gained = f.points + comboBonus;
@@ -394,11 +650,10 @@ function beginCatch(f, catchZone) {
 
   const label = f.golden ? "RARE FIND!" : `+${gained}`;
   showScoreText(label, f.x, f.y, f.golden ? "#ffd35c" : f.color, f.golden ? 1.15 : f.points >= 15 ? 0.95 : 0.85, f.golden ? 62 : 54);
-  if (combo >= 2) showComboText();
   catchBurst(f.x, f.y, f.color, f.golden ? 2.2 : f.points >= 15 ? 1.45 : 1);
-  if (combo === 5) milestone("GREAT!");
-  if (combo === 10) milestone("AMAZING!");
-  if (combo === 15) milestone("E-WASTE HERO!");
+  if (combo === 5) milestone("GREAT!", 5);
+  if (combo === 10) milestone("AMAZING!", 10);
+  if (combo === 15) milestone("E-WASTE HERO!", 15);
   updateHud();
   sound(f.golden ? "gold" : combo >= 5 ? "combo" : "catch");
 }
@@ -458,7 +713,7 @@ function draw() {
   drawMotes();
   drawPetals();
   if (state === "home") drawHomeFox();
-  if (state === "playing" || state === "gameOver") {
+  if (state === "playing") {
     drawFruits();
     drawParticles();
     drawFox();
@@ -467,6 +722,7 @@ function draw() {
     drawPhaseBanner();
     drawReady();
   }
+  if (isResultState()) drawHomeFox(0.38);
   if (state === "leaderboard") drawHomeFox(0.45);
   ctx.restore();
 }
@@ -523,8 +779,8 @@ function drawFruits() {
     ctx.save();
     ctx.translate(f.x, f.y);
     ctx.rotate(f.rot);
-    const pulse = f.golden && !f.caught ? 1 + Math.sin(elapsed * 8 + f.phase) * 0.04 : 1;
-    const scale = (f.catchScale || 1) * pulse;
+    const pulse = f.golden && !f.caught ? 1 + Math.sin(elapsed * 8 + f.phase) * 0.06 : 1;
+    const scale = (f.catchScale || 1) * pulse * getDepthScale(f.y);
     const alpha = f.alpha == null ? 1 : f.alpha;
     ctx.globalAlpha = alpha;
     if (f.golden) drawGoldenAura(f);
@@ -533,9 +789,16 @@ function drawFruits() {
     ctx.shadowOffsetX = 16;
     ctx.shadowOffsetY = 18;
     ctx.drawImage(f.img, (-f.drawWidth * scale) / 2, (-f.drawHeight * scale) / 2, f.drawWidth * scale, f.drawHeight * scale);
-    if (f.golden && !f.caught) drawGoldenSparkles(f);
+    if (f.golden && !f.caught) {
+      drawGoldenRing(f, scale);
+      drawGoldenSparkles(f);
+    }
     ctx.restore();
   }
+}
+
+function getDepthScale(y) {
+  return clamp(0.9 + (y / 1500) * 0.16, 0.9, 1.065);
 }
 
 function drawGoldenAura(f) {
@@ -565,8 +828,30 @@ function drawGoldenSparkles(f) {
   ctx.restore();
 }
 
+function drawGoldenRing(f, scale) {
+  ctx.save();
+  ctx.rotate(-f.rot + elapsed * 1.8);
+  ctx.strokeStyle = "rgba(255,214,80,0.78)";
+  ctx.lineWidth = 3;
+  ctx.beginPath();
+  ctx.ellipse(0, 0, f.drawWidth * scale * 0.62, f.drawHeight * scale * 0.42, 0, 0, Math.PI * 2);
+  ctx.stroke();
+  for (let i = 0; i < 4; i++) {
+    const a = elapsed * 1.8 + (Math.PI * 2 * i) / 4;
+    const x = Math.cos(a) * f.drawWidth * scale * 0.62;
+    const y = Math.sin(a) * f.drawHeight * scale * 0.42;
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(Math.PI / 4 + a);
+    ctx.fillStyle = "rgba(255,247,166,0.92)";
+    ctx.fillRect(-5, -5, 10, 10);
+    ctx.restore();
+  }
+  ctx.restore();
+}
+
 function drawFox() {
-  const lean = foxVX / 900;
+  const lean = foxLean;
   const runCycle = Math.sin(elapsed * 18);
   const happyCycle = Math.sin(elapsed * 15);
   const idleCycle = Math.sin(elapsed * 4);
@@ -579,13 +864,15 @@ function drawFox() {
   const bottomY = (missSad > 0 ? 1802 : catchSmile > 0 ? 1805 : moveDir ? 1810 : 1800) - getFoxHop();
   const squash = moveDir ? Math.abs(runCycle) : catchSmile > 0 ? Math.abs(happyCycle) : missSad > 0 ? 0.18 : Math.abs(idleCycle) * 0.05;
   const reaction = getReactionSquash();
-  const scaleX = 1 + squash * (moveDir ? 0.05 : catchSmile > 0 ? 0.07 : missSad > 0 ? 0.035 : 0.015) + reaction.x;
-  const scaleY = 1 - squash * (moveDir ? 0.045 : catchSmile > 0 ? 0.06 : missSad > 0 ? 0.05 : 0.012) + reaction.y;
-  const extraLean = moveDir ? runCycle * 0.035 : catchSmile > 0 ? happyCycle * 0.04 : missSad > 0 ? -0.035 : idleCycle * 0.018;
+  const edgeSquash = getBoundarySquash();
+  const skidLean = skidTimer > 0 ? -Math.sign(foxVX || moveDir || facingDir) * Math.sin((skidTimer / 0.18) * Math.PI) * 0.05 : 0;
+  const scaleX = 1 + squash * (moveDir ? 0.05 : catchSmile > 0 ? 0.07 : missSad > 0 ? 0.035 : 0.015) + reaction.x + edgeSquash.x;
+  const scaleY = 1 - squash * (moveDir ? 0.045 : catchSmile > 0 ? 0.06 : missSad > 0 ? 0.05 : 0.012) + reaction.y + edgeSquash.y;
+  const extraLean = moveDir ? runCycle * 0.03 : catchSmile > 0 ? happyCycle * 0.04 : missSad > 0 ? -0.035 : idleCycle * 0.018;
   drawShadow(foxX, 1810, 350 + Math.abs(lean) * 120 + squash * 28, 44 - squash * 5);
   ctx.save();
   ctx.translate(foxX, bottomY + bob + getBinBounce() * 0.25);
-  ctx.rotate(lean * 0.13 + extraLean);
+  ctx.rotate(lean + skidLean + extraLean);
   if (catchSmile > 0 && catchDir > 0) ctx.scale(-1, 1);
   drawSprite(img, 0, 0, spriteH, true, scaleX, scaleY);
   ctx.restore();
@@ -634,7 +921,7 @@ function drawCombo() {
   const t = clamp(comboPulse / 0.72, 0, 1);
   const scale = 1 + Math.sin(t * Math.PI) * 0.28;
   ctx.save();
-  ctx.globalAlpha = clamp(comboTimer / 0.45, 0, 1);
+  ctx.globalAlpha = clamp(comboTimer / 0.45, 0, 1) * (countdownPulse > 0 ? 0.58 : 1);
   ctx.translate(W / 2, 330);
   ctx.scale(scale, scale);
   ctx.font = "900 56px Trebuchet MS, Arial";
@@ -801,12 +1088,9 @@ function showCenterText(text, x, y, color, duration = 0.78, fontSize = 104) {
   });
 }
 
-function showComboText() {
-  const special = combo >= 15 ? "E-WASTE HERO!" : combo >= 10 ? "AMAZING!" : combo >= 5 ? "GREAT!" : `COMBO ×${combo}`;
-  showCenterText(special, W / 2, combo >= 5 ? 430 : 360, combo >= 5 ? "#ffd35c" : "#fff7d5", 0.72, combo >= 15 ? 74 : 66);
-}
-
-function milestone(text) {
+function milestone(text, key) {
+  if (shownMilestones[key]) return;
+  shownMilestones[key] = true;
   showBanner(text, "#ffd35c", 1.05);
   catchBurst(W / 2, 520, "#ffd35c", 2);
   sound("milestone");
@@ -836,6 +1120,23 @@ function catchBurst(x, y, color, strength = 1) {
       spin: -5 + Math.random() * 10,
     });
   }
+}
+
+function goldenTrail(f) {
+  addParticle({
+    type: "dot",
+    x: f.x + (Math.random() - 0.5) * f.drawWidth * 0.45,
+    y: f.y - f.drawHeight * 0.18 + (Math.random() - 0.5) * f.drawHeight * 0.25,
+    vx: (Math.random() - 0.5) * 34,
+    vy: -35 - Math.random() * 45,
+    gravity: 95,
+    size: 4 + Math.random() * 4,
+    color: Math.random() > 0.35 ? "#ffd35c" : "#fff7b8",
+    alpha: 0.62,
+    life: 0.34 + Math.random() * 0.16,
+    rot: 0,
+    spin: 0,
+  });
 }
 
 function missBurst(x, y) {
@@ -870,6 +1171,13 @@ function getReactionSquash() {
   return { x: pulse * 0.045, y: -pulse * 0.04 };
 }
 
+function getBoundarySquash() {
+  if (boundarySquash <= 0) return { x: 0, y: 0 };
+  const t = boundarySquash / 0.2;
+  const pulse = Math.sin(clamp(t, 0, 1) * Math.PI);
+  return { x: -pulse * 0.035, y: pulse * 0.045 };
+}
+
 function getFoxHop() {
   if (foxReaction <= 0) return 0;
   const t = 1 - foxReaction / 0.34;
@@ -902,34 +1210,116 @@ function easeOutBack(t, amount = 1.1) {
 }
 
 function renderLeaderboard() {
-  const rows = getScores();
+  const rows = getScores().slice(0, 20);
   els.leaderList.innerHTML = "";
-  if (!rows.length) {
-    const li = document.createElement("li");
-    li.innerHTML = "<span>1</span><strong>FOX</strong><em>000</em>";
-    els.leaderList.append(li);
-    return;
-  }
   rows.forEach((row, i) => {
     const li = document.createElement("li");
-    li.innerHTML = `<span>${i + 1}</span><strong>${row.name}</strong><em>${String(row.score).padStart(3, "0")}</em>`;
+    const rank = document.createElement("span");
+    const name = document.createElement("strong");
+    const scoreValue = document.createElement("em");
+    rank.textContent = String(i + 1);
+    name.textContent = sanitizeName(row.name);
+    scoreValue.textContent = String(Number(row.score) || 0).padStart(3, "0");
+    li.append(rank, name, scoreValue);
     els.leaderList.append(li);
   });
 }
 
-function saveScore() {
-  const name = (els.nameInput.value || "FOX").toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 5) || "FOX";
+function updateResultAnimation(dt) {
+  if (!isResultState() || !currentResult) return;
+  resultScoreTimer += dt;
+  const duration = prefersReducedMotion ? 0.1 : 0.82;
+  const t = clamp(resultScoreTimer / duration, 0, 1);
+  resultScoreDisplay = Math.round(currentResult.score * easeOutBack(t, 0.45));
+  if (t >= 1) resultScoreDisplay = currentResult.score;
+  updateResultPanel();
+}
+
+function updateResultPanel() {
+  els.finalScore.textContent = String(Math.max(0, resultScoreDisplay)).padStart(3, "0");
+  const best = currentResult ? currentResult.bestCombo : maxCombo;
+  const finalScore = currentResult ? currentResult.score : resultFinalScore;
+  if (els.bestCombo) els.bestCombo.textContent = `Best Combo ×${best}`;
+  if (els.performanceTitle) els.performanceTitle.textContent = getPerformanceTitle(finalScore, best);
+}
+
+function getPerformanceTitle(finalScore, best) {
+  if (finalScore >= 260 || best >= 10) return "E-WASTE HERO";
+  if (finalScore >= 150 || best >= 5) return "RECYCLING STAR";
+  return "E-WASTE BEGINNER";
+}
+
+function confirmScore() {
+  if (
+    state !== "name-entry" ||
+    !currentResult ||
+    scoreSavedForRound ||
+    isSavingScore
+  ) return;
+
+  isSavingScore = true;
+
+  if (els.confirmScoreButton) {
+    els.confirmScoreButton.disabled = true;
+    els.confirmScoreButton.classList.add("button--locked");
+  }
+
+  const name = sanitizeName(els.nameInput.value) || "FOX";
   els.nameInput.value = name;
-  const rows = getScores();
-  rows.push({ name, score, date: Date.now() });
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(rows.sort((a, b) => b.score - a.score).slice(0, 10)));
+
+  const rows = getScores().filter(
+    (row) => row.roundId !== currentResult.roundId
+  );
+
+  const entryId = `${currentResult.roundId}-${Date.now()}`;
+  savedEntryId = entryId;
+
+  rows.push({
+    id: entryId,
+    roundId: currentResult.roundId,
+    name,
+    score: currentResult.score,
+    bestCombo: currentResult.bestCombo,
+    date: Date.now(),
+  });
+
+  localStorage.setItem(
+    STORAGE_KEY,
+    JSON.stringify(
+      rows
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 20)
+    )
+  );
+
+  scoreSavedForRound = true;
   sound("save");
-  setScreen("leaderboard");
+  navigateTo("leaderboard");
+
+  window.setTimeout(() => {
+    isSavingScore = false;
+
+    if (els.confirmScoreButton) {
+      els.confirmScoreButton.disabled = false;
+      els.confirmScoreButton.classList.remove("button--locked");
+    }
+  }, 260);
+}
+
+function sanitizeName(value) {
+  return String(value || "")
+    .toUpperCase()
+    .replace(/[^A-Z0-9]/g, "")
+    .slice(0, 5);
 }
 
 function getScores() {
   try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+    const rows = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+    if (!Array.isArray(rows)) return [];
+    return rows
+      .filter((row) => row && typeof row === "object")
+      .sort((a, b) => (Number(b.score) || 0) - (Number(a.score) || 0));
   } catch {
     return [];
   }
@@ -1005,6 +1395,15 @@ function bindHold(button, dir) {
   const start = (event) => {
     event.preventDefault();
     event.stopPropagation();
+    if (state !== "playing") return;
+    if (event.pointerId != null && button.setPointerCapture) {
+      try {
+        button.setPointerCapture(event.pointerId);
+      } catch {
+        // Some browsers may reject capture after a cancelled pointer.
+      }
+    }
+    if (els.controls) els.controls.classList.add("controls--pressing");
     moveDir = dir;
     unlockAudio();
   };
@@ -1014,38 +1413,98 @@ function bindHold(button, dir) {
       event.preventDefault();
       event.stopPropagation();
     }
+    if (event?.pointerId != null && button.releasePointerCapture && button.hasPointerCapture?.(event.pointerId)) {
+      try {
+        button.releasePointerCapture(event.pointerId);
+      } catch {
+        // Capture may already be released by the browser.
+      }
+    }
     if (moveDir === dir) moveDir = 0;
+    if (els.controls) els.controls.classList.remove("controls--pressing");
   };
 
   button.addEventListener("pointerdown", start, { passive: false });
   button.addEventListener("pointerup", stop, { passive: false });
   button.addEventListener("pointercancel", stop, { passive: false });
+  button.addEventListener("lostpointercapture", stop, { passive: false });
   button.addEventListener("pointerleave", stop, { passive: false });
+  button.addEventListener("touchstart", blockNativeTouch, { passive: false, capture: true });
+  button.addEventListener("touchmove", blockNativeTouch, { passive: false, capture: true });
+  button.addEventListener("touchend", blockNativeTouch, { passive: false, capture: true });
+  button.addEventListener("touchcancel", blockNativeTouch, { passive: false, capture: true });
 
-  button.addEventListener("touchstart", start, { passive: false });
-  button.addEventListener("touchend", stop, { passive: false });
-  button.addEventListener("touchcancel", stop, { passive: false });
+  button.addEventListener("contextmenu", preventGameChromeDefault, { passive: false, capture: true });
+  button.addEventListener("dragstart", preventGameChromeDefault, { passive: false, capture: true });
+  button.addEventListener("selectstart", preventGameChromeDefault, { passive: false, capture: true });
+  button.oncontextmenu = () => false;
+}
+
+function bindActionButton(button, allowedState, handler) {
+  if (!button) return;
+  const allowedStates = Array.isArray(allowedState) ? allowedState : [allowedState];
+  button.dataset.actionButton = "true";
+
+  const run = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    if (button.disabled || isNavigationLocked() || !allowedStates.includes(state)) return;
+
+    lockNavigation(260);
+    handler(event);
+  };
+
+  if (window.PointerEvent) {
+    button.addEventListener("pointerup", run, { passive: false });
+    button.addEventListener(
+      "click",
+      (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+      },
+      { passive: false }
+    );
+  } else {
+    button.addEventListener("click", run, { passive: false });
+  }
 }
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
 }
 
-els.startButton.addEventListener("click", startGame);
-els.leaderButton.addEventListener("click", () => setScreen("leaderboard"));
-els.playAgainButton.addEventListener("click", startGame);
-els.saveScoreButton.addEventListener("click", saveScore);
-document.querySelectorAll("[data-home]").forEach((button) => button.addEventListener("click", () => setScreen("home")));
+bindActionButton(els.startButton, "home", startGame);
+bindActionButton(els.leaderButton, "home", () => navigateTo("leaderboard"));
+bindActionButton(els.playFromLeaderboardButton, "leaderboard", startGame);
+bindActionButton(els.homeLeaderboardButton, "leaderboard", goHome);
+bindActionButton(els.saveScoreButton, "result-summary", () => navigateTo("name-entry"));
+bindActionButton(els.homeResultButton, "result-summary", goHome);
+bindActionButton(els.confirmScoreButton, "name-entry", confirmScore);
+bindActionButton(els.backResultButton, "name-entry", () => navigateTo("result-summary"));
 els.nameInput.addEventListener("input", () => {
-  els.nameInput.value = els.nameInput.value.toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 5);
+  els.nameInput.value = sanitizeName(els.nameInput.value);
 });
 bindHold(els.leftButton, -1);
 bindHold(els.rightButton, 1);
+if (els.controls) {
+  els.controls.addEventListener("touchstart", blockNativeTouch, { passive: false, capture: true });
+  els.controls.addEventListener("touchmove", blockNativeTouch, { passive: false, capture: true });
+  els.controls.addEventListener("touchend", blockNativeTouch, { passive: false, capture: true });
+  els.controls.addEventListener("touchcancel", blockNativeTouch, { passive: false, capture: true });
+  els.controls.addEventListener("contextmenu", preventGameChromeDefault, { passive: false, capture: true });
+}
 
 window.addEventListener("keydown", (event) => {
-  if (event.key === "ArrowLeft" || event.key.toLowerCase() === "a") moveDir = -1;
-  if (event.key === "ArrowRight" || event.key.toLowerCase() === "d") moveDir = 1;
-  if (event.key === "Enter" && state === "home") startGame();
+  if (event.key === "ArrowLeft" || event.key.toLowerCase() === "a") {
+    if (state === "playing") moveDir = -1;
+  }
+  if (event.key === "ArrowRight" || event.key.toLowerCase() === "d") {
+    if (state === "playing") moveDir = 1;
+  }
+  if (event.key === "Enter" && state === "home" && !isNavigationLocked()) {
+    lockNavigation(260);
+    startGame();
+  }
 });
 window.addEventListener("keyup", (event) => {
   if ((event.key === "ArrowLeft" || event.key.toLowerCase() === "a") && moveDir === -1) moveDir = 0;
@@ -1053,10 +1512,43 @@ window.addEventListener("keyup", (event) => {
 });
 window.addEventListener("pointerdown", unlockAudio, { once: true });
 
+if (window.visualViewport && els.resultPanel) {
+  const updateKeyboardState = () => {
+    const keyboardOpen = window.visualViewport.height < window.innerHeight * 0.78;
+    const inputFocused = document.activeElement === els.nameInput;
+    els.resultPanel.classList.toggle("result--keyboard", keyboardOpen && state === "name-entry" && inputFocused);
+  };
+  window.visualViewport.addEventListener("resize", updateKeyboardState);
+  window.visualViewport.addEventListener("scroll", updateKeyboardState);
+  els.nameInput.addEventListener("focus", updateKeyboardState);
+  els.nameInput.addEventListener("blur", () => els.resultPanel.classList.remove("result--keyboard"));
+}
+
+function isEditableTarget(target) {
+  return Boolean(target?.closest?.("input, textarea, [contenteditable='true']"));
+}
+
+function isProtectedGameTarget(target) {
+  if (isEditableTarget(target)) return false;
+  return Boolean(target?.closest?.(".control-button, .controls, canvas, .shell button, .logo, .badge, .panel"));
+}
+
+function preventGameChromeDefault(event) {
+  if (!isProtectedGameTarget(event.target)) return;
+  event.preventDefault();
+  event.stopPropagation();
+  if (event.stopImmediatePropagation) event.stopImmediatePropagation();
+}
+
+function blockNativeTouch(event) {
+  if (event.cancelable) event.preventDefault();
+  event.stopPropagation();
+  if (event.stopImmediatePropagation) event.stopImmediatePropagation();
+}
+
 ["contextmenu", "selectstart", "dragstart"].forEach((type) => {
-  document.addEventListener(type, (event) => {
-    event.preventDefault();
-  });
+  document.addEventListener(type, preventGameChromeDefault, { passive: false });
 });
 
+initializeScreens();
 requestAnimationFrame(loop);
