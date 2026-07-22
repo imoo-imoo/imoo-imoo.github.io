@@ -75,6 +75,8 @@
   --font-inter-tight: "Inter Tight", sans-serif;
   --font-outfit: "Outfit", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-codec-pro: "Codec Pro", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-figtree: "Figtree", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-pj-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   --color-primary-50: #f4f2fe;
   --color-primary-100: #ece8ff;
   --color-primary-200: #dcd4ff;
@@ -895,7 +897,7 @@
 }
 
 body {
-  font-family: var(--font-codec-pro);
+  font-family: var(--font-figtree);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -1989,7 +1991,7 @@ body {
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-codec-pro);
+    font-family: var(--font-figtree);
     color: var(--color-secondary);
   }
 
@@ -13233,6 +13235,14 @@ body {
 
    .font-codec-pro {
     font-family: var(--font-codec-pro);
+  }
+
+  .font-figtree {
+    font-family: var(--font-figtree);
+  }
+
+   .font-pj-sans {
+    font-family: var(--font-pj-sans);
   }
 
   .\!text-tagline-2 {
