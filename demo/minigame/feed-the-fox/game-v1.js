@@ -36,22 +36,6 @@ const assets = {
   fruits: Array.from({ length: 13 }, (_, i) => image(`assets/fruits/fruit-${String(i + 1).padStart(2, "0")}.png`)),
 };
 
-const COLLECTIBLE_CONFIGS = [
-  { name: "calculator", baseSize: 132, sourceWidth: 176, sourceHeight: 159, points: 15, color: "#ff574a" },
-  { name: "lightbulb", baseSize: 112, sourceWidth: 148, sourceHeight: 135, points: 10, color: "#ffb330" },
-  { name: "laptop-screen", baseSize: 158, sourceWidth: 146, sourceHeight: 131, points: 10, color: "#91d94d" },
-  { name: "keyboard", baseSize: 174, sourceWidth: 144, sourceHeight: 178, points: 10, color: "#7b54ff", collisionScaleX: 0.82 },
-  { name: "mouse", baseSize: 132, sourceWidth: 142, sourceHeight: 163, points: 15, color: "#ff73a6" },
-  { name: "cd", baseSize: 110, sourceWidth: 174, sourceHeight: 169, points: 10, color: "#ff574a", collisionScaleX: 0.9, collisionScaleY: 0.9 },
-  { name: "smartphone", baseSize: 128, sourceWidth: 121, sourceHeight: 173, points: 10, color: "#ffb330", collisionScaleX: 0.86 },
-  { name: "small-battery", baseSize: 98, sourceWidth: 121, sourceHeight: 119, points: 10, color: "#91d94d" },
-  { name: "large-battery", baseSize: 114, sourceWidth: 138, sourceHeight: 186, points: 15, color: "#7b54ff", collisionScaleX: 0.86 },
-  { name: "broken-laptop", baseSize: 166, sourceWidth: 159, sourceHeight: 148, points: 10, color: "#ff73a6" },
-  { name: "electric-kettle", baseSize: 150, sourceWidth: 144, sourceHeight: 146, points: 10, color: "#ff574a" },
-  { name: "damaged-phone", baseSize: 130, sourceWidth: 123, sourceHeight: 186, points: 10, color: "#ffb330", collisionScaleX: 0.86 },
-  { name: "hair-dryer", baseSize: 150, sourceWidth: 152, sourceHeight: 157, points: 15, color: "#91d94d" },
-];
-
 let state = "home";
 let last = 0;
 let score = 0;
@@ -159,18 +143,12 @@ function update(dt) {
 
   const basketCenterX = foxX + (moveDir > 0 ? 145 : moveDir < 0 ? -145 : -118);
   const bowl = { x: basketCenterX - 145, y: 1450, w: 290, h: 118 };
-  const catchZone = {
-    x: bowl.x - 34,
-    y: bowl.y - 70,
-    w: bowl.w + 68,
-    h: bowl.h * 0.72,
-  };
   for (let i = fruits.length - 1; i >= 0; i--) {
     const f = fruits[i];
     f.y += f.vy * dt;
     f.x += Math.sin(elapsed * f.wobble + f.phase) * f.drift * dt;
     f.rot += f.spin * dt;
-    if (isCaught(f, catchZone)) {
+    if (f.y > bowl.y - 60 && f.y < bowl.y + bowl.h && f.x > bowl.x && f.x < bowl.x + bowl.w) {
       fruits.splice(i, 1);
       score += f.points;
       catchDir = moveDir || facingDir;
@@ -180,7 +158,7 @@ function update(dt) {
       burst(f.x, f.y, f.color);
       updateHud();
       sound("catch");
-    } else if (f.y - f.drawHeight / 2 > H + 80) {
+    } else if (f.y > H + 140) {
       fruits.splice(i, 1);
       pops.push({ x: f.x, y: H - 240, text: "miss", age: 0, color: "#7c4551" });
       missSad = 0.6;
@@ -205,72 +183,21 @@ function update(dt) {
 
 function spawnFruit() {
   const idx = Math.floor(Math.random() * assets.fruits.length);
-  const img = assets.fruits[idx];
-  const config = COLLECTIBLE_CONFIGS[idx];
-  const metrics = getCollectibleMetrics(img, config);
-  const halfWidth = metrics.drawWidth / 2;
+  const size = 100 + Math.random() * 72;
   fruits.push({
-    img,
-    config,
-    x: chooseSpawnX(halfWidth),
-    y: -metrics.drawHeight * 0.7,
-    ...metrics,
+    img: assets.fruits[idx],
+    x: 90 + Math.random() * (W - 180),
+    y: -120,
+    size,
     vy: 330 + Math.random() * 330 + elapsed * 4,
     drift: 55 + Math.random() * 95,
     wobble: 2 + Math.random() * 4,
     phase: Math.random() * Math.PI * 2,
     rot: Math.random() * Math.PI,
     spin: -2.4 + Math.random() * 4.8,
-    points: config.points,
-    color: config.color,
+    points: idx % 4 === 0 ? 15 : 10,
+    color: ["#ff574a", "#ffb330", "#91d94d", "#7b54ff", "#ff73a6"][idx % 5],
   });
-}
-
-function getCollectibleMetrics(img, config) {
-  const sourceWidth = img.naturalWidth || config.sourceWidth;
-  const sourceHeight = img.naturalHeight || config.sourceHeight;
-  const ratio = sourceWidth / sourceHeight;
-  const scale = 0.9 + Math.random() * 0.2;
-  const longestSide = config.baseSize * scale;
-  const drawWidth = ratio >= 1 ? longestSide : longestSide * ratio;
-  const drawHeight = ratio >= 1 ? longestSide / ratio : longestSide;
-  return {
-    scale,
-    drawWidth,
-    drawHeight,
-    collisionWidth: drawWidth * (config.collisionScaleX || 0.9),
-    collisionHeight: drawHeight * (config.collisionScaleY || 0.86),
-  };
-}
-
-function chooseSpawnX(halfWidth) {
-  const margin = halfWidth + 28;
-  const minX = margin;
-  const maxX = W - margin;
-  let x = minX + Math.random() * (maxX - minX);
-
-  for (let attempt = 0; attempt < 8; attempt++) {
-    const tooClose = fruits.some((f) => f.y < 260 && Math.abs(f.x - x) < halfWidth + f.drawWidth / 2 + 76);
-    if (!tooClose) return x;
-    x = minX + Math.random() * (maxX - minX);
-  }
-
-  return x;
-}
-
-function isCaught(f, catchZone) {
-  const item = {
-    x: f.x - f.collisionWidth / 2,
-    y: f.y + f.drawHeight * 0.06,
-    w: f.collisionWidth,
-    h: f.collisionHeight * 0.54,
-  };
-
-  return rectsOverlap(item, catchZone);
-}
-
-function rectsOverlap(a, b) {
-  return a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y;
 }
 
 function draw() {
@@ -330,7 +257,7 @@ function drawFruits() {
     ctx.shadowBlur = 0;
     ctx.shadowOffsetX = 16;
     ctx.shadowOffsetY = 18;
-    ctx.drawImage(f.img, -f.drawWidth / 2, -f.drawHeight / 2, f.drawWidth, f.drawHeight);
+    ctx.drawImage(f.img, -f.size / 2, -f.size / 2, f.size, f.size);
     ctx.restore();
   }
 }
