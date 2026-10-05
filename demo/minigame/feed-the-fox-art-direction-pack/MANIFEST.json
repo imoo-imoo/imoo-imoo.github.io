@@ -1,0 +1,22 @@
+{
+  "source_archive": "feed-the-fox.zip",
+  "created_pack": "feed-the-fox-art-direction-pack",
+  "curated_reference_counts": {
+    "background": 1,
+    "characters": 5,
+    "collectibles": 7,
+    "ui": 9
+  },
+  "production_code": [
+    "index.html",
+    "styles.css",
+    "game.js",
+    "README.md"
+  ],
+  "protected_asset_folders": [
+    "fox-new",
+    "fruits",
+    "ui-painted"
+  ],
+  "next_step_prompt": "CODEX_PHASE_1_VISUAL_PLANNING_PROMPT.md"
+}
