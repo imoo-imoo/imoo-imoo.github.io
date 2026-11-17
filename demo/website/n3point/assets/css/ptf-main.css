@@ -11908,3 +11908,20 @@ p.form-submit
 .isolate {
   isolation: isolate;
 }
+
+/* recruitment */
+
+.recruitment-details li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 20px;
+}
+
+.recruitment-details li span:first-child {
+    flex-shrink: 0;
+}
+
+.recruitment-details li span:last-child {
+    text-align: right;
+}
